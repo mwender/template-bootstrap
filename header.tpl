@@ -71,13 +71,13 @@
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" title="{$LANG.navsupport}">{$LANG.navsupport}<b class="caret"></b></a>
 									 <ul class="dropdown-menu">
+										<li><a href="submitticket.php" title="{$LANG.navopenticket}">{$LANG.navopenticket}</a></li>
 										<li><a href="supporttickets.php" title="{$LANG.navtickets}">{$LANG.navtickets}</a></li>
 										<li><a href="knowledgebase.php" title="{$LANG.knowledgebasetitle}">{$LANG.knowledgebasetitle}</a></li>
 										<li><a href="downloads.php" title="{$LANG.downloadstitle}">{$LANG.downloadstitle}</a></li>
 										<li><a href="serverstatus.php" title="{$LANG.networkstatustitle}">{$LANG.networkstatustitle}</a></li>
 									</ul>
 								</li>
-								<li><a href="submitticket.php" title="{$LANG.navopenticket}">{$LANG.navopenticket}</a></li>
 								<li><a href="affiliates.php" title="{$LANG.affiliatestitle}">{$LANG.affiliatestitle}</a></li>
 							</ul>
 							<ul class="nav pull-right">
