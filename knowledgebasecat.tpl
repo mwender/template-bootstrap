@@ -2,7 +2,7 @@
 	<h1>{$LANG.knowledgebasetitle}</h1>
 </div>
 
-<p class="marginbottom">{$breadcrumbnav}</p>
+<p class="marginbottom breadcrumb">{$breadcrumbnav}</p>
 
 <form method="post" action="knowledgebase.php?action=search" class="well form-horizontal textcenter">
 	<fieldset>
@@ -19,7 +19,7 @@
 <ul class="thumbnails">
 {foreach from=$kbcats item=kbcat}
 	<li class="span3">
-		<h3><img src="images/folder.gif" class="valignbaseline" alt="folder icon"> <a href="{if $seofriendlyurls}knowledgebase/{$kbcat.id}/{$kbcat.urlfriendlyname}{else}knowledgebase.php?action=displaycat&amp;catid={$kbcat.id}{/if}">{$kbcat.name}</a></h3>
+		<h4><img src="images/folder.gif" class="valignbaseline" alt="folder icon"> <a href="{if $seofriendlyurls}knowledgebase/{$kbcat.id}/{$kbcat.urlfriendlyname}{else}knowledgebase.php?action=displaycat&amp;catid={$kbcat.id}{/if}">{$kbcat.name}</a></h4>
 		<p>{$kbcat.description}</p>
 	</li>
 {/foreach}
@@ -33,7 +33,7 @@
 <ul class="thumbnails">
 {foreach from=$kbarticles item=kbarticle}
    <li class="span12">
-      <h3><img src="images/article.gif" class="valignbaseline" alt="article icon"> <a href="{if $seofriendlyurls}knowledgebase/{$kbarticle.id}/{$kbarticle.urlfriendlytitle}.html{else}knowledgebase.php?action=displayarticle&amp;id={$kbarticle.id}{/if}">{$kbarticle.title}</a></h3>
+      <h4><img src="images/article.gif" class="valignbaseline" alt="article icon"> <a href="{if $seofriendlyurls}knowledgebase/{$kbarticle.id}/{$kbarticle.urlfriendlytitle}.html{else}knowledgebase.php?action=displayarticle&amp;id={$kbarticle.id}{/if}">{$kbarticle.title}</a></h4>
       {$kbarticle.article|truncate:150:"..."}
    </li>
 {foreachelse}

@@ -18,7 +18,7 @@ function addBookmark() {
 
 <div class="row">
 	<div class="span8">
-		<p>{$breadcrumbnav}</p>
+		<p class="breadcrumb">{$breadcrumbnav}</p>
 	</div>
 	<div class="span4 textright">
 		<img src="images/addtofavouritesicon.gif" class="valignbaseline" alt="{$LANG.knowledgebasefavorites}"> <a href="#" onClick="addBookmark();return false">{$LANG.knowledgebasefavorites}</a> &nbsp;&nbsp; <img src="images/print.gif" class="valignbaseline" alt="{$LANG.knowledgebaseprint}"> <a href="#" onclick="window.print();return false">{$LANG.knowledgebaseprint}</a>

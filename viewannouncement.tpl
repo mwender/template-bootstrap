@@ -1,7 +1,7 @@
 <div class="page-header">
 	<h1>{$title}</h1>
 </div>
-<div class="textright"><strong>{$timestamp|date_format:"%A, %B %e, %Y"}</strong></div>
+<div class="lead"><strong>{$timestamp|date_format:"%A, %B %e, %Y"}</strong></div>
 
 {$text}
 
