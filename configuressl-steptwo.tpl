@@ -57,7 +57,7 @@
 		<label class="control-label" for="servertype">{$LANG.sslcertapproveremail}</label>
 		<div class="controls">
 			{foreach from=$approveremails item=approveremail key=num}
-			<label class="radio"><input type="radio" name="approveremail" value="{$approveremail}"{if $num eq 0} checked="checked"{/if}> $approveremail}</label>
+			<label class="radio"><input type="radio" name="approveremail" value="{$approveremail}"{if $num eq 0} checked="checked"{/if}> {$approveremail}</label>
 			{/foreach}
 		</div>
 	</div>
