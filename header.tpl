@@ -85,9 +85,7 @@
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" title="{$LANG.hello}, {$loggedinuser.firstname}!">{$LANG.hello}, {$loggedinuser.firstname}!<b class="caret"></b></a>
 									<ul class="dropdown-menu">
 										<li><a href="clientarea.php?action=details" title=">{$LANG.editaccountdetails}">{$LANG.editaccountdetails}</a></li>
-										{if $condlinks.updatecc}<li><a href="clientarea.php?action=creditcard" title="{$LANG.navmanagecc}">{$LANG.navmanagecc}</a></li>{/if}
 										<li><a href="clientarea.php?action=contacts" title="{$LANG.clientareanavcontacts}">{$LANG.clientareanavcontacts}</a></li>
-										{if $condlinks.addfunds}<li><a href="clientarea.php?action=addfunds" title="{$LANG.addfunds}">{$LANG.addfunds}</a></li>{/if}
 										<li><a href="clientarea.php?action=emails" title="{$LANG.navemailssent}">{$LANG.navemailssent}</a></li>
 										<li><a href="clientarea.php?action=changepw" title="{$LANG.clientareanavchangepw}">{$LANG.clientareanavchangepw}</a></li>
 										<li class="divider"></li>
