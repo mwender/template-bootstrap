@@ -27,9 +27,9 @@ function addBookmark() {
 
 <h2 class="marginbottom">{$kbarticle.title}</h2>
 
-<blockquote>
+<div>
 	{$kbarticle.text}
-</blockquote>
+</div>
 
 <form method="post" action="knowledgebase.php?action=displayarticle&amp;id={$kbarticle.id}&amp;useful=vote" class="well form-horizontal textcenter">
 	{if $kbarticle.voted}
