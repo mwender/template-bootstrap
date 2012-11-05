@@ -30,7 +30,7 @@
 			<td>{$service.nextduedate}</td>
 			<td><span class="label label-{$service.rawstatus}">{$service.statustext}</span></td>
 			<td class="textcenter">
-				<a href="{$smarty.server.PHP_SELF}?action=productdetails&amp;id={$service.id}" class="btn" title="{$LANG.clientareaviewdetails}">{$LANG.clientareaviewdetails}</a>
+				<a href="{$smarty.server.PHP_SELF}?action=productdetails&amp;id={$service.id}" class="btn btn-inverse" title="{$LANG.clientareaviewdetails}">{$LANG.clientareaviewdetails}</a>
 			</td>
 		</tr>
 {foreachelse}
