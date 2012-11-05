@@ -1,3 +1,8 @@
+<p class="breadcrumb">{$breadcrumbnav}</p>
+<div class="pull-right margintop">
+	<img src="images/addtofavouritesicon.gif" class="valignbaseline" alt="{$LANG.knowledgebasefavorites}"> <a href="#" onClick="addBookmark();return false">{$LANG.knowledgebasefavorites}</a> &nbsp;&nbsp; <img src="images/print.gif" class="valignbaseline" alt="{$LANG.knowledgebaseprint}"> <a href="#" onclick="window.print();return false">{$LANG.knowledgebaseprint}</a>
+</div>
+
 <div class="page-header">
 	<h1>{$LANG.knowledgebasetitle}</h1>
 </div>
@@ -16,16 +21,7 @@ function addBookmark() {
 </script>
 {/literal}
 
-<div class="row">
-	<div class="span8">
-		<p class="breadcrumb">{$breadcrumbnav}</p>
-	</div>
-	<div class="span4 textright">
-		<img src="images/addtofavouritesicon.gif" class="valignbaseline" alt="{$LANG.knowledgebasefavorites}"> <a href="#" onClick="addBookmark();return false">{$LANG.knowledgebasefavorites}</a> &nbsp;&nbsp; <img src="images/print.gif" class="valignbaseline" alt="{$LANG.knowledgebaseprint}"> <a href="#" onclick="window.print();return false">{$LANG.knowledgebaseprint}</a>
-	</div>
-</div>
-
-<h2 class="marginbottom">{$kbarticle.title}</h2>
+<h2 class="textcenter marginbottom">{$kbarticle.title}</h2>
 
 <div>
 	{$kbarticle.text}
