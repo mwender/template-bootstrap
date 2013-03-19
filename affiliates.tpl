@@ -111,7 +111,7 @@
 		</tr>
 	{foreachelse}
 		<tr>
-			<td colspan="6" class="text-center">{$LANG.norecordsfound}</td>
+			<td colspan="5" class="text-center">{$LANG.norecordsfound}</td>
 		</tr>
 	{/foreach}
 	</tbody>
