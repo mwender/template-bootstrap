@@ -23,11 +23,11 @@
 			<td>{$quote.datecreated}</td>
 			<td>{$quote.validuntil}</td>
 			<td>{$quote.stage}</td>
-			<td class="textcenter"><a href="dl.php?type=q&id={$quote.id}" class="btn btn-info" title="{$LANG.quotedownload}">{$LANG.quotedownload}</a></td>
+			<td class="text-center"><a href="dl.php?type=q&id={$quote.id}" class="btn btn-info" title="{$LANG.quotedownload}">{$LANG.quotedownload}</a></td>
 		</tr>
 {foreachelse}
 		<tr>
-			<td colspan="6" class="textcenter">{$LANG.norecordsfound}</td>
+			<td colspan="6" class="text-center">{$LANG.norecordsfound}</td>
 		</tr>
 {/foreach}
 	</tbody>

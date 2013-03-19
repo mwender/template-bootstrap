@@ -40,7 +40,7 @@
 	</li>
 {foreachelse}
 	<li class="span12">
-		<p class="textcenter">{$LANG.downloadsnone}</p>
+		<p class="text-center">{$LANG.downloadsnone}</p>
 	</li>
 {/foreach}
 </ul>

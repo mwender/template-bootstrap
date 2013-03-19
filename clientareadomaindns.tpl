@@ -12,7 +12,7 @@
 {/if}
 
 {if $external}
-<div class="textcenter">
+<div class="text-center">
 	{$code}
 </div>
 {else}
@@ -79,7 +79,7 @@
 		</tbody>
 		<tfoot>
 			<tr>
-				<td colspan="4" class="textright">
+				<td colspan="4" class="text-right">
 					<input type="submit" value="{$LANG.clientareasavechanges}" class="btn btn-primary btn-large">
 				</td>
 			</tr>

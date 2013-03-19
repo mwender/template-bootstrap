@@ -87,7 +87,7 @@
 </form>
 
 <div class="modal hide fade in" id="modalpleasewait">
-	<div class="modal-header textcenter">
+	<div class="modal-header text-center">
 		<h3><img src="images/loadingsml.gif" alt="{$LANG.pleasewait}" class="valignbaseline"> {$LANG.pleasewait}</h3>
 	</div>
 </div>

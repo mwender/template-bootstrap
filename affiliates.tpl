@@ -14,12 +14,12 @@
 
 <div class="row">
 	<div class="span10 offset1">
-		<div class="textcenter">
+		<div class="text-center">
 			<h3>{$LANG.affiliatesreferallink}</h3>
 			<table class="table table-bordered">
 				<thead>
 					<tr>
-						<th class="lead textcenter">{$referrallink}</th>
+						<th class="lead text-center">{$referrallink}</th>
 					</tr>
 				</thead>
 			</table>
@@ -27,7 +27,7 @@
 	</div>
 </div>
 
-<div class="row textcenter">
+<div class="row text-center">
 	<div class="span10 offset1">
 		<div class="row-fluid">
 			<div class="span4">
@@ -58,15 +58,15 @@
 			<tbody>
 				<tr>
 					<td>{$LANG.affiliatescommissionspending}</td>
-					<td class="textcenter"><strong>{$pendingcommissions}</strong></td>
+					<td class="text-center"><strong>{$pendingcommissions}</strong></td>
 				</tr>
 				<tr>
 					<td>{$LANG.affiliatescommissionsavailable}</td>
-					<td class="textcenter"><strong>{$balance}</strong></td>
+					<td class="text-center"><strong>{$balance}</strong></td>
 				</tr>
 				<tr>
 					<td>{$LANG.affiliateswithdrawn}:</td>
-					<td class="textcenter"><strong>{$withdrawn}</strong></td>
+					<td class="text-center"><strong>{$withdrawn}</strong></td>
 				</tr>
 			</tbody>
 		</table>
@@ -79,7 +79,7 @@
 	{$LANG.affiliateswithdrawalrequestsuccessful}
 </div>
 {elseif $withdrawlevel}
-<div class="textcenter">
+<div class="text-center">
 	<a href="{$smarty.server.PHP_SELF}?action=withdrawrequest" class="btn btn-large btn-primary" title="{$LANG.affiliatesrequestwithdrawal}">{$LANG.affiliatesrequestwithdrawal}</a>
 </div>
 {/if}
@@ -111,7 +111,7 @@
 		</tr>
 	{foreachelse}
 		<tr>
-			<td colspan="6" class="textcenter">{$LANG.norecordsfound}</td>
+			<td colspan="6" class="text-center">{$LANG.norecordsfound}</td>
 		</tr>
 	{/foreach}
 	</tbody>
@@ -129,7 +129,7 @@
 	<h2>{$LANG.affiliateslinktous}</h2>
 </div>
 
-<div class="textcenter">
+<div class="text-center">
 	{$affiliatelinkscode}
 </div>
 {/if}

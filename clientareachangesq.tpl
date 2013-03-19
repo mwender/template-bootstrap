@@ -35,9 +35,9 @@
 <form method="post" action="clientarea.php">
 	<input type="hidden" name="action" value="changesq">
 {if !$nocurrent}
-	<div class="textcenter">
+	<div class="text-center">
 		<p>{$LANG.pwresetsecurityquestionrequired}</p>
-		<div class="well well-small textcenter form-inline">
+		<div class="well well-small text-center form-inline">
 			<label for="currentans">{$currentquestion}</label>
 			<input type="password" name="currentsecurityqans" id="currentans" class="span3">
 		</div>
@@ -60,7 +60,7 @@
 		</div>
 	</div>
 	<hr>
-	<div class="textcenter">
+	<div class="text-center">
 		<input class="btn btn-primary" type="submit" name="submit" value="{$LANG.clientareasavechanges}">
 		<input class="btn" type="reset" value="{$LANG.cancel}">
 	</div>

@@ -2,11 +2,11 @@
 <div class="well">
 	<h1 class="marginbottom">{$LANG.domaincheckerchoosedomain}</h1>
 	<p class="marginbottom">{$LANG.domaincheckerenterdomain}</p>
-	<div class="textcenter">
+	<div class="text-center">
 		<form method="post" action="domainchecker.php">
 			<input class="span7 marginbottom" style="font-size:1.4em;height:30px;" name="domain" type="text" value="" placeholder="{$LANG.domaincheckerdomainexample}">
 	{if $capatacha}
-			<div class="borderradius textcenter marginbottom" style="width:50%;margin-left:auto;margin-right:auto;border:1px dashed #cccccc;padding:10px;">
+			<div class="borderradius text-center marginbottom" style="width:50%;margin-left:auto;margin-right:auto;border:1px dashed #cccccc;padding:10px;">
 				<p>{$LANG.captchaverify}</p>
 		{if $capatacha eq "recaptcha"}
 				<p>{$recapatchahtml}</p>
@@ -29,14 +29,14 @@
 	<div class="span6">
 		<h2>{$LANG.navservicesorder}</h2>
 		<p>{$LANG.clientareahomeorder}</p>
-		<div class="textcenter">
+		<div class="text-center">
 			<a href="cart.php" title="{$LANG.clientareahomeorderbtn}" class="btn">{$LANG.clientareahomeorderbtn} <i class="icon icon-shopping-cart"></i></a>
 		</div>
 	</div>
 	<div class="span6">
 		<h2>{$LANG.manageyouraccount}</h2>
 		<p>{$LANG.clientareahomelogin}</p>
-		<div class="textcenter">
+		<div class="text-center">
 			<a href="clientarea.php" title="{$LANG.clientareahomeloginbtn}" class="btn">{$LANG.clientareahomeloginbtn} <i class="icon icon-lock"></i></a>
 		</div>
 	</div>

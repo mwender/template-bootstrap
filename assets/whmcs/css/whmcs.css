@@ -26,10 +26,6 @@ select { width:auto; }
 
 .page-header { margin-top: 0px; }
 
-.textright { text-align: right !important; }
-.textleft { text-align: left !important; }
-.textcenter { text-align: center !important;}
-
 .marginbottom { margin-bottom: 18px; }
 .nomarginbottom { margin-bottom: 0px !important; }
 .marginright { margin-right: 18px; }

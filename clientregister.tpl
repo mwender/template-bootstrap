@@ -128,7 +128,7 @@
 	{/if}
 
 	{if $securityquestions}
-		<div class="alert alert-info alert-block form-inline textcenter">
+		<div class="alert alert-info alert-block form-inline text-center">
 			<label for="securityqans">{$LANG.clientareasecurityquestion}</label>
 			<select name="securityqid" id="securityqid">
 			{foreach key=num item=question from=$securityquestions}
@@ -144,7 +144,7 @@
 		<div class="well">
 			<h3>{$LANG.captchatitle}</h3>
 			<p>{$LANG.captchaverify}</p>
-			<div class="textcenter">
+			<div class="text-center">
 		{if $capatacha eq "recaptcha"}
 				{$recapatchahtml}
 		{else}
@@ -155,12 +155,12 @@
 	{/if}
 
 	{if $accepttos}
-		<div class="textcenter marginbottom">
+		<div class="text-center marginbottom">
 			<label class="checkbox inline"><input type="checkbox" name="accepttos" id="accepttos" value="on" > {$LANG.ordertosagreement} <a href="{$tosurl}" target="_blank">{$LANG.ordertos}</a>
 		</div>
 	{/if}
 
-		<div class="textcenter">
+		<div class="text-center">
 			<input class="btn btn-large btn-primary" type="submit" value="{$LANG.clientregistertitle}">
 		</div>
 	</fieldset>

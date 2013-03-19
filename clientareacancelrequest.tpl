@@ -4,14 +4,14 @@
 
 {if $invalid}
 <div class="alert alert-warning">{$LANG.clientareacancelinvalid}</div>
-<div class="textcenter marginbottom">
+<div class="text-center marginbottom">
 	<a href="clientarea.php?action=productdetails&id={$id}" title="{$LANG.clientareabacklink}" class="btn">{$LANG.clientareabacklink}</a>
 </div>
 
 {elseif $requested}
 
 <div class="alert alert-success">{$LANG.clientareacancelconfirmation}</div>
-<div class="textcenter marginbottom">
+<div class="text-center marginbottom">
 	<a href="clientarea.php?action=productdetails&id={$id}" title="{$LANG.clientareabacklink}" class="btn">{$LANG.clientareabacklink}</a>
 </div>
 

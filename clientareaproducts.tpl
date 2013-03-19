@@ -29,13 +29,13 @@
 			<td>{$service.billingcycle}</td>
 			<td>{$service.nextduedate}</td>
 			<td><span class="label label-{$service.rawstatus}">{$service.statustext}</span></td>
-			<td class="textcenter">
+			<td class="text-center">
 				<a href="{$smarty.server.PHP_SELF}?action=productdetails&amp;id={$service.id}" class="btn btn-inverse" title="{$LANG.clientareaviewdetails}">{$LANG.clientareaviewdetails}</a>
 			</td>
 		</tr>
 {foreachelse}
 		<tr>
-			<td colspan="6" class="textcenter">{$LANG.norecordsfound}</td>
+			<td colspan="6" class="text-center">{$LANG.norecordsfound}</td>
 		</tr>
 {/foreach}
 	</tbody>

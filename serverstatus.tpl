@@ -2,7 +2,7 @@
 	<h1>{$LANG.networkstatusintro}</h1>
 </div>
 
-<div class="alert alert-block alert-warning textcenter">
+<div class="alert alert-block alert-warning text-center">
 	<div class="row-fluid">
 		<div class="span4"><a class="lead" href="{$smarty.server.PHP_SELF}?view=open">{$opencount} {$LANG.networkissuesstatusopen}</a></div>
 		<div class="span4"><a class="lead" href="{$smarty.server.PHP_SELF}?view=scheduled">{$scheduledcount} {$LANG.networkissuesstatusscheduled}</a></div>
@@ -20,7 +20,7 @@
 						<h3>{$issue.title|truncate:80} <small>{$LANG.networkissuesdate} - {$issue.startdate}{if $issue.enddate} - {$issue.enddate}{/if}</small></h3>
 						<strong>{$LANG.networkissuesaffecting} {$issue.type}</strong> - {if $issue.type eq $LANG.networkissuestypeserver}{$issue.server}{else}{$issue.affecting}{/if} | <strong>{$LANG.networkissuespriority}</strong> - {$issue.priority} | <strong>{$LANG.networkissueslastupdated}</strong>- {$issue.lastupdate}
 					</div>
-					<div class="span2 textright">
+					<div class="span2 text-right">
 						{if $issue.clientaffected}<span class="label label-warning" >Attention</span>{/if}
 						<span class="badge badge-inverse">{$issue.status}</span>
 					</div>
@@ -92,12 +92,12 @@
 {foreach from=$servers key=num item=server}
 		<tr>
 			<td>{$server.name}</td>
-			<td class="textcenter" id="port80_{$num}"><img src="images/loadingsml.gif" alt="{$LANG.loading}"></td>
-			<td class="textcenter" id="port21_{$num}"><img src="images/loadingsml.gif" alt="{$LANG.loading}"></td>
-			<td class="textcenter" id="port110_{$num}"><img src="images/loadingsml.gif" alt="{$LANG.loading}"></td>
-			<td class="textcenter"><a href="{$server.phpinfourl}" target="_blank">{$LANG.serverstatusphpinfo}</a></td>
-			<td class="textcenter" id="load{$num}"><img src="images/loadingsml.gif" alt="{$LANG.loading}"></td>
-			<td class="textcenter" id="uptime{$num}"><img src="images/loadingsml.gif" alt="{$LANG.loading}"><script type="text/javascript">checkPort({$num},80);checkPort({$num},21);checkPort({$num},110);getStats({$num});</script></td>
+			<td class="text-center" id="port80_{$num}"><img src="images/loadingsml.gif" alt="{$LANG.loading}"></td>
+			<td class="text-center" id="port21_{$num}"><img src="images/loadingsml.gif" alt="{$LANG.loading}"></td>
+			<td class="text-center" id="port110_{$num}"><img src="images/loadingsml.gif" alt="{$LANG.loading}"></td>
+			<td class="text-center"><a href="{$server.phpinfourl}" target="_blank">{$LANG.serverstatusphpinfo}</a></td>
+			<td class="text-center" id="load{$num}"><img src="images/loadingsml.gif" alt="{$LANG.loading}"></td>
+			<td class="text-center" id="uptime{$num}"><img src="images/loadingsml.gif" alt="{$LANG.loading}"><script type="text/javascript">checkPort({$num},80);checkPort({$num},21);checkPort({$num},110);getStats({$num});</script></td>
 		</tr>
 {foreachelse}
 		<tr>
@@ -109,6 +109,6 @@
 
 {/if}
 
-<div class="textright">
+<div class="text-right">
 	<img src="images/rssfeed.gif" alt="RSS" class="valigntextbottom"> <a href="networkissuesrss.php">{$LANG.announcementsrss}</a>
 </div>

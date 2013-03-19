@@ -107,17 +107,17 @@
 					<h2>{$LANG.domainsautorenew}</h2>
 					<p>{$LANG.domainrenewexp}</p>
 				</div>
-				<div class="span8 textcenter">
+				<div class="span8 text-center">
 					<form method="post" action="{$smarty.server.PHP_SELF}?action=domaindetails#tab-autorenew">
 						<input type="hidden" name="id" value="{$domainid}">
 					{if $autorenew}
-						<div class="alert alert-success alert-block textcenter">
+						<div class="alert alert-success alert-block text-center">
 							<h3 class="alert-heading">{$LANG.domainautorenewstatus}: {$LANG.domainsautorenewenabled}</h3>
 						</div>
 						<input type="hidden" name="autorenew" value="disable">
 						<input type="submit" class="btn btn-large btn-danger" value="{$LANG.domainsautorenewdisable}">
 					{else}
-						<div class="alert alert-error alert-block textcenter">
+						<div class="alert alert-error alert-block text-center">
 							<h3 class="alert-heading">{$LANG.domainautorenewstatus}: {$LANG.domainsautorenewdisabled}</h3>
 						</div>
 						<input type="hidden" name="autorenew" value="enable">
@@ -229,17 +229,17 @@
 					<h2>{$LANG.domainregistrarlock}</h2>
 					<p>{$LANG.domainlockingexp}</p>
 				</div>
-				<div class="span8 textcenter">
+				<div class="span8 text-center">
                <form method="post" action="{$smarty.server.PHP_SELF}?action=domaindetails#tab-registrarlock">
 						<input type="hidden" name="id" value="{$domainid}">
 						<input type="hidden" name="sub" value="savereglock">
                {if $lockstatus == "locked"}
-                  <div class="alert alert-success alert-block textcenter">
+                  <div class="alert alert-success alert-block text-center">
                      <h3 class="alert-heading">{$LANG.domainreglockstatus}: {$LANG.domainsautorenewenabled}</h3>
                   </div>
 						<input type="submit" class="btn btn-large btn-danger" value="{$LANG.domainreglockdisable}">
                {else}
-                  <div class="alert alert-error alert-block textcenter">
+                  <div class="alert alert-error alert-block text-center">
                      <h3 class="alert-heading">{$LANG.domainreglockstatus}: {$LANG.domainsautorenewdisabled}</h3>
                   </div>
 						<input type="submit" name="reglock" class="btn btn-large btn-success" value="{$LANG.domainreglockenable}">
@@ -254,7 +254,7 @@
 					<h2>{$LANG.domainrelease}</h2>
 					<p>{$LANG.domainlockingexp}</p>
 				</div>
-				<div class="span8 textcenter">
+				<div class="span8 text-center">
 					<form method="post" action="{$smarty.server.PHP_SELF}?action=domaindetails" class="form-inline">
 						<fieldset class="well">
 							<input type="hidden" name="sub" value="releasedomain">

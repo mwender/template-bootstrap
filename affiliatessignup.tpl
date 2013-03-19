@@ -14,7 +14,7 @@
 	<li>{$LANG.affiliatesignupinfo3}</li>
 </ul>
 
-<form method="post" action="affiliates.php" class="textcenter">
+<form method="post" action="affiliates.php" class="text-center">
 	<input type="hidden" name="activate" value="true">
 	<button class="btn btn-success btn-large">{$LANG.affiliatesactivate}</button>
 </form>

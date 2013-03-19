@@ -86,7 +86,7 @@
 {if $capatacha}
 	<h3>{$LANG.captchatitle}</h3>
 	<p>{$LANG.captchaverify}</p>
-	<div class="textcenter">
+	<div class="text-center">
 	{if $capatacha eq "recaptcha"}
 		{$recapatchahtml}
 	{else}
@@ -102,7 +102,7 @@
 </form>
 
 <div class="modal hide fade in" id="modalpleasewait">
-	<div class="modal-header textcenter">
+	<div class="modal-header text-center">
 		<h3><img src="images/loadingsml.gif" class="valignbaseline"> {$LANG.pleasewait}</h3>
 	</div>
 </div>

@@ -2,14 +2,14 @@
 	<h1>{$LANG.creditcard}</h1>
 </div>
 
-<div class="alert alert-warning textcenter">
+<div class="alert alert-warning text-center">
 	<h2 class="alert-heading">Paying Invoice #{$invoiceid}</h2>
 	Balance Due: <strong>{$balance}</strong>
 </div>
 
 {if $remotecode}
 
-<div id="submitfrm" class="textcenter">
+<div id="submitfrm" class="text-center">
 {$remotecode}
 <iframe name="3dauth" width="90%" height="600" scrolling="auto" src="about:blank" style="border:1px solid #fff;"></iframe>
 </div>
@@ -202,14 +202,14 @@ function autoForward() {
 			</script>
 	    </div>
 	</div>
-	<div class="textcenter marginbottom">
+	<div class="text-center marginbottom">
 		<p class="marginbottom"><img src="images/padlock.gif" alt="Secure" class="valigntextbottom"> {$LANG.creditcardsecuritynotice}</p>
 		<input class="btn btn-large btn-primary" type="submit" value="{$LANG.ordercontinuebutton}" onclick="$('#modalpleasewait').modal();">
 	</div>
 </form>
 
 <div class="modal hide fade in" id="modalpleasewait">
-	<div class="modal-header textcenter">
+	<div class="modal-header text-center">
 		<h3><img src="images/loadingsml.gif" alt="{$LANG.pleasewait}" class="valignbaseline"> {$LANG.pleasewait}</h3>
 	</div>
 </div>
@@ -219,7 +219,7 @@ function autoForward() {
 		<button class="close" data-dismiss="modal">&times;</button>
 		<h3>{$LANG.creditcardcvvnumber}, {$LANG.creditcardcvvwhere}</h3>
 	</div>
-	<div class="modal-body textcenter">
+	<div class="modal-body text-center">
 		<img src="images/ccv.gif" alt="cvv2 image">
 	</div>
 </div>

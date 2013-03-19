@@ -3,7 +3,7 @@
 </div>
 
 <div class="row">
-	<div class="span10 offset1 textcenter">
+	<div class="span10 offset1 text-center">
 		<div class="alert alert-success alert-block">
 			<h3 class="alert-heading">{$LANG.supportticketsticketcreated} <a href="viewticket.php?tid={$tid}&amp;c={$c}">#{$tid}</a></h3>
 		</div>

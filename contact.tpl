@@ -45,7 +45,7 @@
 		<div class="well">
 			<h3>{$LANG.captchatitle}</h3>
 			<p>{$LANG.captchaverify}</p>
-			<div class="textcenter">
+			<div class="text-center">
 	{if $capatacha eq "recaptcha"}
 				{$recapatchahtml}
 	{else}
@@ -54,7 +54,7 @@
 			</div>
 		</div>
 {/if}
-		<div class="textcenter">
+		<div class="text-center">
 			<input type="submit" value="{$LANG.contactsend}" class="btn btn-primary">
 		</div>
 	</fieldset>

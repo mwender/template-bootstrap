@@ -30,11 +30,11 @@
 			<td><a href="viewticket.php?tid={$ticket.tid}&amp;c={$ticket.c}">{if $ticket.unread}<strong>{/if}#{$ticket.tid} - {$ticket.subject}{if $ticket.unread}</strong>{/if}</a></td>
 			<td>{$ticket.status}</td>
 			<td>{$ticket.lastreply}</td>
-			<td class="textcenter"><a href="viewticket.php?tid={$ticket.tid}&amp;c={$ticket.c}" title="{$LANG.supportticketsviewticket} {$ticket.tid}" class="btn btn-inverse">{$LANG.supportticketsviewticket}</a></td>
+			<td class="text-center"><a href="viewticket.php?tid={$ticket.tid}&amp;c={$ticket.c}" title="{$LANG.supportticketsviewticket} {$ticket.tid}" class="btn btn-inverse">{$LANG.supportticketsviewticket}</a></td>
 		</tr>
 {foreachelse}
 		<tr>
-			<td colspan="7" class="textcenter">{$LANG.norecordsfound}</td>
+			<td colspan="7" class="text-center">{$LANG.norecordsfound}</td>
 		</tr>
 {/foreach}
 	</tbody>

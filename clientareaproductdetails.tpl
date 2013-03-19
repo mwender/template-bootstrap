@@ -215,7 +215,7 @@
 							</tr>
 {foreachelse}
 							<tr>
-								<td class="textcenter" colspan="4">{$LANG.clientareanoaddons}</td>
+								<td class="text-center" colspan="4">{$LANG.clientareanoaddons}</td>
 							</tr>
 {/foreach}
 						</tbody>

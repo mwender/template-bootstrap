@@ -18,15 +18,15 @@
 		<table class="table table-striped table-bordered">
 			<tbody>
 				<tr>
-					<th class="textright">{$LANG.addfundsminimum}</th>
+					<th class="text-right">{$LANG.addfundsminimum}</th>
 					<td>{$minimumamount}</td>
 				</tr>
 				<tr>
-					<th class="textright">{$LANG.addfundsmaximum}</th>
+					<th class="text-right">{$LANG.addfundsmaximum}</th>
 					<td>{$maximumamount}</td>
 				</tr>
 				<tr>
-					<th class="textright">{$LANG.addfundsmaximumbalance}</th>
+					<th class="text-right">{$LANG.addfundsmaximumbalance}</th>
 					<td>{$maximumbalance}</td>
 				</tr>
 			</tbody>
@@ -48,8 +48,8 @@
 					</select>
 				</div>
 			</div>
-			<div class="textcenter marginbottom"><button class="btn btn-primary">{$LANG.addfunds}</button></div>
-			<p class="textcenter">{$LANG.addfundsnonrefundable}</p>
+			<div class="text-center marginbottom"><button class="btn btn-primary">{$LANG.addfunds}</button></div>
+			<p class="text-center">{$LANG.addfundsnonrefundable}</p>
 		</form>
 		{/if}
 	</div>

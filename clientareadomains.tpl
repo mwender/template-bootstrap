@@ -15,7 +15,7 @@
 	<table class="table table-bordered-outside table-striped table-sorted">
 		<thead>
 			<tr>
-				<th class="textcenter"><input type="checkbox" class="toggle-checkboxes" data-target=".domids"></th>
+				<th class="text-center"><input type="checkbox" class="toggle-checkboxes" data-target=".domids"></th>
 				<th{if $orderby eq "domain"} class="sort-{$sort}"{/if}><a href="clientarea.php?action=domains{if $q}&amp;q={$q}{/if}&amp;orderby=domain" title="{$LANG.clientareahostingdomain}">{$LANG.clientareahostingdomain}</a></th>
 				<th{if $orderby eq "regdate"} class="sort-{$sort}"{/if}><a href="clientarea.php?action=domains{if $q}&amp;q={$q}{/if}&amp;orderby=regdate" title="{$LANG.clientareahostingregdate}">{$LANG.clientareahostingregdate}</a></th>
 				<th{if $orderby eq "nextduedate"} class="sort-{$sort}"{/if}><a href="clientarea.php?action=domains{if $q}&amp;q={$q}{/if}&amp;orderby=nextduedate" title="{$LANG.clientareahostingnextduedate}">{$LANG.clientareahostingnextduedate}</a></th>
@@ -27,7 +27,7 @@
 		<tbody>
 {foreach key=num item=domain from=$domains}
 			<tr>
-				<td class="textcenter"><input type="checkbox" name="domids[]" class="domids" value="{$domain.id}"></td>
+				<td class="text-center"><input type="checkbox" name="domids[]" class="domids" value="{$domain.id}"></td>
 				<td><a href="http://{$domain.domain}/" target="_blank">{$domain.domain}</a></td>
 				<td>{$domain.registrationdate}</td>
 				<td>{$domain.nextduedate}</td>
@@ -37,7 +37,7 @@
 			</tr>
 {foreachelse}
 			<tr>
-				<td colspan="7" class="textcenter">{$LANG.norecordsfound}</td>
+				<td colspan="7" class="text-center">{$LANG.norecordsfound}</td>
 			</tr>
 {/foreach}
 		</tbody>

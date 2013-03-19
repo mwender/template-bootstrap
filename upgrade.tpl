@@ -12,7 +12,7 @@
 	{$LANG.upgradeerroroverdueinvoice}
 </div>
 
-<div class="textcenter marginbottom">
+<div class="text-center marginbottom">
 	<a href="clientarea.php?action=productdetails&id={$id}" class="btn btn-large">{$LANG.clientareabacklink}</a>
 </div>
 
@@ -53,7 +53,7 @@
 						</select>
 						{/if}
 					</div>
-					<div class="span3 textright">
+					<div class="span3 text-right">
 						<input type="submit" value="{$LANG.upgradedowngradechooseproduct}" class="btn">
 					</div>
 				</div>
@@ -126,7 +126,7 @@
 		</tbody>
 	</table>
 
-	<div class="textcenter">
+	<div class="text-center">
 		<input type="submit" value="{$LANG.ordercontinuebutton}" class="btn btn-primary btn-large">
 	</div>
 

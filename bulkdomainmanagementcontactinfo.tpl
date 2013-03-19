@@ -60,14 +60,14 @@
 		</div>
 	{/foreach}
 	</div>
-	<div class="textcenter">
+	<div class="text-center">
 		<a href="clientarea.php?action=domaindetails&id={$domainid}" class="btn" title="{$LANG.clientareabacklink}">{$LANG.clientareabacklink}</a>
 		<input type="submit" value="{$LANG.clientareasavechanges}" onclick="$('#modalpleasewait').modal();" class="btn btn-primary">
 	</div>
 </form>
 
 <div class="modal hide fade in" id="modalpleasewait">
-	<div class="modal-header textcenter">
+	<div class="modal-header text-center">
 		<h3><img src="images/loadingsml.gif" alt="{$LANG.pleasewait}" class="valignbaseline"> {$LANG.pleasewait}</h3>
 	</div>
 </div>

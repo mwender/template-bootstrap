@@ -21,13 +21,13 @@ function addBookmark() {
 </script>
 {/literal}
 
-<h2 class="textcenter marginbottom">{$kbarticle.title}</h2>
+<h2 class="text-center marginbottom">{$kbarticle.title}</h2>
 
 <div>
 	{$kbarticle.text}
 </div>
 
-<form method="post" action="knowledgebase.php?action=displayarticle&amp;id={$kbarticle.id}&amp;useful=vote" class="well form-horizontal textcenter">
+<form method="post" action="knowledgebase.php?action=displayarticle&amp;id={$kbarticle.id}&amp;useful=vote" class="well form-horizontal text-center">
 	{if $kbarticle.voted}
 		<strong>{$LANG.knowledgebaserating}</strong> {$kbarticle.useful} {$LANG.knowledgebaseratingtext} ({$kbarticle.votes} {$LANG.knowledgebasevotes})
 	{else}

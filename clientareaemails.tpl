@@ -19,7 +19,7 @@
 		</tr>
 {foreachelse}
 		<tr>
-			<td colspan="2" class="textcenter">{$LANG.norecordsfound}</td>
+			<td colspan="2" class="text-center">{$LANG.norecordsfound}</td>
 		</tr>
 {/foreach}
 	</tbody>
@@ -37,7 +37,7 @@
 <script type="text/javascript">
 {literal}
 	function viewEmail(id) {
-		$('#modalviewemail').html('<p class="textcenter"><img src="images/loadingsml.gif" alt="{$LANG.pleasewait}"></p>');
+		$('#modalviewemail').html('<p class="text-center"><img src="images/loadingsml.gif" alt="{$LANG.pleasewait}"></p>');
 		$('#modalviewemail').load('viewemail.php?id='+id);
 		$('#modalviewemail').modal();
 	}

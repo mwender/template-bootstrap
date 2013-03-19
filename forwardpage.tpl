@@ -2,11 +2,11 @@
 
 <hr>
 
-<p class="textcenter"><img src="images/loading.gif" alt="Loading" border="0"></p>
+<p class="text-center"><img src="images/loading.gif" alt="Loading" border="0"></p>
 
 <hr>
 
-<div class="textcenter">{$code}</div>
+<div class="text-center">{$code}</div>
 
 <form method="post" action="{if $invoiceid}viewinvoice.php?id={$invoiceid}{else}clientarea.php{/if}"></form>
 

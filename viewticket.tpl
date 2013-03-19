@@ -17,7 +17,7 @@
 
 <h2>{$subject}</h2>
 
-<div class="row textcenter">
+<div class="row text-center">
 	<div class="span3">
 		<div class="well well-small">
 			<h3>{$LANG.supportticketsubmitted}</h3>
@@ -89,7 +89,7 @@
 	</script>
 	<a href="#" onclick="extraAttachment();return false;"><img src="images/add.gif" alt="add icon" class="valigntop"> {$LANG.addmore}</a>
 	({$LANG.supportticketsallowedextensions}: {$allowedfiletypes})
-	<div class="textcenter">
+	<div class="text-center">
 		<button class="btn btn-primary" onclick="$('#modalpleasewait').modal();">{$LANG.supportticketsticketsubmit}</button>
 	</div>
 </form>
@@ -148,7 +148,7 @@
 </div>
 
 <div class="modal hide fade in" id="modalpleasewait">
-   <div class="modal-header textcenter">
+   <div class="modal-header text-center">
       <h3><img src="images/loadingsml.gif" alt="{$LANG.pleasewait}" class="valignbaseline"> {$LANG.pleasewait}</h3>
    </div>
 </div>

@@ -27,7 +27,7 @@
 						<input type="hidden" name="email" value="{$email}">
 						<label for="answer">{$securityquestion}</label>
 						<input class="span4" name="answer" id="answer" type="text" value="{$answer}">
-                  <div class="textcenter">
+                  <div class="text-center">
 							<input type="submit" class="btn btn-primary" value="{$LANG.pwresetsubmit}">
                   </div>
                </fieldset>
@@ -43,7 +43,7 @@
 						<input type="hidden" name="action" value="reset" >
 						<label for="email">{$LANG.loginemail}</label>
 						<input class="span4" name="email" id="email" type="text">
-                  <div class="textcenter">
+                  <div class="text-center">
 							<input type="submit" class="btn btn-primary" value="{$LANG.pwresetsubmit}">
                   </div>
                </fieldset>

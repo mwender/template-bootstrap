@@ -24,48 +24,48 @@
 			{/foreach}
 		{foreachelse}
 			<tr>
-				<td colspan="2" class="textcenter">{$LANG.norecordsfound}</td>
+				<td colspan="2" class="text-center">{$LANG.norecordsfound}</td>
 			</tr>
 		{/foreach}
 		</tbody>
 		<tfoot>
 			<tr>
-				<td class="textright">{$LANG.invoicessubtotal}:</td>
+				<td class="text-right">{$LANG.invoicessubtotal}:</td>
 				<td>{$subtotal}</td>
 			</tr>
 			<tr>
 			{if $tax}
 			<tr>
-				<td class="textright">{$LANG.invoicestax}:</td>
+				<td class="text-right">{$LANG.invoicestax}:</td>
 				<td>{$tax}</td>
 			</tr>
 			{/if}
 			{if $tax2}
 			<tr>
-				<td class="textright">{$LANG.invoicestax} 2:</td>
+				<td class="text-right">{$LANG.invoicestax} 2:</td>
 				<td>{$tax2}</td>
 			</tr>
 			{/if}
 			{if $credit}
 			<tr>
-				<td class="textright">{$LANG.invoicescredit}:</td>
+				<td class="text-right">{$LANG.invoicescredit}:</td>
 				<td>{$credit}</td>
 			</tr>
 			{/if}
 			{if $partialpayments}
 			<tr>
-				<td class="textright">{$LANG.invoicespartialpayments}:</td>
+				<td class="text-right">{$LANG.invoicespartialpayments}:</td>
 				<td>{$partialpayments}</td>
 			</tr>
 			{/if}
 			<tr>
-				<td class="textright">{$LANG.invoicestotaldue}:</td>
+				<td class="text-right">{$LANG.invoicestotaldue}:</td>
 				<td>{$total}</td>
 			</tr>
 		</tfoot>
 	</table>
 
-	<div class="well textcenter">
+	<div class="well text-center">
 		<h3>{$LANG.orderpaymentmethod}</h3>
 		<select name="paymentmethod">
 		{foreach from=$gateways key=num item=gateway}

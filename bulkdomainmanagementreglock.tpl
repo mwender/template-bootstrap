@@ -28,7 +28,7 @@
 	{foreach from=$domains item=domain name=domains}{$domain}{if !$smarty.foreach.domains.last}, {/if}{/foreach}
 </div>
 
-<form method="post" action="clientarea.php" class="well textcenter">
+<form method="post" action="clientarea.php" class="well text-center">
 	<input type="hidden" name="action" value="bulkdomain">
 	<input type="hidden" name="update" value="reglock">
 	<input type="hidden" name="save" value="1">

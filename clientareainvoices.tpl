@@ -3,7 +3,7 @@
 </div>
 
 {if !$nobalance}
-<div class="well well-small pull-right textcenter lead">
+<div class="well well-small pull-right text-center lead">
 	{$LANG.invoicesoutstandingbalance}: {$totalbalance} 
 	{if $masspay}<a href="clientarea.php?action=masspay&all=true" class="btn btn-large btn-success"><i class="icon-ok-circle icon-white"></i> {$LANG.masspayall}</a>{/if}
 </div>
@@ -30,11 +30,11 @@
 			<td>{$invoice.datedue}</td>
 			<td>{$invoice.total}</td>
 			<td><span class="label label-{$invoice.rawstatus}">{$invoice.statustext}</span></td>
-			<td class="textcenter"><a href="viewinvoice.php?id={$invoice.id}" target="_blank" class="btn btn-info" title="{$LANG.invoicesview} {$invoice.invoicenum}">{$LANG.invoicesview}</a></td>
+			<td class="text-center"><a href="viewinvoice.php?id={$invoice.id}" target="_blank" class="btn btn-info" title="{$LANG.invoicesview} {$invoice.invoicenum}">{$LANG.invoicesview}</a></td>
 		</tr>
 {foreachelse}
 		<tr>
-			<td colspan="6" class="textcenter">{$LANG.norecordsfound}</td>
+			<td colspan="6" class="text-center">{$LANG.norecordsfound}</td>
 		</tr>
 {/foreach}
 	</tbody>

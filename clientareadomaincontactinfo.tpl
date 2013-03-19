@@ -40,7 +40,7 @@
 		</div>
 	{/foreach}
 	</div>
-	<div class="textcenter">
+	<div class="text-center">
 		<a href="clientarea.php?action=domaindetails&id={$domainid}" class="btn" title="{$LANG.clientareabacklink}">{$LANG.clientareabacklink}</a>
 		<input type="submit" value="{$LANG.clientareasavechanges}" class="btn btn-primary">
 	</div>
