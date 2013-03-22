@@ -1,4 +1,9 @@
+/* 
+This looks to be pointless to load, also i've noticed delayed page load times
+because of this resource.  If all goes well this will be removed for good.
+
 @import url("https://fonts.googleapis.com/css?family=Ubuntu:500,700");
+*/
 
 body { background-color: #EFEFEF; }
 

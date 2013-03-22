@@ -1,5 +1,4 @@
 <script type="text/javascript" src="includes/jscript/statesdropdown.js"></script>
-<script type="text/javascript" src="includes/jscript/pwstrength.js"></script>
 
 <div class="page-header">
 	<h1>{$LANG.clientregistertitle} <small>{$LANG.registerintro}</small></h1>

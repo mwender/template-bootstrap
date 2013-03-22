@@ -20,26 +20,26 @@
 <div class="row text-center">
 	<div class="span3">
 		<div class="well well-small">
-			<h3>{$LANG.supportticketsubmitted}</h3>
-			{$date}
+			<span class="lead">{$LANG.supportticketsubmitted}</span>
+			<div>{$date}</div>
 		</div>
 	</div>
 	<div class="span3">
 		<div class="well well-small">
-			<h3>{$LANG.supportticketsdepartment}</h3>
-			{$department}
+			<span class="lead">{$LANG.supportticketsdepartment}</span>
+			<div>{$department}</div>
 		</div>
 	</div>
 	<div class="span3">
 		<div class="well well-small">
-			<h3>{$LANG.supportticketspriority}</h3>
-			{$urgency}
+			<span class="lead">{$LANG.supportticketspriority}</span>
+			<div>{$urgency}</div>
 		</div>
 	</div>
 	<div class="span3">
 		<div class="well well-small">
-			<h3>{$LANG.supportticketsstatus}</h3>
-			{$status}
+			<span class="lead">{$LANG.supportticketsstatus}</span>
+			<div>{$status}</div>
 		</div>
 	</div>
 </div>

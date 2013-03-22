@@ -10,9 +10,7 @@
 {/if}
 		<li><a href="clientarea.php?action=contacts">{$LANG.clientareanavcontacts}</a></li>
 		<li class="active"><a href="clientarea.php?action=changepw">{$LANG.clientareanavchangepw}</a></li>
-{if $condlinks.updatesq}
-		<li><a href="clientarea.php?action=changesq">{$LANG.clientareanavsecurityquestions}</a></li>
-{/if}
+		{if $condlinks.security}<li><a href="clientarea.php?action=security">{$LANG.clientareanavsecurity}</a></li>{/if}
 	</ul>
 </div>
 

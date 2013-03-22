@@ -55,15 +55,15 @@
 </div>
 {/if}
 
-{if $registerdomainenabled || $transferdomainenabled || $owndomainenabled}
+{if $condlinks.domainreg || $condlinks.domaintrans || $condlinks.domainown}
 <div class="well text-center">
 	<h3>{$LANG.domaincheckerchecknewdomain}</h3>
 	<form method="post" action="domainchecker.php">
 		<input class="span7" style="font-size:1.4em;height:30px;" name="domain" type="text" value="" placeholder="{$LANG.domaincheckerdomainexample}">
 		<div>
-			{if $registerdomainenabled}<input type="submit" value="{$LANG.checkavailability}" class="btn btn-primary btn-large">{/if} 
-			{if $transferdomainenabled}<input type="submit" name="transfer" value="{$LANG.domainstransfer}" class="btn btn-success btn-large">{/if} 
-			{if $owndomainenabled}<input type="submit" name="hosting" value="{$LANG.domaincheckerhostingonly}" class="btn btn-large">{/if}
+			{if $condlinks.domainreg}<input type="submit" value="{$LANG.checkavailability}" class="btn btn-primary btn-large">{/if} 
+			{if $condlinks.domaintrans}<input type="submit" name="transfer" value="{$LANG.domainstransfer}" class="btn btn-success btn-large">{/if} 
+			{if $condlinks.domainown}<input type="submit" name="hosting" value="{$LANG.domaincheckerhostingonly}" class="btn btn-large">{/if}
 		</div>
 	</form>
 </div>

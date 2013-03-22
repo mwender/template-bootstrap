@@ -8,9 +8,7 @@
 		<li class="active"><a href="clientarea.php?action=creditcard">{$LANG.clientareanavccdetails}</a></li>
 		<li><a href="clientarea.php?action=contacts">{$LANG.clientareanavcontacts}</a></li>
 		<li><a href="clientarea.php?action=changepw">{$LANG.clientareanavchangepw}</a></li>
-{if $condlinks.updatesq}
-		<li><a href="clientarea.php?action=changesq">{$LANG.clientareanavsecurityquestions}</a></li>
-{/if}
+		{if $condlinks.security}<li><a href="clientarea.php?action=security">{$LANG.clientareanavsecurity}</a></li>{/if}
 	</ul>
 </div>
 
@@ -99,7 +97,7 @@
 			</select>
 			/
 			<select name="ccexpiryyear">
-			{foreach from=$years item=year}
+			{foreach from=$expiryyears item=year}
 				<option>{$year}</option>
 			{/foreach}
 			</select>
@@ -109,7 +107,17 @@
 	<div class="control-group">
 		<label class="control-label" for="ccstartmonth">{$LANG.creditcardcardstart}</label>
 		<div class="controls">
-			<input type="text" name="ccstartmonth" id="ccstartmonth" maxlength="2" class="span1"> / <input type="text" name="ccstartyear" id="ccstartyear" maxlength="2" class="span1" value="{$ccstartyear}"> (MM/YY)
+			<select name="ccstartmonth" id="ccstartmonth">
+			{foreach from=$months item=month}
+				<option>{$month}</option>
+			{/foreach}
+			</select>
+			/ 
+			<select name="ccstartyear">
+			{foreach from=$startyears item=year}
+				<option>{$year}</option>
+			{/foreach}
+			</select>
 		</div>
 	</div>
 	<div class="control-group">
@@ -119,7 +127,13 @@
 		</div>
 	</div>
 {/if}
-	 <div class="form-actions">
+	<div class="control-group">
+		<label class="control-label" for="cardcvv">{$LANG.creditcardcvvnumber}</label>
+		<div class="controls">
+			<input type="text" class="span1" name="cardcvv" id="cardcvv" value="{$cardcvv}" autocomplete="off">
+		</div>
+	</div>
+	<div class="form-actions">
 		<input class="btn btn-primary" type="submit" name="submit" value="{$LANG.clientareasavechanges}">
 		<input class="btn" type="reset" value="{$LANG.cancel}">
 		{if $allowcustomerdelete && $cardtype}

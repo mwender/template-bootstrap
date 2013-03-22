@@ -2,7 +2,7 @@
 	<h1>{$LANG.clientareanavsupporttickets} <small>{$LANG.supportticketsintro}</small></h1>
 </div>
 
-<form class="pull-right form-inline well well-small" action="supporttickets.php" method="get">
+<form class="pull-right form-inline well well-small" action="supporttickets.php" method="post">
 	<input type="text" name="searchterm" class="span3" value="{if $searchterm}{$searchterm}{/if}" placeholder="{$LANG.searchtickets}">
 	<button type="submit" class="btn btn-success">{$LANG.search}</button>
 </form>

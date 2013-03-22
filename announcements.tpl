@@ -4,8 +4,8 @@
 
 {foreach key=num item=announcement from=$announcements}
 <div class="marginbottom">
-	<h2><a href="{if $seofriendlyurls}announcements/{$announcement.id}/{$announcement.urlfriendlytitle}.html{else}{$smarty.server.PHP_SELF}?id={$announcement.id}{/if}">{$announcement.title}</a> &nbsp;&nbsp;<p class="lead">{$announcement.timestamp|date_format:"%A, %B %e, %Y"}</p></h2>
-
+	<h4><a href="{if $seofriendlyurls}announcements/{$announcement.id}/{$announcement.urlfriendlytitle}.html{else}{$smarty.server.PHP_SELF}?id={$announcement.id}{/if}">{$announcement.title}</a></h4>
+	<p>{$announcement.timestamp|date_format:"%A, %B %e, %Y"}</p>
 	<blockquote>
 		<p>{$announcement.text|strip_tags|truncate:400:"..."}</p>
 {if strlen($announcement.text)>400}

@@ -5,6 +5,7 @@
 <p class="marginbottom breadcrumb">{$breadcrumbnav}</p>
 
 <form method="post" action="knowledgebase.php?action=search" class="well form-horizontal text-center">
+	{if $catid}<input type="hidden" name="catid" value="{$catid}" />{/if}
 	<fieldset>
 		<input class="span6" style="font-size:1.4em;height:30px;" name="search" type="text" value="" placeholder="{$LANG.kbquestionsearchere}">
 		<input type="submit" class="btn btn-large btn-primary" value="{$LANG.knowledgebasesearch}">

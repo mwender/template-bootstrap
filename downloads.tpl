@@ -32,7 +32,7 @@
 <ul class="thumbnails">
 {foreach from=$mostdownloads item=download}
 	<li class="span12">
-		<h3>{$download.type} <a href="{$download.link}">{$download.title}{if $download.clientsonly} <img src="images/padlock.gif" alt="Login Required">{/if}</a></h3>
+		<h3>{$download.type} <a href="{$download.link}">{$download.title}{if $download.clientsonly} <img src="images/padlock.gif" alt="{$LANG.loginrequired}">{/if}</a></h3>
 		<div>{$download.description}</div>
 		<small>{$LANG.downloadsfilesize}: {$download.filesize}</small>
 	</li>

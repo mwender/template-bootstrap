@@ -1,4 +1,4 @@
-{if $registerdomainenabled || $transferdomainenabled || $owndomainenabled}
+{if $condlinks.domainreg || $condlinks.domaintrans || $condlinks.domainown}
 <div class="well">
 	<h1 class="marginbottom">{$LANG.domaincheckerchoosedomain}</h1>
 	<p class="marginbottom">{$LANG.domaincheckerenterdomain}</p>
@@ -16,9 +16,9 @@
 			</div>
 	{/if}
 			<div>
-				{if $registerdomainenabled}<input type="submit" value="{$LANG.checkavailability}" class="btn btn-primary btn-large">{/if} 
-				{if $transferdomainenabled}<input type="submit" name="transfer" value="{$LANG.domainstransfer}" class="btn btn-success btn-large">{/if} 
-				{if $owndomainenabled}<input type="submit" name="hosting" value="{$LANG.domaincheckerhostingonly}" class="btn btn-large">{/if} 
+				{if $condlinks.domainreg}<input type="submit" value="{$LANG.checkavailability}" class="btn btn-primary btn-large">{/if} 
+				{if $condlinks.domaintrans}<input type="submit" name="transfer" value="{$LANG.domainstransfer}" class="btn btn-success btn-large">{/if} 
+				{if $condlinks.domainown}<input type="submit" name="hosting" value="{$LANG.domaincheckerhostingonly}" class="btn btn-large">{/if} 
 			</div>
 		</form>
 	</div>

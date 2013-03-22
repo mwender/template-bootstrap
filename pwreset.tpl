@@ -18,38 +18,32 @@
 	{/if}
 
 	{if $securityquestion}
-		<div class="alert alert-info">{$LANG.pwresetsecurityquestionrequired}</div>
-		<div class="row">
-			<div class="span4 offset1">
-				<form method="post" action="pwreset.php">
-					<fieldset>
-						<input type="hidden" name="action" value="reset">
-						<input type="hidden" name="email" value="{$email}">
-						<label for="answer">{$securityquestion}</label>
-						<input class="span4" name="answer" id="answer" type="text" value="{$answer}">
-                  <div class="text-center">
-							<input type="submit" class="btn btn-primary" value="{$LANG.pwresetsubmit}">
-                  </div>
-               </fieldset>
-            </form>
-         </div>
+	<div class="alert alert-info">{$LANG.pwresetsecurityquestionrequired}</div>
+	<form method="post" action="pwreset.php">
+		<input type="hidden" name="action" value="reset">
+		<input type="hidden" name="email" value="{$email}">
+		<div class="text-center">
+			<label for="answer">{$securityquestion}</label>
+			<input name="answer" id="answer" type="text" value="{$answer}">
 		</div>
+		<div class="text-center">
+			<input type="submit" class="btn btn-primary" value="{$LANG.pwresetsubmit}">
+		</div>
+	</form>
 	{else}
 		<p>{$LANG.pwresetdesc}</p>
-		<div class="row">
-			<div class="span4 offset1">
-				<form method="post" action="pwreset.php">
-					<fieldset>
-						<input type="hidden" name="action" value="reset" >
-						<label for="email">{$LANG.loginemail}</label>
-						<input class="span4" name="email" id="email" type="text">
-                  <div class="text-center">
-							<input type="submit" class="btn btn-primary" value="{$LANG.pwresetsubmit}">
-                  </div>
-               </fieldset>
-            </form>
-         </div>
-      </div>
+		<form method="post" action="pwreset.php" class="form-horizontal">
+			<input type="hidden" name="action" value="reset">
+			<div class="control-group">
+				<label class="control-label" for="email">{$LANG.loginemail}</label>
+				<div class="controls">
+					<input name="email" id="email" type="text">
+				</div>
+			</div>
+			<div class="text-center">
+				<button type="submit" class="btn btn-primary">{$LANG.pwresetsubmit}</button>
+			</div>
+		</form>
 	{/if}
    </div>
 {/if}

@@ -2,13 +2,19 @@
 	<h1>{$LANG.managing} {$domain} <small>{$LANG.domaincontactinfo}</small></h1>
 </div>
 
+{if $successful}
+<div class="alert alert-success fade in">
+	<button class="close" data-dismiss="alert">&times;</button>
+	{$LANG.changessavedsuccessfully}
+</div>
+{/if}
+
 {if $error}
 <div class="alert alert-error fade in">
 	<button class="close" data-dismiss="alert">&times;</button>
 	{$error}
 </div>
 {/if}
-
 
 <form method="post" action="{$smarty.server.PHP_SELF}?action=domaincontacts" >
 	<input type="hidden" name="sub" value="save">

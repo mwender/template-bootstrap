@@ -10,9 +10,7 @@
 {/if}
 		<li><a href="clientarea.php?action=contacts">{$LANG.clientareanavcontacts}</a></li>
 		<li><a href="clientarea.php?action=changepw">{$LANG.clientareanavchangepw}</a></li>
-{if $condlinks.updatesq}
-		<li><a href="clientarea.php?action=changesq">{$LANG.clientareanavsecurityquestions}</a></li>
-{/if}
+		{if $condlinks.security}<li><a href="clientarea.php?action=security">{$LANG.clientareanavsecurity}</a></li>{/if}
 	</ul>
 </div>
 
@@ -125,6 +123,15 @@
 				<label class="control-label" for="country">{$LANG.clientareacountry}</label>
 				<div class="controls">
 					{$clientcountriesdropdown}
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="emailoptout">{$LANG.emailoptout}</label>
+				<div class="controls">
+					<label class="checkbox" for="emailoptout">
+						<input type="checkbox" value="1" name="emailoptout" id="emailoptout"{if $emailoptout} checked="checked"{/if}>
+						{$LANG.emailoptoutdesc}
+					</label>
 				</div>
 			</div>
 		</div>

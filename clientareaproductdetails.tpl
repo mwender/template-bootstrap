@@ -192,11 +192,11 @@
 			<div class="row">
 				<div class="span4">
 					<h2>{$LANG.clientareahostingaddons}</h2>
-					<p>{$LANG.clientareahostingaddonsintro}</p>
+					<p>{$LANG.yourclientareahostingaddons}</p>
 					{if $addonsavailable}<p><a class="btn" href="cart.php?gid=addons&amp;pid={$id}">{$LANG.orderavailableaddons}</a></p>{/if}
 				</div>
 				<div class="span8">
-					<table class="table table-bordered">
+					<table class="table table-bordered table-striped">
 						<thead>
 							<tr>
 								<th>{$LANG.clientareaaddon}</th>

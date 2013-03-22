@@ -138,14 +138,14 @@ function autoForward() {
 				<div class="control-group">
 					<label class="control-label" for="ccexpirymonth">{$LANG.creditcardcardexpires}</label>
 					<div class="controls">
-						<select name="ccexpirymonth" id="ccexpirymonth" class="span1">
+						<select name="ccexpirymonth" id="ccexpirymonth">
 						{foreach from=$months item=month}
 							<option{if $ccexpirymonth eq $month} selected="selected"{/if}>{$month}</option>
 						{/foreach}
 						</select> 
 						/ 
-						<select name="ccexpiryyear" class="span1">
-						{foreach from=$years item=year}
+						<select name="ccexpiryyear">
+						{foreach from=$expiryyears item=year}
 							<option{if $ccexpiryyear eq $year} selected="selected"{/if}>{$year}</option>
 						{/foreach}
 						</select>
@@ -155,23 +155,29 @@ function autoForward() {
 				<div class="control-group">
 					<label class="control-label" for="ccstartmonth">{$LANG.creditcardcardstart}</label>
 					<div class="controls">
-						<input type="text" name="ccstartmonth" id="ccstartmonth" maxlength="2" class="span1"> 
-						/
-						<input type="text" name="ccstartyear" id="ccstartyear" maxlength="2" class="span1">
-						<span class="help-inline">(MM/YY)</span>
+						<select name="ccstartmonth"  id="ccstartmonth">
+							{foreach from=$months item=month}
+							<option>{$month}</option>{/foreach}
+						</select>
+						/ 
+						<select name="ccstartyear" id="ccstartmonth">
+							{foreach from=$years item=year}
+								<option>{$year}</option>
+							{/foreach}
+						</select>
 					</div>
 				</div>
 				<div class="control-group">
 					<label class="control-label" for="ccissuenum">{$LANG.creditcardcardissuenum}</label>
 					<div class="controls">
-						<input type="text" name="ccissuenum" id="ccissuenum" maxlength="3" value="{$ccissuenum}" class="span2">
+						<input type="text" name="ccissuenum" id="ccissuenum" maxlength="3" value="{$ccissuenum}" class="span1">
 					</div>
 				</div>
 				{/if}
 				<div class="control-group">
 					<label class="control-label" for="cccvv">{$LANG.creditcardcvvnumber}</label>
 					<div class="controls">
-						<input type="text" name="cccvv" id="cccvv" size="5" value="{$cccvv}" autocomplete="off" class="span2">
+						<input type="text" name="cccvv" id="cccvv" size="5" value="{$cccvv}" autocomplete="off" class="span1">
 						<span class="help-inline"><a href="images/ccv.gif" onclick="$('#cvv2-help').modal();return false;">{$LANG.creditcardcvvwhere}</a></span>
 					</div>
 				</div>

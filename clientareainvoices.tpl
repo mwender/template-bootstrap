@@ -4,7 +4,7 @@
 
 {if !$nobalance}
 <div class="well well-small pull-right text-center lead">
-	{$LANG.invoicesoutstandingbalance}: {$totalbalance} 
+	{$LANG.invoicesoutstandingbalance}: <span class="text-error">{$totalbalance}</span>
 	{if $masspay}<a href="clientarea.php?action=masspay&all=true" class="btn btn-large btn-success"><i class="icon-ok-circle icon-white"></i> {$LANG.masspayall}</a>{/if}
 </div>
 {/if}

@@ -45,18 +45,20 @@
 										<li><a href="cart.php?gid=addons" title="{$LANG.clientareaviewaddons}">{$LANG.clientareaviewaddons}</a></li>
 									</ul>
 								</li>
+								{if $condlinks.domainreg || $condlinks.domaintrans}
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" title="{$LANG.navdomains}">{$LANG.navdomains}<b class="caret"></b></a>
 									<ul class="dropdown-menu">
 										<li><a href="clientarea.php?action=domains" title="{$LANG.clientareanavdomains}">{$LANG.clientareanavdomains}</a></li>
 										<li class="divider"></li>
 										<li><a href="cart.php?gid=renewals" title="{$LANG.navrenewdomains}">{$LANG.navrenewdomains}</a></li>
-										<li><a href="cart.php?a=add&amp;domain=register" title="{$LANG.navregisterdomain}">{$LANG.navregisterdomain}</a></li>
-										<li><a href="cart.php?a=add&amp;domain=transfer" title="{$LANG.navtransferdomain}">{$LANG.navtransferdomain}</a></li>
+										{if $condlinks.domainreg}<li><a href="cart.php?a=add&amp;domain=register" title="{$LANG.navregisterdomain}">{$LANG.navregisterdomain}</a></li>{/if}
+										{if $condlinks.domaintrans}<li><a href="cart.php?a=add&amp;domain=transfer" title="{$LANG.navtransferdomain}">{$LANG.navtransferdomain}</a></li>{/if}
 										<li class="divider"></li>
 										<li><a href="domainchecker.php" title="{$LANG.navwhoislookup}">{$LANG.navwhoislookup}</a></li>
 									</ul>
 								</li>
+								{/if}
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" title="{$LANG.navbilling}">{$LANG.navbilling}<b class="caret"></b></a>
 									<ul class="dropdown-menu">
@@ -78,7 +80,9 @@
 										<li><a href="serverstatus.php" title="{$LANG.networkstatustitle}">{$LANG.networkstatustitle}</a></li>
 									</ul>
 								</li>
+								{if $condlinks.affiliates}
 								<li><a href="affiliates.php" title="{$LANG.affiliatestitle}">{$LANG.affiliatestitle}</a></li>
+								{/if}
 							</ul>
 							<ul class="nav pull-right">
 								<li class="dropdown">
