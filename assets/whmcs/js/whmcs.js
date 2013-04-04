@@ -27,4 +27,8 @@ $(function(){
 		var target = $(this).data().target;
 		$(target).attr('checked', this.checked).change();
 	});
+
+	// Language Selector Styling fix
+	$('#languagefrm').addClass('form-inline');
 });
+
