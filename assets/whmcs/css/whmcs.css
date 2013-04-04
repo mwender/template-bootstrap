@@ -134,3 +134,9 @@ select { width:auto; }
 .rating span.selected { 
 	background: url('../img/rating_star_filled.png') no-repeat;
 }
+
+@media (max-width: 767px) {
+   .input-large {
+      height: 44px !important;
+   }
+}
