@@ -59,8 +59,14 @@
 							<h4>{$LANG.orderproduct}:</h4>
 							{if $groupname}{$groupname} - {/if}{$product} <span class="label label-{$rawstatus}">{$status}</span>{if $domain}<div><a href="http://{$domain}" target="_blank">{$domain}</a></div>{/if}
 						</li>
+{if $username}
+						<li class="span4">
+							<h4>{$LANG.serverusername}:</h4>
+							{$username}
+						</li>
+{/if}
 {if $dedicatedip}
-						<li class="span8">
+						<li class="span4">
 							<h4>{$LANG.domainregisternsip}:</h4>
 							{$dedicatedip}
 						</li>
@@ -137,14 +143,6 @@
 					<form method="post" action="{$smarty.server.PHP_SELF}" class="form-horizontal">
 						<fieldset>
 							<input type="hidden" name="action" value="productdetails">
-{if $username}
-							<div class="control-group">
-								<label class="control-label" for="password">{$LANG.serverusername}/{$LANG.serverpassword}</label>
-								<div class="controls">
-									{$username}{if $password} / {$password}{/if}
-								</div>
-							</div>
-{/if}
 							<div class="control-group">
 								<label class="control-label" for="password">{$LANG.newpassword}</label>
 								<div class="controls">
