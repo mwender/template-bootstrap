@@ -141,6 +141,8 @@
 				</div>
 				<div class="span8">
 					<form method="post" action="{$smarty.server.PHP_SELF}" class="form-horizontal">
+						<input type="hidden" name="id" value="{$id}">
+						<input type="hidden" name="modulechangepassword" value="true">
 						<fieldset>
 							<input type="hidden" name="action" value="productdetails">
 							<div class="control-group">
