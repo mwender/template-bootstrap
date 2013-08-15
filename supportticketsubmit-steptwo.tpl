@@ -92,6 +92,7 @@
 	{else}
 		<img src="includes/verifyimage.php" alt="captcha"> <input type="text" name="code" class="span2" maxlength="5">
 	{/if}
+	</div>
 {/if}
 
 	<div class="form-actions">
