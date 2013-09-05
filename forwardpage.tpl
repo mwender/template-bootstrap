@@ -14,7 +14,7 @@
 <script language="javascript">
 	setTimeout ( "autoForward()" , 5000 );
 	function autoForward() {
-   	document.forms[0].submit()
+		document.forms[0].submit()
 	}
 </script>
 {/literal}
