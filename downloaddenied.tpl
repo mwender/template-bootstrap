@@ -9,9 +9,9 @@
 </div>
 
 {if $pid}
-<div class="text-center"><a href="cart.php?a=add&pid={$pid}" class="btn btn-large marginbottom" title="{$LANG.ordernowbutton}">{$LANG.ordernowbutton} &raquo;</a></div>
+<div class="form-group text-center"><a href="cart.php?a=add&pid={$pid}" class="btn btn-success btn-lg" title="{$LANG.ordernowbutton}">{$LANG.ordernowbutton} &raquo;</a></div>
 {/if}
 
 {if $aid}
-<div class="text-center"><a href="cart.php?gid=addons" class="btn btn-large marginbottom" title="{$LANG.ordernowbutton}">{$LANG.ordernowbutton} &raquo;</a></div>
+<div class="form-group text-center"><a href="cart.php?gid=addons" class="btn btn-success btn-lg" title="{$LANG.ordernowbutton}">{$LANG.ordernowbutton} &raquo;</a></div>
 {/if}

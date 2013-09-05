@@ -14,13 +14,13 @@
 
 {if $successful}
 <div class="alert alert-success">
-	<button class="close" data-dismiss="alert">&times;</button>
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	{$LANG.changessavedsuccessfully}
 </div>
 {/if}
 
 {if $errormessage}
-<div class="alert alert-error">
+<div class="alert alert-danger">
 	<h4 class="alert-heading">{$LANG.clientareaerrors}</h4>
 	<ul>
 		{$errormessage}
@@ -37,41 +37,41 @@
 	{/foreach}
 		<option value="new" selected="selected">{$LANG.clientareanavaddcontact}</option>
 	</select>
-	<input class="btn" type="submit" value="{$LANG.go}">
+	<input class="btn btn-default" type="submit" value="{$LANG.go}">
 </form>
 
 <form class="form-horizontal" method="post" action="clientarea.php">
 	<input type="hidden" name="action" value="addcontact">
 	<div class="row">
-		<div class="span6">
+		<div class="col-md-6">
 			<div class="control-group">
 				<label class="control-label" for="firstname">{$LANG.clientareafirstname}</label>
 				<div class="controls">
-					<input type="text" name="firstname" id="firstname" class="span3" value="{$contactfirstname}">
+					<input type="text" name="firstname" id="firstname" class="col-md-3" value="{$contactfirstname}">
 				</div>
 			</div>
 			<div class="control-group">
 				<label class="control-label" for="lastname">{$LANG.clientarealastname}</label>
 				<div class="controls">
-					<input type="text" name="lastname" id="lastname" class="span3" value="{$contactlastname}">
+					<input type="text" name="lastname" id="lastname" class="col-md-3" value="{$contactlastname}">
 				</div>
 			</div>
 			<div class="control-group">
 				<label class="control-label" for="companyname">{$LANG.clientareacompanyname}</label>
 				<div class="controls">
-					<input type="text" name="companyname" id="companyname" class="span3" value="{$contactcompanyname}">
+					<input type="text" name="companyname" id="companyname" class="col-md-3" value="{$contactcompanyname}">
 				</div>
 			</div>
 			<div class="control-group">
 				<label class="control-label" for="email">{$LANG.clientareaemail}</label>
 				<div class="controls">
-					<input type="text" name="email" id="email" class="span3" value="{$contactemail}">
+					<input type="text" name="email" id="email" class="col-md-3" value="{$contactemail}">
 				</div>
 			</div>
 			<div class="control-group">
 				<label class="control-label" for="phonenumber">{$LANG.clientareaphonenumber}</label>
 				<div class="controls">
-					<input type="text" name="phonenumber" id="phonenumber" class="span3" value="{$contactphonenumber}">
+					<input type="text" name="phonenumber" id="phonenumber" class="col-md-3" value="{$contactphonenumber}">
 				</div>
 			</div>
 			<div class="control-group">
@@ -96,35 +96,35 @@
 				</script>
 			</div>
 		</div>
-		<div class="span6">
+		<div class="col-md-6">
 			<div class="control-group">
 				<label class="control-label" for="address1">{$LANG.clientareaaddress1}</label>
 				<div class="controls">
-					<input type="text" name="address1" id="address1" class="span3" value="{$contactaddress1}">
+					<input type="text" name="address1" id="address1" class="col-md-3" value="{$contactaddress1}">
 				</div>
 			</div>
 			<div class="control-group">
 				<label class="control-label" for="address2">{$LANG.clientareaaddress2}</label>
 				<div class="controls">
-					<input type="text" name="address2" id="address2" class="span3" value="{$contactaddress2}">
+					<input type="text" name="address2" id="address2" class="col-md-3" value="{$contactaddress2}">
 				</div>
 			</div>
 			<div class="control-group">
 				<label class="control-label" for="city">{$LANG.clientareacity}</label>
 				<div class="controls">
-					<input type="text" name="city" id="city" class="span3" value="{$contactcity}">
+					<input type="text" name="city" id="city" class="col-md-3" value="{$contactcity}">
 				</div>
 			</div>
 			<div class="control-group">
 				<label class="control-label" for="state">{$LANG.clientareastate}</label>
 				<div class="controls">
-					<input type="text" name="state" id="state" class="span3" value="{$contactstate}">
+					<input type="text" name="state" id="state" class="col-md-3" value="{$contactstate}">
 				</div>
 			</div>
 			<div class="control-group">
 				<label class="control-label" for="postcode">{$LANG.clientareapostcode}</label>
 				<div class="controls">
-					<input type="text" name="postcode" id="postcode" class="span3" value="{$contactpostcode}">
+					<input type="text" name="postcode" id="postcode" class="col-md-3" value="{$contactpostcode}">
 				</div>
 			</div>
 			<div class="control-group">
@@ -132,7 +132,7 @@
 				<div class="controls">
 					{$countriesdropdown}
 				</div>
-				{literal}<script type="text/javascript">$(function() { $('#country').addClass('span3'); });</script>{/literal}
+				{literal}<script type="text/javascript">$(function() { $('#country').addClass('col-md-3'); });</script>{/literal}
 			</div>
 		</div>
 	</div>
@@ -142,7 +142,7 @@
 		<div class="control-group">
 			<label class="control-label" for="password">{$LANG.clientareapassword}</label>
 			<div class="controls">
-				<input type="password" name="password" id="password" class="span3">
+				<input type="password" name="password" id="password" class="col-md-3">
 				<span class="help-inline"></span>
 			</div>
 			<script type="text/javascript">
@@ -172,7 +172,7 @@
 		<div class="control-group">
 			<label class="control-label" for="password2">{$LANG.clientareaconfirmpassword}</label>
 			<div class="controls">
-				<input type="password" name="password2" id="password2" class="span3">
+				<input type="password" name="password2" id="password2" class="col-md-3">
 				<span class="help-inline"></span>
 			</div>
 			<script type="text/javascript">
@@ -195,7 +195,7 @@
 		</div>
 		{$LANG.subaccountpermissions}
 		<div class="row">
-			<div class="span6">
+			<div class="col-md-6">
 				<div class="control-group">
 					<div class="controls">
 						<label class="checkbox">
@@ -235,7 +235,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="span6">
+			<div class="col-md-6">
 				<div class="control-group">
 					<div class="controls">
 						<label class="checkbox">
@@ -311,7 +311,7 @@
 
 	<div class="form-actions">
 		<input class="btn btn-primary" type="submit" name="submit" value="{$LANG.clientareasavechanges}">
-		<input class="btn" type="reset" value="{$LANG.cancel}">
+		<input class="btn btn-default" type="reset" value="{$LANG.cancel}">
 	</div>
 </form>
 

@@ -3,70 +3,89 @@
 </div>
 
 {if $inccode}
-<div class="alert alert-error fade in">
-	<button class="close" data-dismiss="alert">&times;</button>
+<div class="alert alert-danger alert-dismissable">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	{$LANG.captchaverifyincorrect}
 </div>
 {/if}
 
 {if $bulkdomainsearchenabled}
-<div class="tabbable">
-	<ul class="nav nav-tabs">
-		<li class="active"><a href="domainchecker.php">{$LANG.domainsimplesearch}</a></li>
-		<li><a href="domainchecker.php?search=bulkregister">{$LANG.domainbulksearch}</a></li>
-		<li><a href="domainchecker.php?search=bulktransfer">{$LANG.domainbulktransfersearch}</a></li>
-	</ul>
-</div>
+<ul class="nav nav-tabs" style="margin-bottom: 30px">
+	<li class="active"><a href="domainchecker.php">{$LANG.domainsimplesearch}</a></li>
+	<li><a href="domainchecker.php?search=bulkregister">{$LANG.domainbulksearch}</a></li>
+	<li><a href="domainchecker.php?search=bulktransfer">{$LANG.domainbulktransfersearch}</a></li>
+</ul>
 {/if}
 
 <div class="well text-center">
 	<form method="post" action="domainchecker.php">
 		<p>{$LANG.domaincheckerenterdomain}</p>
-		<div class="input-append text-center">
-			<input class="span8 input-large" name="domain" type="text" value="{if $domain}{$domain}{/if}" placeholder="{$LANG.domaincheckerdomainexample}"><button class="btn btn-large" type="button" onclick="jQuery('#mtlds').slideToggle();">{$LANG.searchmultipletlds}</button>
+		<div class="form-group">
+			<div class="input-group text-center">
+				<input class="input-lg form-control" name="domain" type="text" value="{if $domain}{$domain}{/if}" placeholder="{$LANG.domaincheckerdomainexample}">
+				<span class="input-group-btn">
+					<button class="btn btn-info btn-lg" type="button" onclick="jQuery('#mtlds').slideToggle();">{$LANG.searchmultipletlds}</button>
+				</span>
+			</div>
+			<div id="mtlds" style="display:none;">
+			{foreach from=$tldslist key=num item=listtld}
+				<label class="checkbox-inline">
+					<input type="checkbox" name="tlds[]" value="{$listtld}"{if in_array($listtld,$tlds) || !$tlds && $num==1} checked="checked"{/if}> {$listtld}
+				</label>
+			{/foreach}
+			</div>
 		</div>
-		<div id="mtlds" class="hide">
-		{foreach from=$tldslist key=num item=listtld}
-			<label class="checkbox inline"><input type="checkbox" name="tlds[]" value="{$listtld}"{if in_array($listtld,$tlds) || !$tlds && $num==1} checked="checked"{/if}> {$listtld}</label>
-		{/foreach}
-			<hr>
+
+		{if $capatacha}
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<p>{$LANG.captchaverify}</p>
+						{if $capatacha eq "recaptcha"}
+						<p>{$recapatchahtml}</p>
+						{else}
+						<div class="col-md-3 col-md-offset-3">
+							<input type="text" name="code" class="form-control input-sm" maxlength="5">
+						</div>
+						<div class="col-md-6 text-left">
+							<img src="includes/verifyimage.php" alt="captcha" style="margin-bottom: 20px;">
+						</div>
+					</div>
+					{/if}
+				</div>
+			</div>
 		</div>
-	{if $capatacha}
-			<p>{$LANG.captchaverify}</p>
-		{if $capatacha eq "recaptcha"}
-			<p>{$recapatchahtml}</p>
-		{else}
-			<img src="includes/verifyimage.php" alt="captcha"> <input type="text" name="code" class="span1" style="margin-bottom:0" maxlength="5">
 		{/if}
-		<hr>
-	{/if}
-		<div>
-			<input type="submit" value="{$LANG.checkavailability}" class="btn btn-primary btn-large" onclick="$('#modalpleasewait').modal();">
-			<input type="submit" name="transfer" value="{$LANG.domainstransfer}" class="btn btn-success btn-large" onclick="$('#modalpleasewait').modal();">
-			<input type="submit" name="hosting" value="{$LANG.domaincheckerhostingonly}" class="btn btn-large">
+
+		<div class="form-group">
+			<input type="submit" value="{$LANG.checkavailability}" class="btn btn-primary btn-lg" onclick="$('#modalpleasewait').modal();">
+			<input type="submit" name="transfer" value="{$LANG.domainstransfer}" class="btn btn-success btn-lg" onclick="$('#modalpleasewait').modal();">
+			<input type="submit" name="hosting" value="{$LANG.domaincheckerhostingonly}" class="btn btn-lg btn-default">
 		</div>
+
 	</form>
 </div>
 
 {if $lookup}
 <div class="row">
-	<div class="span10 offset1">
+	<div class="col-md-10 col-md-offset-1">
 	{if $available}
 		<div class="alert alert-success text-center">{$LANG.domainavailable1} {$sld}{$ext} {$LANG.domainavailable2}</div>
 	{elseif $invalidtld}
-		<div class="alert alert-error text-center">
+		<div class="alert alert-danger text-center">
 			<h4>{$invalidtld|strtoupper} {$LANG.domaincheckerinvalidtld}</h4>
 		</div>
 	{elseif $invalid}
-		<div class="alert alert-error text-center">
+		<div class="alert alert-danger text-center">
 			<h4>{$LANG.ordererrordomaininvalid}</h4>
 		</div>
 	{elseif $error}
-		<div class="alert alert-error text-center">
+		<div class="alert alert-danger text-center">
 			<h4>{$LANG.domainerror}</h4>
 		</div>
 	{else}
-		<div class="alert alert-error text-center">
+		<div class="alert alert-danger text-center">
 			<h4>{$LANG.domainunavailable1} {$sld}{$ext} {$LANG.domainunavailable2}</h4>
 		</div>
 	{/if}
@@ -88,9 +107,9 @@
 						<td class="text-center">{$result.domain}</td>
 						<td class="text-center">
 						{if $result.status eq "available"}
-							<span class="badge badge-success">{$LANG.domainavailable}</span>
+							<span class="label label-success">{$LANG.domainavailable}</span>
 						{else}
-							<span class="badge badge-important">{$LANG.domainunavailable}</span>
+							<span class="label label-danger">{$LANG.domainunavailable}</span>
 						{/if}
 						</td>
 						<td class="text-center">
@@ -112,7 +131,7 @@
 				<tfoot>
 					<tr>
 						<td colspan="4" class="text-right">
-							<input type="submit" value="{$LANG.ordernowbutton}" class="btn btn-large btn-danger">
+							<input type="submit" value="{$LANG.ordernowbutton}" class="btn btn-lg btn-success">
 						</td>
 					</tr>
 				</tfoot>
@@ -129,7 +148,7 @@
 </div>
 
 <div class="row">
-	<div class="span10 offset1">
+	<div class="col-md-10 col-md-offset-1">
 		<table class="table table-striped table-bordered">
 			<thead>
 				<tr>
@@ -167,20 +186,28 @@
 
 {/if}
 
-<div class="modal hide fade in" id="modalpleasewait">
-   <div class="modal-header text-center">
-      <h3><img src="images/loadingsml.gif" alt="{$LANG.pleasewait}" class="valignbaseline"> {$LANG.pleasewait}</h3>
-   </div>
+<div class="modal fade" id="modalpleasewait">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header text-center">
+				<h4 class="modal-title"><img src="images/loadingsml.gif" alt="{$LANG.pleasewait}" class="valignbaseline"> {$LANG.pleasewait}</h4>
+			</div>
+		</div>	
+	</div>
 </div>
 
-<div class="modal hide fade in" id="modalwhois">
-	<div class="modal-header">
-		<button class="close" data-dismiss="modal">&times;</button>
-		<h3>{$LANG.whoisresults} <span><img src="images/loadingsml.gif" alt="{$LANG.pleasewait}" class="valignbaseline"></span></h3>
-	</div>
-	<div class="modal-body"></div>
-	<div class="modal-footer">
-		<button class="close" data-dismiss="modal">Close</button>
+<div class="modal fade" id="modalwhois">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">{$LANG.whoisresults} <span><img src="images/loadingsml.gif" alt="{$LANG.pleasewait}" class="valignbaseline"></span></h4>
+			</div>
+			<div class="modal-body"></div>
+			<div class="modal-footer">
+				<button class="close" data-dismiss="modal">Close</button>
+			</div>
+		</div>
 	</div>
 </div>
 
@@ -188,7 +215,7 @@
 {literal}
 	function showWhois(domain) {
 		$('#modalwhois .modal-body').html('<div class="text-center"><img src="images/loadingsml.gif" alt="{$LANG.pleasewait}"></div>');
-		$('#modalwhois .modal-header h3 span').html(domain);
+		$('#modalwhois .modal-header h4 span').html(domain);
 		$('#modalwhois .modal-body').load('whois.php?domain='+domain);
 		$('#modalwhois').modal();
 	}

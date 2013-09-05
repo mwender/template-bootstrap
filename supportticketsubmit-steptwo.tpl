@@ -3,8 +3,8 @@
 </div>
 
 {if $errormessage}
-<div class="alert alert-error fade in">
-	<button class="close" data-dismiss="alert">&times;</button>
+<div class="alert alert-danger alert-dismissable">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	<h4 class="alert-header">{$LANG.clientareaerrors}</h4>
 	<ul>
 		{$errormessage}
@@ -15,46 +15,46 @@
 <form name="submitticket" method="post" action="{$smarty.server.PHP_SELF}" enctype="multipart/form-data">
 	<input type="hidden" name="step" value="3">
 	<div class="row">
-		<div class="span4">
+		<div class="col-md-4">
 			<label for="name">{$LANG.supportticketsclientname}</label>
 			{if $loggedin}
-			<input class="span4 disabled" type="text" id="name" value="{$clientname}" disabled="disabled">
+			<input class="col-md-4 disabled" type="text" id="name" value="{$clientname}" disabled="disabled">
 			{else}
-			<input class="span4" type="text" name="name" id="name" value="{$name}">
+			<input class="col-md-4" type="text" name="name" id="name" value="{$name}">
 			{/if}
 		</div>
-		<div class="span4">
+		<div class="col-md-4">
 			<label for="email">{$LANG.supportticketsclientemail}</label>
 			{if $loggedin}
-			<input class="span4 disabled" type="text" id="email" value="{$email}" disabled="disabled">
+			<input class="col-md-4 disabled" type="text" id="email" value="{$email}" disabled="disabled">
 			{else}
-			<input class="span4" type="text" name="email" id="email" value="{$email}">
+			<input class="col-md-4" type="text" name="email" id="email" value="{$email}">
 			{/if}
 		</div>
 	</div>
 	<label for="subject">{$LANG.supportticketsticketsubject}</label>
-	<input class="span12" type="text" name="subject" id="subject" value="{$subject}">
+	<input class="col-md-12" type="text" name="subject" id="subject" value="{$subject}">
 	<div class="row">
-		<div class="span3">
+		<div class="col-md-3">
 			<label for="name">{$LANG.supportticketsdepartment}</label>
-			<select name="deptid" class="span3">
+			<select name="deptid" class="col-md-3">
 			{foreach from=$departments item=department}
 				<option value="{$department.id}"{if $department.id eq $deptid} selected="selected"{/if}>{$department.name}</option>
 			{/foreach}
 			</select>
 		</div>
-		<div class="span3">
+		<div class="col-md-3">
 			<label for="priority">{$LANG.supportticketspriority}</label>
-			<select name="urgency" id="priority" class="span3">
+			<select name="urgency" id="priority" class="col-md-3">
 				<option value="High"{if $urgency eq "High"} selected="selected"{/if}>{$LANG.supportticketsticketurgencyhigh}</option>
 				<option value="Medium"{if $urgency eq "Medium" || !$urgency} selected="selected"{/if}>{$LANG.supportticketsticketurgencymedium}</option>
 				<option value="Low"{if $urgency eq "Low"} selected="selected"{/if}>{$LANG.supportticketsticketurgencylow}</option>
 			</select>
 		</div>
 {if $relatedservices}
-		<div class="span6">
+		<div class="col-md-6">
 			<label for="relatedservice">{$LANG.relatedservice}</label>
-			<select name="relatedservice" id="relatedservice" class="span6">
+			<select name="relatedservice" id="relatedservice" class="col-md-6">
 				<option value="">{$LANG.none}</option>
 			{foreach from=$relatedservices item=relatedservice}
 				<option value="{$relatedservice.id}">{$relatedservice.name} ({$relatedservice.status})</option>
@@ -64,7 +64,7 @@
 {/if}
 	</div>
 	<label for="message">{$LANG.contactmessage}</label>
-	<textarea name="message" id="message" rows="12" class="span12">{$message}</textarea>
+	<textarea name="message" id="message" rows="12" class="col-md-12">{$message}</textarea>
 {foreach key=num item=customfield from=$customfields}
 	<label for="customfield{$customfield.id}">{$customfield.name}</label>
 	{$customfield.input} {$customfield.description}
@@ -90,14 +90,14 @@
 	{if $capatacha eq "recaptcha"}
 		{$recapatchahtml}
 	{else}
-		<img src="includes/verifyimage.php" alt="captcha"> <input type="text" name="code" class="span2" maxlength="5">
+		<img src="includes/verifyimage.php" alt="captcha"> <input type="text" name="code" class="col-md-2" maxlength="5">
 	{/if}
 	</div>
 {/if}
 
 	<div class="form-actions">
 	    <input class="btn btn-primary" type="submit" name="save" value="{$LANG.supportticketsticketsubmit}" onclick="$('#modalpleasewait').modal();">
-	    <input class="btn" type="reset" value="{$LANG.cancel}">
+	    <input class="btn btn-default" type="reset" value="{$LANG.cancel}">
 	</div>
 
 </form>

@@ -2,7 +2,7 @@
 	<h1>{$LANG.accessdenied}</h1>
 </div>
 
-<div class="alert alert-error">
+<div class="alert alert-danger">
     <h4 class="alert-heading">{$LANG.subaccountpermissiondenied}</h4>
 </div>
 
@@ -17,5 +17,5 @@
 <p>{$LANG.subaccountcontactmaster}</p>
 
 <div class="text-center">
-	<input type="button" value="{$LANG.clientareabacklink}" onclick="history.go(-1)" class="btn">
+	<input type="button" value="{$LANG.clientareabacklink}" onclick="history.go(-1)" class="btn btn-default">
 </p>

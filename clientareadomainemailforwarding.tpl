@@ -3,8 +3,8 @@
 </div>
 
 {if $error}
-<div class="alert alert-error fade in">
-	<button class="close" data-dismiss="alert">&times;</button>
+<div class="alert alert-danger alert-dismissable">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	{$error}
 </div>
 {/if}
@@ -32,26 +32,26 @@
 		{foreach key=num item=emailforwarder from=$emailforwarders}
 			<tr>
 				<td>
-					<div class="input-append">
-						<input type="text" name="emailforwarderprefix[{$num}]" value="{$emailforwarder.prefix}" class="span3"><span class="add-on">@{$domain}</span>
+					<div class="input-group">
+						<input type="text" name="emailforwarderprefix[{$num}]" value="{$emailforwarder.prefix}" class="col-md-3"><span class="input-group-addon">@{$domain}</span>
 					</div>
 				</td>
-				<td><input type="text" name="emailforwarderforwardto[{$num}]" value="{$emailforwarder.forwardto}" class="span4"></td>
+				<td><input type="text" name="emailforwarderforwardto[{$num}]" value="{$emailforwarder.forwardto}" class="col-md-4"></td>
 			</tr>
 		{/foreach}
 			<tr>
 				<td>
-					<div class="input-append">
-						<input type="text" name="emailforwarderprefixnew" class="span3"><span class="add-on">@{$domain}</span>
+					<div class="input-group">
+						<input type="text" name="emailforwarderprefixnew" class="col-md-3"><span class="input-group-addon">@{$domain}</span>
 					</div>
 				</td>
-				<td><input type="text" name="emailforwarderforwardtonew" class="span4"></td>
+				<td><input type="text" name="emailforwarderforwardtonew" class="col-md-4"></td>
 			</tr>
 		</tbody>
 		<tfoot>
 			<tr>
 				<td colspan="3" class="text-right">
-					<input type="submit" value="{$LANG.clientareasavechanges}" onclick="$('#modalpleasewait').modal();" class="btn btn-primary btn-large">
+					<input type="submit" value="{$LANG.clientareasavechanges}" onclick="$('#modalpleasewait').modal();" class="btn btn-primary btn-lg">
 				</td>
 			</tr>
 		</tfoot>

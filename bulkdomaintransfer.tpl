@@ -3,51 +3,61 @@
 </div>
 
 {if $inccode}
-<div class="alert alert-error fade in">
-	<button class="close" data-dismiss="alert">&times;</button>
+<div class="alert alert-danger alert-dismissable">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	{$LANG.captchaverifyincorrect}
 </div>
 {/if}
 
 {if $bulkdomainsearchenabled}
-<div class="tabbable">
-	<ul class="nav nav-tabs">
-		<li><a href="domainchecker.php">{$LANG.domainsimplesearch}</a></li>
-		<li><a href="domainchecker.php?search=bulkregister">{$LANG.domainbulksearch}</a></li>
-		<li class="active"><a href="domainchecker.php?search=bulktransfer">{$LANG.domainbulktransfersearch}</a></li>
-	</ul>
-</div>
+<ul class="nav nav-tabs" style="margin-bottom:30px">
+	<li><a href="domainchecker.php">{$LANG.domainsimplesearch}</a></li>
+	<li><a href="domainchecker.php?search=bulkregister">{$LANG.domainbulksearch}</a></li>
+	<li class="active"><a href="domainchecker.php?search=bulktransfer">{$LANG.domainbulktransfersearch}</a></li>
+</ul>
 {/if}
 
 <div class="well text-center">
 	<form method="post" action="domainchecker.php">
 		<input type="hidden" name="search" value="bulktransfer">
 		<p>{$LANG.domainbulktransferdescription}</p>
-		<div class="text-center">
-			<textarea name="bulkdomains" rows="8" class="span8">{$bulkdomains}</textarea>
+		<div class="text-center form-group">
+			<textarea name="bulkdomains" rows="8" class="form-control">{$bulkdomains}</textarea>
 		</div>
-	{if $capatacha}
-			<p>{$LANG.captchaverify}</p>
-		{if $capatacha eq "recaptcha"}
-			<p>{$recapatchahtml}</p>
-		{else}
-			<img src="includes/verifyimage.php" alt="captcha"> <input type="text" name="code" class="span1" style="margin-bottom:0" maxlength="5">
+		{if $capatacha}
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<p>{$LANG.captchaverify}</p>
+						{if $capatacha eq "recaptcha"}
+						<p>{$recapatchahtml}</p>
+						{else}
+						<div class="col-md-3 col-md-offset-3">
+							<input type="text" name="code" class="form-control input-sm" maxlength="5">
+						</div>
+						<div class="col-md-6 text-left">
+							<img src="includes/verifyimage.php" alt="captcha" style="margin-bottom: 20px;">
+						</div>
+					</div>
+					{/if}
+				</div>
+			</div>
+		</div>
 		{/if}
-		<hr>
-	{/if}
-		<input type="submit" value="{$LANG.domainstransfer}" class="btn btn-primary btn-large">
+		<input type="submit" value="{$LANG.domainstransfer}" class="btn btn-primary btn-lg" onclick="$('#modalpleasewait').modal();">
 	</form>
 </div>
 
 {if $invalid}
-<div class="alert alert-error text-center">
+<div class="alert alert-danger text-center">
 	<h4>{$LANG.domaincheckerbulkinvaliddomain}</h4>
 </div>
 {/if}
 
 {if $availabilityresults}
 <div class="row">
-	<div class="span10 offset1">
+	<div class="col-md-10 col-md-offset-1">
 		<form method="post" action="{$systemsslurl}cart.php" class="form-horizontal">
 			<input type="hidden" name="a" value="add">
 			<input type="hidden" name="domain" value="transfer">
@@ -66,9 +76,9 @@
 						<td>{$result.domain}</td>
 						<td class="text-center">
 						{if $result.status eq "unavailable"}
-							<span class="badge badge-success">{$LANG.domaincheckeravailtransfer}</span>
+							<span class="label label-success">{$LANG.domaincheckeravailtransfer}</span>
 						{else}
-							<span class="badge badge-important">{$LANG.domainunavailable}</span>
+							<span class="label label-danger">{$LANG.domainunavailable}</span>
 						{/if}
 						</td>
 						<td class="text-center">
@@ -86,7 +96,7 @@
 				<tfoot>
 					<tr>
 						<td colspan="4" class="text-right">
-							<input type="submit" value="{$LANG.ordernowbutton} &raquo;" class="btn btn-large btn-danger">
+							<input type="submit" value="{$LANG.ordernowbutton} &raquo;" class="btn btn-lg btn-success">
 						</td>
 					</tr>
 				</tfoot>
@@ -102,7 +112,7 @@
 </div>
 
 <div class="row">
-	<div class="span10 offset1">
+	<div class="col-md-10 col-md-offset-1">
 		<table class="table table-striped table-bordered">
 			<thead>
 				<tr>
@@ -138,3 +148,14 @@
 	</div>
 </div>
 {/if}
+
+<div class="modal fade" id="modalpleasewait">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header text-center">
+				<h4 class="modal-title"><img src="images/loadingsml.gif" alt="{$LANG.pleasewait}" class="valignbaseline"> {$LANG.pleasewait}</h4>
+			</div>
+		</div>
+	</div>
+</div>
+

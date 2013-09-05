@@ -3,8 +3,8 @@
 </div>
 
 {if $save}
-<div class="alert alert-success fade in">
-	<button class="close" data-dismiss="alert">&times;</button>
+<div class="alert alert-success alert-dismissable">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	{$LANG.changessavedsuccessfully}
 </div>
 {/if}
@@ -24,6 +24,6 @@
 	<input type="hidden" name="domids[]" value="{$domainid}">
 	{/foreach}
 	<h4 class="marginbottom">{$LANG.domainautorenewrecommend}</h4>
-	<input type="submit" name="enable" value="{$LANG.domainsautorenewenable}" class="btn btn-success btn-large">
-	<input type="submit" name="disable" value="{$LANG.domainsautorenewdisable}" class="btn btn-danger btn-large">
+	<input type="submit" name="enable" value="{$LANG.domainsautorenewenable}" class="btn btn-success btn-lg">
+	<input type="submit" name="disable" value="{$LANG.domainsautorenewdisable}" class="btn btn-danger btn-lg">
 </form>

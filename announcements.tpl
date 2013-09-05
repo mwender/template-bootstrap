@@ -33,15 +33,14 @@
 	<p class="text-center marginbottom"><strong>{$LANG.announcementsnone}</strong></p>
 {/foreach}
 
-<div class="pull-left"><img src="images/rssfeed.gif" alt="{$LANG.announcementsrss}" class="valigntop"> <a href="announcementsrss.php">{$LANG.announcementsrss}</a></div>
 
-<div class="pagination pagination-right">
-   <ul>
-      <li{if !$prevpage} class="disabled"{/if}>
-			<a href="{if $prevpage}{$smarty.server.PHP_SELF}?page={$prevpage}{else}javascript:return false;{/if}" title="{$LANG.previouspage}">&larr; {$LANG.previouspage}</a>
-      </li>
-      <li{if !$nextpage} class="disabled"{/if}>
-			<a href="{if $nextpage}{$smarty.server.PHP_SELF}?page={$nextpage}{else}javascript:return false;{/if}" title="{$LANG.nextpage}">{$LANG.nextpage} &rarr;</a>
-      </li>
-   </ul>
-</div>
+<ul class="pagination">
+	<li{if !$prevpage} class="disabled"{/if}>
+		<a href="{if $prevpage}{$smarty.server.PHP_SELF}?page={$prevpage}{else}javascript:return false;{/if}" title="{$LANG.previouspage}">&larr; {$LANG.previouspage}</a>
+	</li>
+	<li{if !$nextpage} class="disabled"{/if}>
+		<a href="{if $nextpage}{$smarty.server.PHP_SELF}?page={$nextpage}{else}javascript:return false;{/if}" title="{$LANG.nextpage}">{$LANG.nextpage} &rarr;</a>
+	</li>
+</ul>
+
+<div class="pull-right"><img src="images/rssfeed.gif" alt="{$LANG.announcementsrss}" class="valigntop"> <a href="announcementsrss.php">{$LANG.announcementsrss}</a></div>

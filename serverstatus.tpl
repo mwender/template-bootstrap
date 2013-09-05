@@ -3,55 +3,53 @@
 </div>
 
 <div class="alert alert-block alert-warning text-center">
-	<div class="row-fluid">
-		<div class="span4"><a class="lead" href="{$smarty.server.PHP_SELF}?view=open">{$opencount} {$LANG.networkissuesstatusopen}</a></div>
-		<div class="span4"><a class="lead" href="{$smarty.server.PHP_SELF}?view=scheduled">{$scheduledcount} {$LANG.networkissuesstatusscheduled}</a></div>
-		<div class="span4"><a class="lead" href="{$smarty.server.PHP_SELF}?view=resolved">{$resolvedcount} {$LANG.networkissuesstatusresolved}</a></div>
+	<div class="row">
+		<div class="col-md-4"><a class="lead" href="{$smarty.server.PHP_SELF}?view=open">{$opencount} {$LANG.networkissuesstatusopen}</a></div>
+		<div class="col-md-4"><a class="lead" href="{$smarty.server.PHP_SELF}?view=scheduled">{$scheduledcount} {$LANG.networkissuesstatusscheduled}</a></div>
+		<div class="col-md-4"><a class="lead" href="{$smarty.server.PHP_SELF}?view=resolved">{$resolvedcount} {$LANG.networkissuesstatusresolved}</a></div>
 	</div>
 </div>
 
-<div class="accordion">
+<div class="panel-group" id="accordion">
 {foreach from=$issues item=issue}
-	<div class="accordion-group">
-		<div class="accordion-heading">
-			<div class="accordion-toggle" data-toggle="collapse" data-parent=".accordion" href="#serverstatus-{$issue.id}">
-				<div class="row-fluid">
-					<div class="span10">
-						<h3>{$issue.title|truncate:80} <small>{$LANG.networkissuesdate} - {$issue.startdate}{if $issue.enddate} - {$issue.enddate}{/if}</small></h3>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<div class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#serverstatus-{$issue.id}">
+				<div class="row">
+					<div class="col-md-10">
+						<h4>{$issue.title|truncate:80} <small>{$LANG.networkissuesdate} - {$issue.startdate}{if $issue.enddate} - {$issue.enddate}{/if}</small></h3>
 						<strong>{$LANG.networkissuesaffecting} {$issue.type}</strong> - {if $issue.type eq $LANG.networkissuestypeserver}{$issue.server}{else}{$issue.affecting}{/if} | <strong>{$LANG.networkissuespriority}</strong> - {$issue.priority} | <strong>{$LANG.networkissueslastupdated}</strong>- {$issue.lastupdate}
 					</div>
-					<div class="span2 text-right">
+					<div class="col-md-2 text-right">
 						{if $issue.clientaffected}<span class="label label-warning" >Attention</span>{/if}
-						<span class="badge badge-inverse">{$issue.status}</span>
+						<span class="label label-warning">{$issue.status}</span>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div id="serverstatus-{$issue.id}" class="accordion-body collapse">
-			<div class="accordion-inner">
+		<div id="serverstatus-{$issue.id}" class="panel-collapse collapse">
+			<div class="panel-body">
 				{$issue.description}
 			</div>
 		</div>
 	</div>
 {foreachelse}
-	<div class="accordion-group">
-		<div class="accordion-heading">
+	<div class="panel panel-default">
+		<div class="panel-heading">
 			<a class="accordion-toggle" data-toggle="collapse" data-parent=".accordion" href="#serverstatus-none">{$noissuesmsg}</a>
 		</div>
 	</div>
 {/foreach}
 </div>
 
-<div class="pagination pagination-right">
-	<ul>
-		<li{if !$prevpage} class="disabled"{/if}>
-			<a href="{if $prevpage}{$smarty.server.PHP_SELF}?{if $view}view={$view}&amp;{/if}page={$prevpage}{else}javascript:return false;{/if}">&larr; {$LANG.previouspage}</a>
-		</li>
-		<li{if !$nextpage} class="disabled"{/if}>
-			<a href="{if $nextpage}{$smarty.server.PHP_SELF}?{if $view}view={$view}&amp;{/if}page={$nextpage}{else}javascript:return false;{/if}">{$LANG.nextpage} &rarr;</a>
-		</li>
-	</ul>
-</div>
+<ul class="pagination">
+	<li{if !$prevpage} class="disabled"{/if}>
+		<a href="{if $prevpage}{$smarty.server.PHP_SELF}?{if $view}view={$view}&amp;{/if}page={$prevpage}{else}javascript:return false;{/if}">&larr; {$LANG.previouspage}</a>
+	</li>
+	<li{if !$nextpage} class="disabled"{/if}>
+		<a href="{if $nextpage}{$smarty.server.PHP_SELF}?{if $view}view={$view}&amp;{/if}page={$nextpage}{else}javascript:return false;{/if}">{$LANG.nextpage} &rarr;</a>
+	</li>
+</ul>
 
 {if $servers}
 <script type="text/javascript">

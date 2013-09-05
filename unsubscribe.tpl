@@ -11,7 +11,7 @@
 {/if}
 
 {if $errormessage}
-<div class="alert alert-error">
+<div class="alert alert-danger">
 	{$LANG.erroroccured}
 </div>
 

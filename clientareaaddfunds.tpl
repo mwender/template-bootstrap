@@ -1,15 +1,15 @@
+<div class="page-header">
+	<h1>{$LANG.addfunds} <small>{$LANG.addfundsintro}</small></h1>
+</div>
 <div class="row">
-	<div class="span6 offset3">
-		<div class="page-header">
-			<h1>{$LANG.addfunds} <small>{$LANG.addfundsintro}</small></h1>
-		</div>
+	<div class="col-md-6 col-md-offset-3">
 		{if $addfundsdisabled}
-		<div class="alert alert-error">
+		<div class="alert alert-danger">
 			{$LANG.clientareaaddfundsdisabled}
 		</div>
 		{else}
 		{if $notallowed || $errormessage}
-		<div class="alert alert-error">
+		<div class="alert alert-danger">
 			<h4 class="alert-heading">{$LANG.clientareaerrors}</h4>
 			{if $notallowed}{$LANG.clientareaaddfundsnotallowed}{else}{$errormessage}{/if}
 		</div>
@@ -31,24 +31,26 @@
 				</tr>
 			</tbody>
 		</table>
-		<form method="post" action="{$smarty.server.PHP_SELF}?action=addfunds" class="form-horizontal offset1 span4">
-			<div class="control-group">
-				<label class="control-label" for="amount">{$LANG.addfundsamount}:</label>
-				<div class="controls">
-					<input type="text" name="amount" id="amount" value="{$amount}" class="span1">
+		<form method="post" action="{$smarty.server.PHP_SELF}?action=addfunds" class="form-horizontal">
+			<div class="form-group">
+				<label class="col-lg-6 control-label" for="amount">{$LANG.addfundsamount}:</label>
+				<div class="col-lg-6">
+					<input type="text" name="amount" id="amount" value="{$amount}" class="form-control">
 				</div>
 			</div>
-			<div class="control-group">
-				<label class="control-label" for="paymentmethod">{$LANG.orderpaymentmethod}:</label>
-				<div class="controls">
-					<select name="paymentmethod" id="paymentmethod">
+			<div class="form-group">
+				<label class="col-lg-6 control-label" for="paymentmethod">{$LANG.orderpaymentmethod}:</label>
+				<div class="col-lg-6">
+					<select name="paymentmethod" id="paymentmethod" class="form-control">
 					{foreach from=$gateways item=gateway}
 						<option value="{$gateway.sysname}">{$gateway.name}</option>
 					{/foreach}
 					</select>
 				</div>
 			</div>
-			<div class="text-center marginbottom"><button class="btn btn-primary">{$LANG.addfunds}</button></div>
+			<div class="text-center form-group">
+				<button class="btn btn-primary">{$LANG.addfunds}</button>
+			</div>
 			<p class="text-center">{$LANG.addfundsnonrefundable}</p>
 		</form>
 		{/if}

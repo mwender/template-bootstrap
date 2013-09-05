@@ -4,11 +4,15 @@
 
 <form class="form-inline well well-small pull-right" action="clientarea.php" method="post">
 	<input type="hidden" name="action" value="products">
-	<input type="text" class="span3" name="q" value="{if $q}{$q}{/if}" placeholder="{$LANG.searchenterdomain}">
-	<button type="submit" class="btn btn-success">{$LANG.searchfilter}</button>
+	<div class="form-group">
+		<input type="text" class="form-control" name="q" value="{if $q}{$q}{/if}" placeholder="{$LANG.searchenterdomain}" style="min-width: 300px">
+	</div>
+	<div class="form-group">
+		<button type="submit" class="btn btn-success">{$LANG.searchfilter}</button>
+	</div>
 </form>
 
-<div id="resultsfound" style="padding-top:15px;">{$numitems} {$LANG.recordsfound}, {$LANG.page} {$pagenumber} {$LANG.pageof} {$totalpages}</div>
+<div id="resultsfound" style="padding-top:30px;">{$numitems} {$LANG.recordsfound}, {$LANG.page} {$pagenumber} {$LANG.pageof} {$totalpages}</div>
 
 <table id="resultslist" class="table table-bordered-outside table-striped table-sorted">
 	<thead>
@@ -30,7 +34,7 @@
 			<td>{$service.nextduedate}</td>
 			<td><span class="label label-{$service.rawstatus}">{$service.statustext}</span></td>
 			<td class="text-center">
-				<a href="{$smarty.server.PHP_SELF}?action=productdetails&amp;id={$service.id}" class="btn btn-inverse" title="{$LANG.clientareaviewdetails}">{$LANG.clientareaviewdetails}</a>
+				<a href="{$smarty.server.PHP_SELF}?action=productdetails&amp;id={$service.id}" class="btn btn-primary" title="{$LANG.clientareaviewdetails}">{$LANG.clientareaviewdetails}</a>
 			</td>
 		</tr>
 {foreachelse}
@@ -41,9 +45,9 @@
 	</tbody>
 </table>
 
-<form id="resultslimit" method="post" action="{$smarty.server.PHP_SELF}?action={$clientareaaction}" class="pull-right">
+<form id="resultslimit" method="post" action="{$smarty.server.PHP_SELF}?action={$clientareaaction}" class="pull-right" style="margin-top: 18px">
 	<fieldset>
-		<select name="itemlimit" onchange="submit()">
+		<select name="itemlimit" onchange="submit()" class="form-control">
 			<option>{$LANG.resultsperpage}</option>
 			<option value="10"{if $itemlimit==10} selected="selected"{/if}>10</option>
 			<option value="25"{if $itemlimit==25} selected="selected"{/if}>25</option>
@@ -54,9 +58,7 @@
 	</fieldset>
 </form>
 
-<div class="pagination">
-	<ul>
-		<li{if !$prevpage} class="disabled"{/if}><a href="{if $prevpage}clientarea.php?action={$clientareaaction}{if $q}&amp;q={$q}{/if}&amp;page={$prevpage}{else}javascript:return false;{/if}">&larr; {$LANG.previouspage}</a></li>
-		<li{if !$nextpage} class="disabled"{/if}><a href="{if $nextpage}clientarea.php?action={$clientareaaction}{if $q}&amp;q={$q}{/if}&amp;page={$nextpage}{else}javascript:return false;{/if}">{$LANG.nextpage} &rarr;</a></li>
-	</ul>
-</div>
+<ul class="pagination">
+	<li{if !$prevpage} class="disabled"{/if}><a href="{if $prevpage}clientarea.php?action={$clientareaaction}{if $q}&amp;q={$q}{/if}&amp;page={$prevpage}{else}javascript:return false;{/if}">&larr; {$LANG.previouspage}</a></li>
+	<li{if !$nextpage} class="disabled"{/if}><a href="{if $nextpage}clientarea.php?action={$clientareaaction}{if $q}&amp;q={$q}{/if}&amp;page={$nextpage}{else}javascript:return false;{/if}">{$LANG.nextpage} &rarr;</a></li>
+</ul>

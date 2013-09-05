@@ -3,11 +3,15 @@
 </div>
 
 <form class="pull-right form-inline well well-small" action="supporttickets.php" method="post">
-	<input type="text" name="searchterm" class="span3" value="{if $searchterm}{$searchterm}{/if}" placeholder="{$LANG.searchtickets}">
-	<button type="submit" class="btn btn-success">{$LANG.search}</button>
+	<div class="form-group">
+		<input type="text" name="searchterm" class="form-control" value="{if $searchterm}{$searchterm}{/if}" placeholder="{$LANG.searchtickets}" style="min-width: 300px;">
+	</div>
+	<div class="form-group">
+		<button type="submit" class="btn btn-success">{$LANG.search}</button>
+	</div>
 </form>
 
-<a href="submitticket.php" class="btn marginbottom" title="{$LANG.opennewticket}">{$LANG.opennewticket}</a>
+<a href="submitticket.php" class="btn btn-primary marginbottom" title="{$LANG.opennewticket}">{$LANG.opennewticket}</a>
 
 <p>{$numitems} {$LANG.recordsfound}, {$LANG.page} {$pagenumber} {$LANG.pageof} {$totalpages}</p>
 
@@ -30,7 +34,7 @@
 			<td><a href="viewticket.php?tid={$ticket.tid}&amp;c={$ticket.c}">{if $ticket.unread}<strong>{/if}#{$ticket.tid} - {$ticket.subject}{if $ticket.unread}</strong>{/if}</a></td>
 			<td>{$ticket.status}</td>
 			<td>{$ticket.lastreply}</td>
-			<td class="text-center"><a href="viewticket.php?tid={$ticket.tid}&amp;c={$ticket.c}" title="{$LANG.supportticketsviewticket} {$ticket.tid}" class="btn btn-inverse">{$LANG.supportticketsviewticket}</a></td>
+			<td class="text-center"><a href="viewticket.php?tid={$ticket.tid}&amp;c={$ticket.c}" title="{$LANG.supportticketsviewticket} {$ticket.tid}" class="btn btn-info">{$LANG.supportticketsviewticket}</a></td>
 		</tr>
 {foreachelse}
 		<tr>
@@ -42,7 +46,7 @@
 
 <form method="post" action="supporttickets.php" class="pull-right">
 	<fieldset>
-		<select name="itemlimit" onchange="submit()">
+		<select name="itemlimit" onchange="submit()" class="form-control" style="margin-top: 15px">
 			<option>{$LANG.resultsperpage}</option>
 			<option value="10"{if $itemlimit==10} selected="selected"{/if}>10</option>
 			<option value="25"{if $itemlimit==25} selected="selected"{/if}>25</option>
@@ -53,9 +57,7 @@
 	</fieldset>
 </form>
 
-<div class="pagination">
-	<ul>
-		<li{if !$prevpage} class="disabled"{/if}><a href="{if $prevpage}supporttickets.php?page={$prevpage}{else}javascript:return false;{/if}">&larr; {$LANG.previouspage}</a></li>
-		<li{if !$nextpage} class="disabled"{/if}><a href="{if $nextpage}supporttickets.php?page={$nextpage}{else}javascript:return false;{/if}">{$LANG.nextpage} &rarr;</a></li>
-	</ul>
-</div>
+<ul class="pagination">
+	<li{if !$prevpage} class="disabled"{/if}><a href="{if $prevpage}supporttickets.php?page={$prevpage}{else}javascript:return false;{/if}">&larr; {$LANG.previouspage}</a></li>
+	<li{if !$nextpage} class="disabled"{/if}><a href="{if $nextpage}supporttickets.php?page={$nextpage}{else}javascript:return false;{/if}">{$LANG.nextpage} &rarr;</a></li>
+</ul>

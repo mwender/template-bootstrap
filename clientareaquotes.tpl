@@ -35,7 +35,7 @@
 
 <form method="post" action="{$smarty.server.PHP_SELF}?action={$clientareaaction}" class="pull-right">
 	<fieldset>
-		<select name="itemlimit" onchange="submit()">
+		<select name="itemlimit" onchange="submit()" class="form-control" style="margin-top: 18px;">
 			<option>{$LANG.resultsperpage}</option>
 			<option value="10"{if $itemlimit==10} selected="selected"{/if}>10</option>
 			<option value="25"{if $itemlimit==25} selected="selected"{/if}>25</option>
@@ -46,9 +46,7 @@
 	</fieldset>
 </form>
 
-<div class="pagination">
-	<ul>
-		<li{if !$prevpage} class="disabled"{/if}><a href="{if $prevpage}clientarea.php?action={$clientareaaction}{if $q}&amp;q={$q}{/if}&amp;page={$prevpage}{else}javascript:return false;{/if}">&larr; {$LANG.previouspage}</a></li>
-		<li{if !$nextpage} class="disabled"{/if}><a href="{if $nextpage}clientarea.php?action={$clientareaaction}{if $q}&amp;q={$q}{/if}&amp;page={$nextpage}{else}javascript:return false;{/if}">{$LANG.nextpage} &rarr;</a></li>
-	</ul>
-</div>
+<ul class="pagination">
+	<li{if !$prevpage} class="disabled"{/if}><a href="{if $prevpage}clientarea.php?action={$clientareaaction}{if $q}&amp;q={$q}{/if}&amp;page={$prevpage}{else}javascript:return false;{/if}">&larr; {$LANG.previouspage}</a></li>
+	<li{if !$nextpage} class="disabled"{/if}><a href="{if $nextpage}clientarea.php?action={$clientareaaction}{if $q}&amp;q={$q}{/if}&amp;page={$nextpage}{else}javascript:return false;{/if}">{$LANG.nextpage} &rarr;</a></li>
+</ul>

@@ -25,20 +25,23 @@
 	</tbody>
 </table>
 
-<div class="pagination">
-	<ul>
-		<li{if !$prevpage} class="disabled"{/if}><a href="{if $prevpage}clientarea.php?action={$clientareaaction}&amp;page={$prevpage}{else}javascript:return false;{/if}">&larr; {$LANG.previouspage}</a></li>
-		<li{if !$nextpage} class="disabled"{/if}><a href="{if $nextpage}clientarea.php?action={$clientareaaction}&amp;page={$nextpage}{else}javascript:return false;{/if}">{$LANG.nextpage} &rarr;</a></li>
-	</ul>
-</div>
+<ul class="pagination">
+	<li{if !$prevpage} class="disabled"{/if}><a href="{if $prevpage}clientarea.php?action={$clientareaaction}&amp;page={$prevpage}{else}javascript:return false;{/if}">&larr; {$LANG.previouspage}</a></li>
+	<li{if !$nextpage} class="disabled"{/if}><a href="{if $nextpage}clientarea.php?action={$clientareaaction}&amp;page={$nextpage}{else}javascript:return false;{/if}">{$LANG.nextpage} &rarr;</a></li>
+</ul>
 
-<div class="modal hide fade in" id="modalviewemail"></div>
+<div class="modal fade" id="modalviewemail">
+	<div class="modal-dialog">
+		<div class="modal-content">
+		</div>
+	</div>
+</div>
 
 <script type="text/javascript">
 {literal}
 	function viewEmail(id) {
-		$('#modalviewemail').html('<p class="text-center"><img src="images/loadingsml.gif" alt="{$LANG.pleasewait}"></p>');
-		$('#modalviewemail').load('viewemail.php?id='+id);
+		$('#modalviewemail .modal-content').html('<div class="modal-body"><p class="text-center"><img src="images/loadingsml.gif" alt="{$LANG.pleasewait}"></p></div>');
+		$('#modalviewemail .modal-content').load('viewemail.php?id='+id);
 		$('#modalviewemail').modal();
 	}
 {/literal}

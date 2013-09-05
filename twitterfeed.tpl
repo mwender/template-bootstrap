@@ -1,8 +1,8 @@
-<ul class="unstyled">
+<ul class="list-unstyled">
 {foreach from=$tweets item=tweet key=num}
 	{if $num < $numtweets}
 	<li>
-		<i class="icon32 icon32-twitter pull-left"></i>
+		<i class="glyphicon32 icon32-twitter pull-left"></i>
 		<h4>{$tweet.date}</h4>
 		<p>{$tweet.tweet}</p>
 	</li>

@@ -4,6 +4,7 @@
 
 <form method="post" action="clientarea.php?action=masspay">
 	<input type="hidden" name="geninvoice" value="true">
+
 	<table class="table table-bordered table-striped">
 		<thead>
 			<tr>
@@ -12,7 +13,7 @@
 			</tr>
 		</thead>
 		<tbody>
-		{foreach from=$invoiceitems key=invid item=invoiceitem}
+			{foreach from=$invoiceitems key=invid item=invoiceitem}
 			<tr>
 				<td colspan="2"><strong>{$LANG.invoicenumber} {$invid}</strong> <input type="hidden" name="invoiceids[]" value="{$invid}"></td>
 			</tr>
@@ -22,11 +23,11 @@
 				<td>{$item.amount}</td>
 			</tr>
 			{/foreach}
-		{foreachelse}
+			{foreachelse}
 			<tr>
 				<td colspan="2" class="text-center">{$LANG.norecordsfound}</td>
 			</tr>
-		{/foreach}
+			{/foreach}
 		</tbody>
 		<tfoot>
 			<tr>
@@ -65,13 +66,18 @@
 		</tfoot>
 	</table>
 
-	<div class="well text-center">
+	<div class="well well-small text-center">
 		<h3>{$LANG.orderpaymentmethod}</h3>
-		<select name="paymentmethod">
-		{foreach from=$gateways key=num item=gateway}
-			<option value="{$gateway.sysname}"{if $gateway.sysname eq $defaultgateway} selected="selected"{/if}>{$gateway.name}</option>
-		{/foreach}
-		</select>
-		<div><button class="btn btn-primary btn-large">{$LANG.masspaymakepayment}</button></div>
+			<div class="row form-group">
+				<div class="col-md-6 col-md-offset-3">
+					<select name="paymentmethod" class="form-control">
+						{foreach from=$gateways key=num item=gateway}
+						<option value="{$gateway.sysname}"{if $gateway.sysname eq $defaultgateway} selected="selected"{/if}>{$gateway.name}</option>
+						{/foreach}
+					</select>
+				</div>
+			</div>
+			<div><button class="btn btn-primary btn-lg">{$LANG.masspaymakepayment}</button></div>
 	</div>
+
 </form>

@@ -16,7 +16,7 @@
 
 <form method="post" action="affiliates.php" class="text-center">
 	<input type="hidden" name="activate" value="true">
-	<button class="btn btn-success btn-large">{$LANG.affiliatesactivate}</button>
+	<button class="btn btn-success btn-lg">{$LANG.affiliatesactivate}</button>
 </form>
 
 {else}

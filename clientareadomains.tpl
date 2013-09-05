@@ -4,11 +4,15 @@
 
 <form class="form-inline well well-small pull-right" action="clientarea.php" method="post">
 	<input type="hidden" name="action" value="products">
-	<input type="text" class="span3" name="q" value="{if $q}{$q}{/if}" placeholder="{$LANG.searchenterdomain}">
-	<button type="submit" class="btn btn-success">{$LANG.searchfilter}</button>
+	<div class="form-group">
+		<input type="text" class="form-control" name="q" value="{if $q}{$q}{/if}" placeholder="{$LANG.searchenterdomain}" style="min-width: 300px">
+	</div>
+	<div class="form-group">
+		<button type="submit" class="btn btn-success">{$LANG.searchfilter}</button>
+	</div>
 </form>
 
-<div style="padding-top:9px">{$numitems} {$LANG.recordsfound}, {$LANG.page} {$pagenumber} {$LANG.pageof} {$totalpages}</div>
+<div style="padding-top:30px">{$numitems} {$LANG.recordsfound}, {$LANG.page} {$pagenumber} {$LANG.pageof} {$totalpages}</div>
 
 <form method="post" action="clientarea.php" class="clearfix">
 	<input type="hidden" name="action" value="bulkdomain">
@@ -33,7 +37,7 @@
 				<td>{$domain.nextduedate}</td>
 				<td><span class="label label-{$domain.rawstatus}">{$domain.statustext}</span></td>
 				<td>{if $domain.autorenew}{$LANG.domainsautorenewenabled}{else}{$LANG.domainsautorenewdisabled}{/if}</td>
-				<td><a href="clientarea.php?action=domaindetails&amp;id={$domain.id}" class="btn" title="{$LANG.managedomain}">{$LANG.managedomain}</a></td>
+				<td><a href="clientarea.php?action=domaindetails&amp;id={$domain.id}" class="btn btn-default" title="{$LANG.managedomain}">{$LANG.managedomain}</a></td>
 			</tr>
 {foreachelse}
 			<tr>
@@ -45,11 +49,11 @@
 			<tr>
 				<td colspan="7">
 					{$LANG.domainbulkmanagement}:
-					<input type="submit" name="nameservers" value="{$LANG.domainmanagens}" class="btn btn-inverse btn-small">
-					<input type="submit" name="autorenew" value="{$LANG.domainautorenewstatus}" class="btn btn-inverse btn-small">
-					<input type="submit" name="reglock" value="{$LANG.domainreglockstatus}" class="btn btn-inverse btn-small">
-					<input type="submit" name="contactinfo" value="{$LANG.domaincontactinfoedit}" class="btn btn-inverse btn-small">
-					<input type="submit" name="renew" value="{$LANG.domainmassrenew}" class="btn btn-inverse btn-small">
+					<input type="submit" name="nameservers" value="{$LANG.domainmanagens}" class="btn btn-primary btn-sm">
+					<input type="submit" name="autorenew" value="{$LANG.domainautorenewstatus}" class="btn btn-primary btn-sm">
+					<input type="submit" name="reglock" value="{$LANG.domainreglockstatus}" class="btn btn-primary btn-sm">
+					<input type="submit" name="contactinfo" value="{$LANG.domaincontactinfoedit}" class="btn btn-primary btn-sm">
+					<input type="submit" name="renew" value="{$LANG.domainmassrenew}" class="btn btn-primary btn-sm">
 				</td>
 			</tr>
 		</tfoot>
@@ -59,7 +63,7 @@
 <form method="post" action="{$smarty.server.PHP_SELF}" class="pull-right">
 	<fieldset>
 		<input type="hidden" name="action" value="{$clientareaaction}"> 
-		<select name="itemlimit" onchange="submit()">
+		<select name="itemlimit" onchange="submit()" class="form-control" style="margin-top: 18px;">
 			<option>{$LANG.resultsperpage}</option>
 			<option value="10"{if $itemlimit==10} selected="selected"{/if}>10</option>
 			<option value="25"{if $itemlimit==25} selected="selected"{/if}>25</option>
@@ -70,12 +74,10 @@
 	</fieldset>
 </form>
 
-<div class="pagination">
-	<ul>
-		<li{if !$prevpage} class="disabled"{/if}><a href="{if $prevpage}clientarea.php?action=domains{if $q}&amp;q={$q}{/if}&amp;page={$prevpage}{else}javascript:return false;{/if}">&larr; {$LANG.previouspage}</a></li>
-		<li{if !$nextpage} class="disabled"{/if}><a href="{if $nextpage}clientarea.php?action=domains{if $q}&amp;q={$q}{/if}&amp;page={$nextpage}{else}javascript:return false;{/if}">{$LANG.nextpage} &rarr;</a></li>
-	</ul>
-</div>
+<ul class="pagination">
+	<li{if !$prevpage} class="disabled"{/if}><a href="{if $prevpage}clientarea.php?action=domains{if $q}&amp;q={$q}{/if}&amp;page={$prevpage}{else}javascript:return false;{/if}">&larr; {$LANG.previouspage}</a></li>
+	<li{if !$nextpage} class="disabled"{/if}><a href="{if $nextpage}clientarea.php?action=domains{if $q}&amp;q={$q}{/if}&amp;page={$nextpage}{else}javascript:return false;{/if}">{$LANG.nextpage} &rarr;</a></li>
+</ul>
 
 {literal}
 <script type="text/javascript">

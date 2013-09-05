@@ -13,38 +13,36 @@
 </div>
 
 <div class="row">
-	<div class="span10 offset1">
+	<div class="col-md-10 col-md-offset-1">
 		<div class="text-center">
 			<h3>{$LANG.affiliatesreferallink}</h3>
-			<table class="table table-bordered">
-				<thead>
-					<tr>
-						<th class="lead text-center">{$referrallink}</th>
-					</tr>
-				</thead>
-			</table>
+			<div class="panel panel-default">
+				<div class="panel-body text-center">
+					<span class="lead">{$referrallink}</span>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
 
 <div class="row text-center">
-	<div class="span10 offset1">
-		<div class="row-fluid">
-			<div class="span4">
+	<div class="col-md-10 col-md-offset-1">
+		<div class="row">
+			<div class="col-md-4">
 				<div class="well">
-					<h3>{$LANG.affiliatesvisitorsreferred}</h3>
+					<h4>{$LANG.affiliatesvisitorsreferred}</h4>
 					<span class="lead">{$visitors}</span>
 				</div>
 			</div>
-			<div class="span4">
+			<div class="col-md-4">
 				<div class="well">
-					<h3>{$LANG.affiliatessignups}</h3>
+					<h4>{$LANG.affiliatessignups}</h4>
 					<span class="lead">{$signups}</span>
 				</div>
 			</div>
-			<div class="span4">
+			<div class="col-md-4">
 				<div class="well">
-					<h3>{$LANG.affiliatesconversionrate}</h3>
+					<h4>{$LANG.affiliatesconversionrate}</h4>
 				 	<span class="lead">{$conversionrate}%</span>
 				</div>
 			</div>
@@ -53,7 +51,7 @@
 </div>
 
 <div class="row">
-	<div class="span6 offset3">
+	<div class="col-md-6 col-md-offset-3">
 		<table class="table table-striped table-bordered">
 			<tbody>
 				<tr>
@@ -74,13 +72,13 @@
 </div>
 
 {if $withdrawrequestsent}
-<div class="alert alert-success fade in">
-	<button class="close" data-dismiss="alert">&times;</button>
+<div class="alert alert-success alert-dismissable">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	{$LANG.affiliateswithdrawalrequestsuccessful}
 </div>
 {elseif $withdrawlevel}
 <div class="text-center">
-	<a href="{$smarty.server.PHP_SELF}?action=withdrawrequest" class="btn btn-large btn-primary" title="{$LANG.affiliatesrequestwithdrawal}">{$LANG.affiliatesrequestwithdrawal}</a>
+	<a href="{$smarty.server.PHP_SELF}?action=withdrawrequest" class="btn btn-lg btn-primary" title="{$LANG.affiliatesrequestwithdrawal}">{$LANG.affiliatesrequestwithdrawal}</a>
 </div>
 {/if}
 
@@ -117,12 +115,10 @@
 	</tbody>
 </table>
 
-<div class="pagination">
-	<ul>
-		<li{if !$prevpage} class="disabled"{/if}><a href="{if $prevpage}affiliates.php?page={$prevpage}{else}javascript:return false;{/if}">&larr; {$LANG.previouspage}</a></li>
-		<li{if !$nextpage} class="disabled"{/if}><a href="{if $nextpage}affiliates.php?page={$nextpage}{else}javascript:return false;{/if}">{$LANG.nextpage} &rarr;</a></li>
-	</ul>
-</div>
+<ul class="pagination">
+	<li{if !$prevpage} class="disabled"{/if}><a href="{if $prevpage}affiliates.php?page={$prevpage}{else}javascript:return false;{/if}">&larr; {$LANG.previouspage}</a></li>
+	<li{if !$nextpage} class="disabled"{/if}><a href="{if $nextpage}affiliates.php?page={$nextpage}{else}javascript:return false;{/if}">{$LANG.nextpage} &rarr;</a></li>
+</ul>
 
 {if $affiliatelinkscode}
 <div class="page-header">

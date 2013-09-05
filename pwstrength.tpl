@@ -1,3 +1,7 @@
+<div class="progress" id="pwstrengthbox" style="line-height:20px">
+	<div class="progress-bar"></div>
+</div>
+
 {literal}
 <script>
 jQuery(document).ready(function(){
@@ -17,17 +21,11 @@ jQuery(document).ready(function(){
 		var pwstrength=((pwlength*10)-20)+(numeric*10)+(numsymbols*15)+(upper*10);
 		if(pwstrength<0){pwstrength=0}
 		if(pwstrength>100){pwstrength=100}
-		jQuery("#pwstrengthbox").children().addClass("hide");
-		console.log(pwstrength);
-		if(pwstrength<30) jQuery("#pwstrengthbox .bar-danger").removeClass("hide");
-		if(pwstrength>=30 && pwstrength<75) jQuery("#pwstrengthbox .bar-warning").removeClass("hide");
-		if(pwstrength>=75) jQuery("#pwstrengthbox .bar-success").removeClass("hide");
+		jQuery("#pwstrengthbox .progress-bar").width(pwstrength + "%");
+		if(pwstrength<30) jQuery("#pwstrengthbox .progress-bar").removeClass("progress-bar-warning").removeClass("progress-bar-success").addClass("progress-bar-danger").html("{/literal}{$LANG.pwstrengthweak}{literal}");
+		if(pwstrength>=30 && pwstrength<75) jQuery("#pwstrengthbox .progress-bar").removeClass("progress-bar-danger").removeClass("progress-bar-success").addClass("progress-bar-warning").html("{/literal}{$LANG.pwstrengthmoderate}{literal}");
+		if(pwstrength>=75) jQuery("#pwstrengthbox .progress-bar").removeClass("progress-bar-danger").removeClass("progress-bar-warning").addClass("progress-bar-success").html("{/literal}{$LANG.pwstrengthstrong}{literal}");
 	});
 });
 </script>
 {/literal}
-<div class="progress" id="pwstrengthbox">
-	<div class="bar bar-danger hide" style="width: 33%">{$LANG.pwstrengthweak}</div>
-	<div class="bar bar-warning hide" style="width: 66%">{$LANG.pwstrengthmoderate}</div>
-	<div class="bar bar-success hide" style="width: 100%">{$LANG.pwstrengthstrong}</div>
-</div>

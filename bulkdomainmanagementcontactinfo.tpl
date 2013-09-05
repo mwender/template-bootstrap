@@ -4,8 +4,8 @@
 
 {if $save}
 {if $errors}
-<div class="alert alert-error fade in">
-	<button class="close" data-dismiss="alert">&times;</button>
+<div class="alert alert-danger alert-dismissable">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	<h4 class="alert-heading">{$LANG.clientareaerrors}</h4>
 	<ul>
 	{foreach from=$errors item=error}
@@ -14,8 +14,8 @@
 	</ul>
 </div>
 {else}
-<div class="alert alert-success fade in">
-	<button class="close" data-dismiss="alert">&times;</button>
+<div class="alert alert-success alert-dismissable">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	{$LANG.changessavedsuccessfully}
 </div>
 {/if}
@@ -35,7 +35,7 @@
 	{/foreach}
 	<div class="row">
 	{foreach from=$contactdetails name=contactdetails key=k item=i}
-		<div class="span4">
+		<div class="col-md-4">
 			<h2>{$k}</h2>
 			<fieldset class="well">
 				<label class="radio"><input type="radio" name="wc[{$k}]" value="contact" onclick="toggleContact('#{$k}')"{if $defaultns} checked="checked"{/if}>{$LANG.domaincontactusexisting}</label>
@@ -43,7 +43,7 @@
 				<hr>
 				<div id="{$k}choosecontact" {if !$defaultns}class="hide"{/if}>
 					<label for="{$k}contact">{$LANG.domaincontactchoose}</label>
-					<select name="sel[{$k}]" class="span3">
+					<select name="sel[{$k}]" class="col-md-3">
 						<option value="u{$clientsdetails.userid}" selected="selected">{$LANG.domaincontactprimary}</option>
 					{foreach key=num item=contact from=$contacts}
 						<option value="c{$contact.id}">{$contact.name}</option>
@@ -53,7 +53,7 @@
 				<div id="{$k}custom" {if $defaultns}class="hide"{/if}>
 		{foreach from=$i key=kk item=ii}
 					<label for="{$k}{$kk|replace:" ":""}">{$kk}</label>
-					<input type="text" name="contactdetails[{$k}][{$kk}]" id="{$k}{$kk|replace:" ":""}" value="{$ii}" class="span3">
+					<input type="text" name="contactdetails[{$k}][{$kk}]" id="{$k}{$kk|replace:" ":""}" value="{$ii}" class="col-md-3">
 		{/foreach}
 				</div>
 			</fieldset>
@@ -61,7 +61,7 @@
 	{/foreach}
 	</div>
 	<div class="text-center">
-		<a href="clientarea.php?action=domaindetails&id={$domainid}" class="btn" title="{$LANG.clientareabacklink}">{$LANG.clientareabacklink}</a>
+		<a href="clientarea.php?action=domaindetails&id={$domainid}" class="btn btn-default" title="{$LANG.clientareabacklink}">{$LANG.clientareabacklink}</a>
 		<input type="submit" value="{$LANG.clientareasavechanges}" onclick="$('#modalpleasewait').modal();" class="btn btn-primary">
 	</div>
 </form>

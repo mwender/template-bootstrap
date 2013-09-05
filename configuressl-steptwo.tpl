@@ -3,7 +3,7 @@
 </div>
 
 {if $errormessage}
-<div class="alert alert-error">
+<div class="alert alert-danger">
 	<h4 class="alert-heading">{$LANG.clientareaerrors}</h4>
 	<ul>
 		{$errormessage}
@@ -16,30 +16,30 @@
 </div>
 
 <ul class="thumbnails">
-	<li class="span6">
+	<li class="col-md-6">
 		<h4>{$LANG.sslcerttype}:</h4>
 		{$certtype}
 	</li>
-	<li class="span6">
+	<li class="col-md-6">
 		<h4>{$LANG.sslorderdate}:</h4>
 		{$date}
 	</li>
 	{if $domain}
-	<li class="span6">
+	<li class="col-md-6">
 		<h4>{$LANG.domainname}:</h4>
 		{$domain}
 	</li>
 	{/if}
-	<li class="span6">
+	<li class="col-md-6">
 		<h4>{$LANG.orderprice}:</h4>
 		{$price}
 	</li>
-	<li class="span6">
+	<li class="col-md-6">
 		<h4>{$LANG.sslstatus}:</h4>
 		{$status}
 	</li>
 	{foreach from=$displaydata key=displaydataname item=displaydatavalue}
-	<li class="span6">
+	<li class="col-md-6">
 		<h4>{$displaydataname}:</h4>
 		{$displaydatavalue}
 	</li>

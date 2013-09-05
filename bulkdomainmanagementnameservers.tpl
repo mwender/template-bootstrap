@@ -4,7 +4,7 @@
 
 {if $save}
 {if $errors}
-<div class="alert alert-error">
+<div class="alert alert-danger">
 	<h4 class="alert-heading">{$LANG.clientareaerrors}</h4>
 	<ul>
 	{foreach from=$errors item=error}
@@ -13,8 +13,8 @@
 	</ul>
 </div>
 {else}
-<div class="alert alert-success fade in">
-	<button class="close" data-dismiss="alert">&times;</button>
+<div class="alert alert-success alert-dismissable">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	{$LANG.changessavedsuccessfully}
 </div>
 {/if}
@@ -53,36 +53,36 @@
 		<div class="control-group">
 			<label class="control-label" for="ns1">{$LANG.domainnameserver1}</label>
 			<div class="controls">
-				<input class="span3 domnsinputs" id="ns1" name="ns1" type="text" value="{$ns1}">
+				<input class="col-md-3 domnsinputs" id="ns1" name="ns1" type="text" value="{$ns1}">
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label" for="ns2">{$LANG.domainnameserver2}</label>
 			<div class="controls">
-				<input class="span3 domnsinputs" id="ns2" name="ns2" type="text" value="{$ns2}">
+				<input class="col-md-3 domnsinputs" id="ns2" name="ns2" type="text" value="{$ns2}">
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label" for="ns3">{$LANG.domainnameserver3}</label>
 			<div class="controls">
-				<input class="span3 domnsinputs" id="ns3" name="ns3" type="text" value="{$ns3}">
+				<input class="col-md-3 domnsinputs" id="ns3" name="ns3" type="text" value="{$ns3}">
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label" for="ns4">{$LANG.domainnameserver4}</label>
 			<div class="controls">
-				<input class="span3 domnsinputs" id="ns4" name="ns4" type="text" value="{$ns4}">
+				<input class="col-md-3 domnsinputs" id="ns4" name="ns4" type="text" value="{$ns4}">
 			</div>
 		</div>
 		<div class="control-group">			
 			<label class="control-label" for="ns5">{$LANG.domainnameserver5}</label>
 			<div class="controls">
-				<input class="span3 domnsinputs" id="ns5" name="ns5" type="text" value="{$ns5}">
+				<input class="col-md-3 domnsinputs" id="ns5" name="ns5" type="text" value="{$ns5}">
 			</div>
 		</div>
 	</fieldset>
 	<div class="form-actions">
-		<input type="submit" class="btn btn-large btn-primary" onclick="$('#modalpleasewait').modal();" value="{$LANG.changenameservers}">
+		<input type="submit" class="btn btn-lg btn-primary" onclick="$('#modalpleasewait').modal();" value="{$LANG.changenameservers}">
 	</div>
 </form>
 

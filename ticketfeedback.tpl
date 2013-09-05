@@ -1,6 +1,6 @@
 {if $error}
-<div class="alert alert-error fade in">
-	<button class="close" data-dismiss="alert">&times;</button>
+<div class="alert alert-danger alert-dismissable">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	{$LANG.supportticketinvalid}
 </div>
 {elseif $stillopen}
@@ -8,12 +8,12 @@
 	<h1>{$LANG.ticketfeedbacktitle} #{$tid}</h1>
 </div>
 
-<div class="alert alert-error">
+<div class="alert alert-danger">
 	{$LANG.feedbackclosed}
 </div>
 
 <div class="text-center">
-	<a href="clientarea.php" title="{$LANG.returnclient}" class="btn">{$LANG.returnclient}</a>
+	<a href="clientarea.php" title="{$LANG.returnclient}" class="btn btn-default">{$LANG.returnclient}</a>
 </div>
 {elseif $feedbackdone}
 <div class="page-header">
@@ -27,7 +27,7 @@
 <p class="text-center">{$LANG.feedbackthankyou}</p>
 
 <div class="text-center">
-	<a href="clientarea.php" title="{$LANG.returnclient}" class="btn">{$LANG.returnclient}</a>
+	<a href="clientarea.php" title="{$LANG.returnclient}" class="btn btn-default">{$LANG.returnclient}</a>
 </div>
 {elseif $success}
 <div class="page-header">
@@ -40,7 +40,7 @@
 </div>
 
 <div class="text-center">
-	<a href="clientarea.php" title="{$LANG.returnclient}" class="btn">{$LANG.returnclient}</a>
+	<a href="clientarea.php" title="{$LANG.returnclient}" class="btn btn-default">{$LANG.returnclient}</a>
 </div>
 {else}
 <div class="page-header">
@@ -48,7 +48,7 @@
 </div>
 
 {if $errormessage}
-<div class="alert alert-error">
+<div class="alert alert-danger">
 	<h4 class="alert-heading">{$LANG.clientareaerrors}</h4>
 	<ul>
 		{$errormessage}
@@ -92,7 +92,7 @@
 		{/foreach}
 		</select>
 		<p>{$LANG.feedbackpleasecomment1} <strong>{$staff}</strong> {$LANG.feedbackhandled}.</p>
-		<textarea name="comments[{$staffid}]" rows="4" class="span11">{$comments.$staffid}</textarea>
+		<textarea name="comments[{$staffid}]" rows="4" class="col-md-11">{$comments.$staffid}</textarea>
 	</div>
 </form>
 {/foreach}
@@ -102,7 +102,7 @@
 
 <div class="form-actions">
 	<input class="btn btn-primary" type="submit" name="save" value="{$LANG.clientareasavechanges}">
-	<input class="btn" type="reset" value="{$LANG.cancel}">
+	<input class="btn btn-default" type="reset" value="{$LANG.cancel}">
 </div>
 
 </form>

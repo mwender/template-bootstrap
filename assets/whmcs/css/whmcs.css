@@ -1,11 +1,4 @@
 /* 
-This looks to be pointless to load, also i've noticed delayed page load times
-because of this resource.  If all goes well this will be removed for good.
-
-@import url("https://fonts.googleapis.com/css?family=Ubuntu:500,700");
-*/
-
-/* 
 Centered Layout Style
 
 body { background-color: #EFEFEF; }
@@ -15,17 +8,8 @@ body { background-color: #EFEFEF; }
 
 */
 
-h1, h2, h3 { font-family: 'Ubuntu',sans-serif; font-weight: 700; }
 
-h1, h2 { letter-spacing: -2px; }
-
-h3 { letter-spacing: -1px; font-weight: 700; }
-
-h1 small, h2 small, h3 small { letter-spacing: -1px; font-weight: 500; }
-
-select { width:auto; }
-
-body { padding-top: 15px; padding-bottom: 15px; }
+body { padding-top: 20px; padding-bottom: 20px; }
 
 #whmcsheader { padding-bottom:20px; }
 
@@ -44,20 +28,9 @@ body { padding-top: 15px; padding-bottom: 15px; }
 .marginright { margin-right: 18px; }
 .margintop { margin-top: 18px; }
 
-.borderradius { border-radius: 6px; }
-
 .valigntop { vertical-align:top !important; }
 .valigntextbottom { vertical-align:text-bottom !important;}
 .valignbaseline { vertical-align:baseline !important; }
-
-/* height and font-size match btn-large */
-.input-large {
-	height: 34px !important;
-	font-size: 20px !important;
-}
-
-/* table tfoot styling */
-.table > tfoot { font-weight:bold; }
 
 /* table outside border only */
 .table-bordered-outside {
@@ -141,10 +114,4 @@ body { padding-top: 15px; padding-bottom: 15px; }
 
 .rating span.selected { 
 	background: url('../img/rating_star_filled.png') no-repeat;
-}
-
-@media (max-width: 767px) {
-   .input-large {
-      height: 44px !important;
-   }
 }

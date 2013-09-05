@@ -3,9 +3,9 @@
 </div>
 
 {if !$nobalance}
-<div class="well well-small pull-right text-center lead">
-	{$LANG.invoicesoutstandingbalance}: <span class="text-error">{$totalbalance}</span>
-	{if $masspay}<a href="clientarea.php?action=masspay&all=true" class="btn btn-large btn-success"><i class="icon-ok-circle icon-white"></i> {$LANG.masspayall}</a>{/if}
+<div class="alert alert-danger pull-right text-center lead">
+	{$LANG.invoicesoutstandingbalance}: {$totalbalance}
+	{if $masspay}<a href="clientarea.php?action=masspay&all=true" class="btn btn-success">{$LANG.masspayall}</a>{/if}
 </div>
 {/if}
 
@@ -40,9 +40,9 @@
 	</tbody>
 </table>
 
-<form method="post" action="{$smarty.server.PHP_SELF}?action={$clientareaaction}" class="pull-right">
+<form method="post" action="{$smarty.server.PHP_SELF}?action={$clientareaaction}" class="pull-right" style="margin-top: 18px;">
 	<fieldset>
-		<select name="itemlimit" onchange="submit()">
+		<select name="itemlimit" onchange="submit()" class="form-control">
 			<option>{$LANG.resultsperpage}</option>
 			<option value="10"{if $itemlimit==10} selected="selected"{/if}>10</option>
 			<option value="25"{if $itemlimit==25} selected="selected"{/if}>25</option>
@@ -53,9 +53,7 @@
 	</fieldset>
 </form>
 
-<div class="pagination">
-	<ul>
-		<li{if !$prevpage} class="disabled"{/if}><a href="{if $prevpage}clientarea.php?action={$clientareaaction}{if $q}&amp;q={$q}{/if}&amp;page={$prevpage}{else}javascript:return false;{/if}">&larr; {$LANG.previouspage}</a></li>
-		<li{if !$nextpage} class="disabled"{/if}><a href="{if $nextpage}clientarea.php?action={$clientareaaction}{if $q}&amp;q={$q}{/if}&amp;page={$nextpage}{else}javascript:return false;{/if}">{$LANG.nextpage} &rarr;</a></li>
-	</ul>
-</div>
+<ul class="pagination">
+	<li{if !$prevpage} class="disabled"{/if}><a href="{if $prevpage}clientarea.php?action={$clientareaaction}{if $q}&amp;q={$q}{/if}&amp;page={$prevpage}{else}javascript:return false;{/if}">&larr; {$LANG.previouspage}</a></li>
+	<li{if !$nextpage} class="disabled"{/if}><a href="{if $nextpage}clientarea.php?action={$clientareaaction}{if $q}&amp;q={$q}{/if}&amp;page={$nextpage}{else}javascript:return false;{/if}">{$LANG.nextpage} &rarr;</a></li>
+</ul>

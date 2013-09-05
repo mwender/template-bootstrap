@@ -4,11 +4,11 @@
 
 {if !$status}
 	<p>{$LANG.sslinvalidlink}</p>
-	<input type="button" value="{$LANG.clientareabacklink}" class="btn" onclick="history.go(-1)">
+	<input type="button" value="{$LANG.clientareabacklink}" class="btn btn-default" onclick="history.go(-1)">
 {else}
 
 {if $errormessage}
-<div class="alert alert-error">
+<div class="alert alert-danger">
 	<h4 class="alert-heading">{$LANG.clientareaerrors}</h4>
 	<ul>
 		{$errormessage}
@@ -21,30 +21,30 @@
 </div>
 
 <ul class="thumbnails">
-	<li class="span6">
+	<li class="col-md-6">
 		<h4>{$LANG.sslcerttype}:</h4>
 		{$certtype}
 	</li>
-	<li class="span6">
+	<li class="col-md-6">
 		<h4>{$LANG.sslorderdate}:</h4>
 		{$date}
 	</li>
 {if $domain}
-	<li class="span6">
+	<li class="col-md-6">
 		<h4>{$LANG.domainname}:</h4>
 		{$domain}
 	</li>
 {/if}
-	<li class="span6">
+	<li class="col-md-6">
 		<h4>{$LANG.orderprice}:</h4>
 		{$price}
 	</li>
-	<li class="span6">
+	<li class="col-md-6">
 		<h4>{$LANG.sslstatus}:</h4>
 		{$status}
 	</li>
 	{foreach from=$displaydata key=displaydataname item=displaydatavalue}
-	<li class="span6">
+	<li class="col-md-6">
 		<h4>{$displaydataname}:</h4>
 		{$displaydatavalue}
 	</li>
@@ -74,7 +74,7 @@
 	<div class="control-group">
 		<label class="control-label" for="csr">{$LANG.sslcsr}</label>
 		<div class="controls">
-			<textarea name="csr" id="csr" rows="7" class="span6">-----BEGIN CERTIFICATE REQUEST-----
+			<textarea name="csr" id="csr" rows="7" class="col-md-6">-----BEGIN CERTIFICATE REQUEST-----
 
 -----END CERTIFICATE REQUEST-----</textarea>
 		</div>
@@ -182,7 +182,7 @@
 <form method="post" action="clientarea.php">
 	<input type="hidden" name="action" value="productdetails">
 	<input type="hidden" name="id" value="{$serviceid}">
-	<input type="submit" value="{$LANG.invoicesbacktoclientarea}" class="btn">
+	<input type="submit" value="{$LANG.invoicesbacktoclientarea}" class="btn btn-default">
  </form>
 
 {/if}

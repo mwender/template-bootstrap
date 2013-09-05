@@ -3,13 +3,13 @@
 </div>
 
 <div class="row">
-	<div class="span4">
+	<div class="col-md-4">
 		<h2>{$LANG.domaingeteppcode}</h2>
 		<p>{$LANG.domaingeteppcodeexplanation}</p>
 	</div>
-	<div class="span8">
+	<div class="col-md-8">
 {if $error}
-		<div class="alert alert-error alert-block">
+		<div class="alert alert-danger alert-block">
 			<h3 class="alert-heading">{$LANG.domaingeteppcodefailure}</h3>
 			{$error}
 		</div>
@@ -27,5 +27,5 @@
 </div>
 
 <div class="text-center marginbottom">
-	<a href="clientarea.php?action=domaindetails&id={$domainid}" class="btn" title="{$LANG.clientareabacklink}">{$LANG.clientareabacklink}</a>
+	<a href="clientarea.php?action=domaindetails&id={$domainid}" class="btn btn-default" title="{$LANG.clientareabacklink}">{$LANG.clientareabacklink}</a>
 </div>
