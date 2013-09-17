@@ -10,28 +10,36 @@
 			{$LANG.loginincorrect}
 		</div>
 {/if}
-		<form method="post" action="{$systemsslurl}dologin.php" name="frmlogin">
+		<form method="post" action="{$systemsslurl}dologin.php" name="frmlogin" class="form-horizontal">
 			<fieldset>
 				<div class="form-group">
-					<label for="username">{$LANG.loginemail}:</label>
-					<input class="form-control" name="username" id="username" type="text">
+					<label class="control-label col-md-4" for="username">{$LANG.loginemail}:</label>
+					<div class="col-md-8">
+						<input class="form-control" name="username" id="username" type="text">
+					</div>
 				</div>
 				<div class="form-group">
-					<label for="password">{$LANG.loginpassword}:</label>
-					<input class="form-control" name="password" id="password" type="password">
-				</div>
-				<div class="checkbox">
-					<label>
-						<input type="checkbox"{if $rememberme} checked="checked"{/if}> {$LANG.loginrememberme}
-					</label>
+					<label class="control-label col-md-4" for="password">{$LANG.loginpassword}:</label>
+					<div class="col-md-8">
+						<input class="form-control" name="password" id="password" type="password">
+					</div>
 				</div>
 				<div class="form-group">
-					<input type="submit" class="btn btn-primary" value="{$LANG.loginbutton}">
+					<div class="col-md-8 col-md-offset-4">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox"{if $rememberme} checked="checked"{/if}> {$LANG.loginrememberme}
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-8 col-md-offset-4">
+						<button type="submit" class="btn btn-primary">{$LANG.loginbutton}</button>
+						<a href="pwreset.php" style="margin-left:10px;">{$LANG.loginforgotteninstructions}</a>
+					</div>
 				</div>
 			</fieldset>
 		</form>
-		<p class="text-center">
-			<a href="pwreset.php">{$LANG.loginforgotteninstructions}</a>
-		</p>
 	</div>
 </div>
