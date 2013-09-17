@@ -1,4 +1,4 @@
-<div class="progress" id="pwstrengthbox" style="line-height:20px">
+<div class="progress" id="pwstrengthbox">
 	<div class="progress-bar"></div>
 </div>
 
