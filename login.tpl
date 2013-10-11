@@ -28,7 +28,7 @@
 					<div class="col-md-8 col-md-offset-4">
 						<div class="checkbox">
 							<label>
-								<input type="checkbox"{if $rememberme} checked="checked"{/if}> {$LANG.loginrememberme}
+								<input type="checkbox" name="rememberme"{if $rememberme} checked="checked"{/if}> {$LANG.loginrememberme}
 							</label>
 						</div>
 					</div>
