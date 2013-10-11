@@ -10,7 +10,7 @@
 			{$LANG.loginincorrect}
 		</div>
 {/if}
-		<form method="post" action="{$systemsslurl}dologin.php" name="frmlogin" class="form-horizontal">
+		<form method="post" action="{$systemsslurl}dologin.php" class="form-horizontal">
 			<fieldset>
 				<div class="form-group">
 					<label class="control-label col-md-4" for="username">{$LANG.loginemail}:</label>
