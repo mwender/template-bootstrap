@@ -52,78 +52,65 @@
 				<p>{$LANG.clientareaproductdetailsintro}</p>
 				<a href="clientarea.php?action=products" title="{$LANG.backtoserviceslist}" class="btn btn-default">{$LANG.backtoserviceslist}</a>
 			</div>
-			<div class="col-md-8">
-				<div class="clearfix" style="margin-top: 18px;">
-				<ul class="list-unstyled">
-					<li class="col-md-12">
+			<div class="col-md-8" style="padding-top:20px">
+				{if $status eq "Suspended" && $suspendreason}
+				<div class="alert alert-danger">
+					<span class="glyphicon glyphicon-warning-sign"></span> <strong>{$LANG.clientareasuspended}!</strong> {$suspendreason}
+				</div>
+				{/if}
+				<div class="row">
+					<div class="col-md-6">
 						<h4>{$LANG.orderproduct}:</h4>
-						{if $groupname}{$groupname} - {/if}{$product} <span class="label label-{$rawstatus}">{$status}</span>{if $domain}<div><a href="http://{$domain}" target="_blank">{$domain}</a></div>{/if}
-					</li>
-					{if $username}
-					<li class="col-md-6">
+						{if $groupname}{$groupname} - {/if}{$product} <span class="label label-{$rawstatus}">{$status}</span>
+						<h4>{if $type eq "hostingaccount" || $type eq "other"}{$LANG.clientareahostingdomain}{else}{$LANG.serverhostname}{/if}:</h4>
+						{if $domain}
+						<a href="http://{$domain}" target="_blank">{$domain}</a>
+						{else}
+						<div>N/A</div>
+						{/if}
+						{if $username}
 						<h4>{$LANG.serverusername}:</h4>
 						{$username}
-					</li>
-					{/if}
-					{if $dedicatedip}
-					<li class="col-md-6">
+						{/if}
+						{if $dedicatedip}
 						<h4>{$LANG.domainregisternsip}:</h4>
 						{$dedicatedip}
-					</li>
-					{/if}
-					<li class="col-md-6">
-						<h4>{$LANG.firstpaymentamount}:</h4>
-						{$firstpaymentamount}
-					</li>
-					<li class="col-md-6">
-						<h4>{$LANG.clientareahostingregdate}:</h4>
-						{$regdate}
-					</li>
-					<li class="col-md-6">
-						<h4>{$LANG.recurringamount}:</h4>
-						{$recurringamount}
-					</li>
-					<li class="col-md-6">
-						<h4>{$LANG.clientareahostingnextduedate}:</h4>
-						{$nextduedate}
-					</li>
-					<li class="col-md-6">
-						<h4>{$LANG.orderbillingcycle}:</h4>
-						{$billingcycle}
-					</li>
-					<li class="col-md-6">
-						<h4>{$LANG.orderpaymentmethod}:</h4>
-						{$paymentmethod}
-					</li>
-					{if $lastupdate}
-					<li class="col-md-6">
+						{/if}
+						{if $lastupdate}
 						<h4>{$LANG.clientareadiskusage}:</h4>
 						{$diskusage}MB / {$disklimit}MB ({$diskpercent})
-					</li>
-					<li class="col-md-6">
 						<h4>{$LANG.clientareabwusage}:</h4>
 						{$bwusage}MB / {$bwlimit}MB ({$bwpercent})
-					</li>
-					{/if}
-					{foreach from=$configurableoptions item=configoption}
-					<li class="col-md-6">
+						{/if}
+						{foreach from=$configurableoptions item=configoption}
 						<h4>{$configoption.optionname}:</h4>
-						{if $configoption.optiontype eq 3}{if $configoption.selectedqty}{$LANG.yes}{else}{$LANG.no}{/if}{elseif $configoption.optiontype eq 4}{$configoption.selectedqty} x {$configoption.selectedoption}{else}{$configoption.selectedoption}{/if}
-					</li>
-					{/foreach}
-					{foreach from=$productcustomfields item=customfield}
-					<li class="col-md-6">
+						{if $configoption.optiontype eq 3}
+						{if $configoption.selectedqty}{$LANG.yes}{else}{$LANG.no}{/if}
+						{elseif $configoption.optiontype eq 4}
+						{$configoption.selectedqty} &times; {$configoption.selectedoption}
+						{else}
+						{$configoption.selectedoption}
+						{/if}
+						{/foreach}
+						{foreach from=$productcustomfields item=customfield}
 						<h4>{$customfield.name}:</h4>
 						{$customfield.value}
-					</li>
-					{/foreach}
-					{if $suspendreason}
-					<li class="col-md-12">
-						<h4>{$LANG.suspendreason}:</h4>
-						{$suspendreason}
-					</li>
-					{/if}
-				</ul>
+						{/foreach}
+					</div>
+					<div class="col-md-6">
+						<h4>{$LANG.clientareahostingregdate}:</h4>
+						{$regdate}
+						<h4>{$LANG.firstpaymentamount}:</h4>
+						{$firstpaymentamount}
+						<h4>{$LANG.recurringamount}:</h4>
+						{$recurringamount}
+						<h4>{$LANG.clientareahostingnextduedate}:</h4>
+						{$nextduedate}
+						<h4>{$LANG.orderbillingcycle}:</h4>
+						{$billingcycle}
+						<h4>{$LANG.orderpaymentmethod}:</h4>
+						{$paymentmethod}
+					</div>
 				</div>
 				{if $moduleclientarea}
 				<hr>
