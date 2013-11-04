@@ -2,14 +2,19 @@
 	<h1>{$LANG.invoices} <small>{$LANG.invoicesintro}</small></h1>
 </div>
 
-{if !$nobalance}
-<div class="alert alert-danger pull-right text-center lead">
-	{$LANG.invoicesoutstandingbalance}: {$totalbalance}
-	{if $masspay}<a href="clientarea.php?action=masspay&all=true" class="btn btn-success">{$LANG.masspayall}</a>{/if}
+<div class="row">
+	<div class="col-md-7">
+		<p style="margin-top:20px;">{$numitems} {$LANG.recordsfound}, {$LANG.page} {$pagenumber} {$LANG.pageof} {$totalpages}</p>
+	</div>
+	<div class="col-md-5">
+		{if !$nobalance}
+		<div class="alert alert-danger pull-right text-center lead">
+			{$LANG.invoicesoutstandingbalance}: {$totalbalance}
+			{if $masspay}<a href="clientarea.php?action=masspay&all=true" class="btn btn-success">{$LANG.masspayall}</a>{/if}
+		</div>
+		{/if}
+	</div>
 </div>
-{/if}
-
-<p>{$numitems} {$LANG.recordsfound}, {$LANG.page} {$pagenumber} {$LANG.pageof} {$totalpages}</p>
 
 <div class="panel panel-default">
 	<table class="table table-striped table-sorted">

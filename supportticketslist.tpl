@@ -2,18 +2,20 @@
 	<h1>{$LANG.clientareanavsupporttickets} <small>{$LANG.supportticketsintro}</small></h1>
 </div>
 
-<form class="pull-right form-inline well well-small" action="supporttickets.php" method="post">
-	<div class="form-group">
-		<input type="text" name="searchterm" class="form-control" value="{if $searchterm}{$searchterm}{/if}" placeholder="{$LANG.searchtickets}" style="min-width: 300px;">
+<div class="row">
+	<div class="col-md-7">
+		<a href="submitticket.php" class="btn btn-primary marginbottom" title="{$LANG.opennewticket}">{$LANG.opennewticket}</a>
+		<p>{$numitems} {$LANG.recordsfound}, {$LANG.page} {$pagenumber} {$LANG.pageof} {$totalpages}</p>
 	</div>
-	<div class="form-group">
-		<button type="submit" class="btn btn-success">{$LANG.search}</button>
+	<div class="col-md-5">
+		<form class="pull-right form-inline well well-sm" action="supporttickets.php" method="post">
+			<div class="form-group">
+				<input type="text" name="searchterm" class="form-control" value="{if $searchterm}{$searchterm}{/if}" placeholder="{$LANG.searchtickets}" style="min-width: 300px;">
+			</div>
+			<button type="submit" class="btn btn-success">{$LANG.search}</button>
+		</form>
 	</div>
-</form>
-
-<a href="submitticket.php" class="btn btn-primary marginbottom" title="{$LANG.opennewticket}">{$LANG.opennewticket}</a>
-
-<p>{$numitems} {$LANG.recordsfound}, {$LANG.page} {$pagenumber} {$LANG.pageof} {$totalpages}</p>
+</div>
 
 <div class="panel panel-default">
 	<table class="table table-striped table-sorted">

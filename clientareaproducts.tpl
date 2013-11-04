@@ -2,17 +2,20 @@
 	<h1>{$LANG.clientareaproducts} <small>{$LANG.clientareaproductsintro}</small></h1>
 </div>
 
-<form class="form-inline well well-small pull-right" action="clientarea.php" method="post">
-	<input type="hidden" name="action" value="products">
-	<div class="form-group">
-		<input type="text" class="form-control" name="q" value="{if $q}{$q}{/if}" placeholder="{$LANG.searchenterdomain}" style="min-width: 300px">
+<div class="row">
+	<div class="col-md-7">
+		<div id="resultsfound" style="padding-top:20px;">{$numitems} {$LANG.recordsfound}, {$LANG.page} {$pagenumber} {$LANG.pageof} {$totalpages}</div>
 	</div>
-	<div class="form-group">
-		<button type="submit" class="btn btn-success">{$LANG.searchfilter}</button>
+	<div class="col-md-5">
+		<form class="form-inline well well-sm pull-right" action="clientarea.php" method="post">
+			<input type="hidden" name="action" value="products">
+			<div class="form-group">
+				<input type="text" class="form-control" name="q" value="{if $q}{$q}{/if}" placeholder="{$LANG.searchenterdomain}" style="min-width: 300px">
+			</div>
+			<button type="submit" class="btn btn-success">{$LANG.searchfilter}</button>
+		</form>
 	</div>
-</form>
-
-<div id="resultsfound" style="padding-top:30px;">{$numitems} {$LANG.recordsfound}, {$LANG.page} {$pagenumber} {$LANG.pageof} {$totalpages}</div>
+</div>
 
 <div class="panel panel-default">
 	<table id="resultslist" class="table table-striped table-sorted">
