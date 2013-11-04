@@ -10,7 +10,7 @@
 		{if !$nobalance}
 		<div class="alert alert-danger pull-right text-center lead">
 			{$LANG.invoicesoutstandingbalance}: {$totalbalance}
-			{if $masspay}<a href="clientarea.php?action=masspay&all=true" class="btn btn-success">{$LANG.masspayall}</a>{/if}
+			{if $masspay}<a href="clientarea.php?action=masspay&all=true" class="btn btn-danger">{$LANG.masspayall}</a>{/if}
 		</div>
 		{/if}
 	</div>
