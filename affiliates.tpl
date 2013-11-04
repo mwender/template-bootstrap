@@ -52,22 +52,24 @@
 
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
-		<table class="table table-striped table-bordered">
-			<tbody>
-				<tr>
-					<td>{$LANG.affiliatescommissionspending}</td>
-					<td class="text-center"><strong>{$pendingcommissions}</strong></td>
-				</tr>
-				<tr>
-					<td>{$LANG.affiliatescommissionsavailable}</td>
-					<td class="text-center"><strong>{$balance}</strong></td>
-				</tr>
-				<tr>
-					<td>{$LANG.affiliateswithdrawn}:</td>
-					<td class="text-center"><strong>{$withdrawn}</strong></td>
-				</tr>
-			</tbody>
-		</table>
+		<div class="panel panel-default">
+			<table class="table table-striped">
+				<tbody>
+					<tr>
+						<td>{$LANG.affiliatescommissionspending}</td>
+						<td class="text-center"><strong>{$pendingcommissions}</strong></td>
+					</tr>
+					<tr>
+						<td>{$LANG.affiliatescommissionsavailable}</td>
+						<td class="text-center"><strong>{$balance}</strong></td>
+					</tr>
+					<tr>
+						<td>{$LANG.affiliateswithdrawn}:</td>
+						<td class="text-center"><strong>{$withdrawn}</strong></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
 </div>
 
@@ -88,32 +90,34 @@
 
 <p>{$numitems} {$LANG.recordsfound}, {$LANG.page} {$pagenumber} {$LANG.pageof} {$totalpages}</p>
 
-<table class="table table-striped table-bordered table-sorted">
-	<thead>
-		<tr>
-			<th{if $orderby eq "date"} class="sort-{$sort}"{/if}><a href="affiliates.php?orderby=date">{$LANG.affiliatessignupdate}</a></th>
-			<th{if $orderby eq "product"} class="sort-{$sort}"{/if}><a href="affiliates.php?orderby=product">{$LANG.orderproduct}</a></th>
-			<th{if $orderby eq "amount"} class="sort-{$sort}"{/if}><a href="affiliates.php?orderby=amount">{$LANG.affiliatesamount}</a></th>
-			<th>{$LANG.affiliatescommission}</th>
-			<th{if $orderby eq "status"} class="sort-{$sort}"{/if}><a href="affiliates.php?orderby=status">{$LANG.affiliatesstatus}</a></th>
-		</tr>
-	</thead>
-	<tbody>
-	{foreach key=num item=referral from=$referrals}
-		<tr>
-			<td>{$referral.date}</td>
-			<td>{$referral.service}</td>
-			<td>{$referral.amountdesc}</td>
-			<td>{$referral.commission}</td>
-			<td>{$referral.status}</td>
-		</tr>
-	{foreachelse}
-		<tr>
-			<td colspan="5" class="text-center">{$LANG.norecordsfound}</td>
-		</tr>
-	{/foreach}
-	</tbody>
-</table>
+<div class="panel panel-default">
+	<table class="table table-striped table-sorted">
+		<thead>
+			<tr>
+				<th{if $orderby eq "date"} class="sort-{$sort}"{/if}><a href="affiliates.php?orderby=date">{$LANG.affiliatessignupdate}</a></th>
+				<th{if $orderby eq "product"} class="sort-{$sort}"{/if}><a href="affiliates.php?orderby=product">{$LANG.orderproduct}</a></th>
+				<th{if $orderby eq "amount"} class="sort-{$sort}"{/if}><a href="affiliates.php?orderby=amount">{$LANG.affiliatesamount}</a></th>
+				<th>{$LANG.affiliatescommission}</th>
+				<th{if $orderby eq "status"} class="sort-{$sort}"{/if}><a href="affiliates.php?orderby=status">{$LANG.affiliatesstatus}</a></th>
+			</tr>
+		</thead>
+		<tbody>
+			{foreach key=num item=referral from=$referrals}
+			<tr>
+				<td>{$referral.date}</td>
+				<td>{$referral.service}</td>
+				<td>{$referral.amountdesc}</td>
+				<td>{$referral.commission}</td>
+				<td>{$referral.status}</td>
+			</tr>
+			{foreachelse}
+			<tr>
+				<td colspan="5" class="text-center">{$LANG.norecordsfound}</td>
+			</tr>
+			{/foreach}
+		</tbody>
+	</table>
+</div>
 
 <ul class="pagination">
 	<li{if !$prevpage} class="disabled"{/if}><a href="{if $prevpage}affiliates.php?page={$prevpage}{else}javascript:return false;{/if}">&larr; {$LANG.previouspage}</a></li>
