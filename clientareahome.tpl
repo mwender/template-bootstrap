@@ -50,7 +50,7 @@
 {if $clientsstats.numoverdueinvoices>0}
 <div class="alert alert-danger alert-dismissable">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-	<strong>{$LANG.youhaveoverdueinvoices|sprintf2:$clientsstats.numoverdueinvoices}:</strong> {$LANG.overdueinvoicesdesc|sprintf2:'<a href="clientarea.php?action=masspay&all=true">':'</a>'}
+	<strong>{$LANG.youhaveoverdueinvoices|sprintf2:$clientsstats.numoverdueinvoices}:</strong> {$LANG.overdueinvoicesdesc|sprintf2:'<a href="clientarea.php?action=masspay&amp;all=true">':'</a>'}
 </div>
 {/if}
 
@@ -120,12 +120,12 @@
 			<thead>
 				<tr>
 					{if $masspay}<th class="text-center"><input type="checkbox" onclick="toggleCheckboxes('invids')"></th>{/if}
-					<th class="sort-desc"><a href="clientarea.php?action=invoices&orderby=id">{$LANG.invoicestitle}</a></th>
-					<th><a href="clientarea.php?action=invoices&orderby=date">{$LANG.invoicesdatecreated}</a></th>
-					<th><a href="clientarea.php?action=invoices&orderby=duedate">{$LANG.invoicesdatedue}</a></th>
-					<th><a href="clientarea.php?action=invoices&orderby=total">{$LANG.invoicestotal}</a></th>
-					<th><a href="clientarea.php?action=invoices&orderby=balance">{$LANG.invoicesbalance}</a></th>
-					<th><a href="clientarea.php?action=invoices&orderby=status">{$LANG.invoicesstatus}</a></th>
+					<th class="sort-desc"><a href="clientarea.php?action=invoices&amp;orderby=id">{$LANG.invoicestitle}</a></th>
+					<th><a href="clientarea.php?action=invoices&amp;orderby=date">{$LANG.invoicesdatecreated}</a></th>
+					<th><a href="clientarea.php?action=invoices&amp;orderby=duedate">{$LANG.invoicesdatedue}</a></th>
+					<th><a href="clientarea.php?action=invoices&amp;orderby=total">{$LANG.invoicestotal}</a></th>
+					<th><a href="clientarea.php?action=invoices&amp;orderby=balance">{$LANG.invoicesbalance}</a></th>
+					<th><a href="clientarea.php?action=invoices&amp;orderby=status">{$LANG.invoicesstatus}</a></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -148,7 +148,7 @@
 			<tfoot>
 				{if $invoices}
 				<tr>
-					<td colspan="{if $masspay}3{else}2{/if}">{if $masspay}<input type="submit" value="{$LANG.masspayselected}" class="btn btn-default"> <input type="button" value="{$LANG.masspayall}" onclick="window.location='clientarea.php?action=masspay&all=true'" class="btn btn-primary">{/if}</td>
+					<td colspan="{if $masspay}3{else}2{/if}">{if $masspay}<input type="submit" value="{$LANG.masspayselected}" class="btn btn-default"> <input type="button" value="{$LANG.masspayall}" onclick="window.location='clientarea.php?action=masspay&amp;all=true'" class="btn btn-primary">{/if}</td>
 					<td class="text-right">{$LANG.invoicestotaldue}</td>
 					<td>{$totalbalance}</td>
 					<td colspan="2">&nbsp;</td>
@@ -165,12 +165,12 @@
 <div class="clearfix">
 	<h3>{$LANG.clientareafiles}</h3>
 	<ul class="list-inline list-unstyled">
-{foreach from=$files item=file}
+		{foreach from=$files item=file}
 		<li class="col-md-3">
-			<h4><img src="images/file.png" class="valignbaseline" alt="File Icon"> <a href="dl.php?type=f&id={$file.id}"><strong>{$file.title}</strong></a></h4>
+			<h4><img src="images/file.png" class="valignbaseline" alt="File Icon"> <a href="dl.php?type=f&amp;id={$file.id}"><strong>{$file.title}</strong></a></h4>
 			{$LANG.clientareafilesdate}: {$file.date}
 		</li>
-{/foreach}
+		{/foreach}
 	</ul>
 </div>
 {/if}
