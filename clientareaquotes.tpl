@@ -24,7 +24,10 @@
 				<td>{$quote.datecreated}</td>
 				<td>{$quote.validuntil}</td>
 				<td>{$quote.stage}</td>
-				<td class="text-center"><a href="viewquote.php?id={$quote.id}" class="btn btn-info" title="{$LANG.quoteview}">{$LANG.quoteview}</a> <a href="dl.php?type=q&id={$quote.id}" class="btn btn-info" title="{$LANG.quotedownload}">{$LANG.quotedownload}</a></td>
+				<td class="text-center">
+					<a href="viewquote.php?id={$quote.id}" class="btn btn-primary" title="{$LANG.quoteview}">{$LANG.quoteview}</a> 
+					<a href="dl.php?type=q&id={$quote.id}" class="btn btn-primary" title="{$LANG.quotedownload}">{$LANG.quotedownload}</a>
+				</td>
 			</tr>
 			{foreachelse}
 			<tr>

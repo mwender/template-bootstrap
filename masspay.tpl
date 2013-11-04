@@ -66,7 +66,7 @@
 		</tfoot>
 	</table>
 
-	<div class="well well-small text-center">
+	<div class="well well-sm text-center">
 		<h3>{$LANG.orderpaymentmethod}</h3>
 			<div class="row form-group">
 				<div class="col-md-6 col-md-offset-3">

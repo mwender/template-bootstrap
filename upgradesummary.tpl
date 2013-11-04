@@ -75,7 +75,7 @@
 </div>
 {/if}
 
-<form method="post" action="upgrade.php" class="form-inline text-center well well-small">
+<form method="post" action="upgrade.php" class="form-inline text-center well well-sm">
 	<input type="hidden" name="step" value="2">
 	<input type="hidden" name="type" value="{$type}">
 	<input type="hidden" name="id" value="{$id}">

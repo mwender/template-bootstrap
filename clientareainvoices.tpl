@@ -36,7 +36,7 @@
 				<td>{$invoice.datedue}</td>
 				<td>{$invoice.total}</td>
 				<td><span class="label label-{$invoice.rawstatus}">{$invoice.statustext}</span></td>
-				<td class="text-center"><a href="viewinvoice.php?id={$invoice.id}" target="_blank" class="btn btn-info" title="{$LANG.invoicesview} {$invoice.invoicenum}">{$LANG.invoicesview}</a></td>
+				<td class="text-center"><a href="viewinvoice.php?id={$invoice.id}" target="_blank" class="btn btn-primary" title="{$LANG.invoicesview} {$invoice.invoicenum}">{$LANG.invoicesview}</a></td>
 			</tr>
 			{foreachelse}
 			<tr>

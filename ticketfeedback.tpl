@@ -84,7 +84,7 @@
 <form method="post" action="{$smarty.server.PHP_SELF}?tid={$tid}&c={$c}&feedback=1" class="form-inline">
 	<input type="hidden" name="validate" value="true">
 	{foreach from=$staffinvolved key=staffid item=staff}
-	<div class="well well-small">
+	<div class="well well-sm">
 		<label>{$LANG.feedbackpleaserate1} <strong>{$staff}</strong> {$LANG.feedbackhandled}:</label>
 		<select name="rate[{$staffid}]">
 		{foreach from=$ratings item=rating}

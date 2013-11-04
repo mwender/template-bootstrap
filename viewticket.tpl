@@ -19,25 +19,25 @@
 
 <div class="row text-center">
 	<div class="col-md-3">
-		<div class="well well-small">
+		<div class="well well-sm">
 			<span class="lead">{$LANG.supportticketsubmitted}</span>
 			<div>{$date}</div>
 		</div>
 	</div>
 	<div class="col-md-3">
-		<div class="well well-small">
+		<div class="well well-sm">
 			<span class="lead">{$LANG.supportticketsdepartment}</span>
 			<div>{$department}</div>
 		</div>
 	</div>
 	<div class="col-md-3">
-		<div class="well well-small">
+		<div class="well well-sm">
 			<span class="lead">{$LANG.supportticketspriority}</span>
 			<div>{$urgency}</div>
 		</div>
 	</div>
 	<div class="col-md-3">
-		<div class="well well-small">
+		<div class="well well-sm">
 			<span class="lead">{$LANG.supportticketsstatus}</span>
 			<div>{$status}</div>
 		</div>
@@ -98,7 +98,7 @@
 
 <div class="ticketreplys">
 {foreach from=$descreplies key=num item=reply}
-	<div class="well well-small" style="margin-bottom:0">
+	<div class="well well-sm" style="margin-bottom:0">
 		<span class="pull-right">{$reply.date}</span>
 		{$reply.name}
 	{if $reply.admin}

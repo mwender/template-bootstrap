@@ -104,7 +104,7 @@ function autoForward() {
 			<div class="page-header">
 				<h2>{$LANG.creditcarddetails}</h2>
 			</div>
-			<div class="well well-small">
+			<div class="well well-sm">
 				<div class="radio">
 					<label>
 						<input type="radio" name="ccinfo" value="useexisting" {if $cardnum} checked="checked"{else} disabled="disabled"{/if}> 

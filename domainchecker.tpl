@@ -20,7 +20,7 @@
 <div class="well text-center">
 	<form method="post" action="domainchecker.php">
 		<p>{$LANG.domaincheckerenterdomain}</p>
-		<div class="form-group">
+		<div class="form-group col-md-10 col-md-offset-1">
 			<div class="input-group text-center">
 				<input class="input-lg form-control" name="domain" type="text" value="{if $domain}{$domain}{/if}" placeholder="{$LANG.domaincheckerdomainexample}">
 				<span class="input-group-btn">

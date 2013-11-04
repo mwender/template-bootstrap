@@ -1,4 +1,4 @@
-<form class="form-inline well well-small pull-right" action="downloads.php" method="post">
+<form class="form-inline well well-sm pull-right" action="downloads.php" method="post">
 	<input type="hidden" name="action" value="search">
 	<div class="form-group">
 		<input type="text" name="search" class="form-control" value="{if $q}{$q}{/if}" placeholder="{$LANG.downloadssearch}">
