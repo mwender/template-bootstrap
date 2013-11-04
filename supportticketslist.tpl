@@ -15,34 +15,36 @@
 
 <p>{$numitems} {$LANG.recordsfound}, {$LANG.page} {$pagenumber} {$LANG.pageof} {$totalpages}</p>
 
-<table class="table table-bordered-outside table-striped table-sorted">
-	<thead>
-		<tr>
-			<th{if $orderby eq "date"} class="sort-{$sort}"{/if}><a href="supporttickets.php?orderby=date" title="{$LANG.supportticketsdate}">{$LANG.supportticketsdate}</a></th>
-			<th{if $orderby eq "dept"} class="sort-{$sort}"{/if}><a href="supporttickets.php?orderby=dept" title="{$LANG.supportticketsdepartment}">{$LANG.supportticketsdepartment}</a></th>
-			<th{if $orderby eq "subject"} class="sort-{$sort}"{/if}><a href="supporttickets.php?orderby=subject" title="{$LANG.supportticketssubject}">{$LANG.supportticketssubject}</a></th>
-			<th{if $orderby eq "status"} class="sort-{$sort}"{/if}><a href="supporttickets.php?orderby=status" title="{$LANG.supportticketsstatus}">{$LANG.supportticketsstatus}</a></th>
-			<th{if $orderby eq "lastreply"} class="sort-{$sort}"{/if}><a href="supporttickets.php?orderby=lastreply" title="{$LANG.supportticketsticketlastupdated}">{$LANG.supportticketsticketlastupdated}</a></th>
-			<th>&nbsp;</th>
-		</tr>
-	</thead>
-	<tbody>
-{foreach key=num item=ticket from=$tickets}
-		<tr>
-			<td>{$ticket.date}</td>
-			<td>{$ticket.department}</td>
-			<td><a href="viewticket.php?tid={$ticket.tid}&amp;c={$ticket.c}">{if $ticket.unread}<strong>{/if}#{$ticket.tid} - {$ticket.subject}{if $ticket.unread}</strong>{/if}</a></td>
-			<td>{$ticket.status}</td>
-			<td>{$ticket.lastreply}</td>
-			<td class="text-center"><a href="viewticket.php?tid={$ticket.tid}&amp;c={$ticket.c}" title="{$LANG.supportticketsviewticket} {$ticket.tid}" class="btn btn-info">{$LANG.supportticketsviewticket}</a></td>
-		</tr>
-{foreachelse}
-		<tr>
-			<td colspan="7" class="text-center">{$LANG.norecordsfound}</td>
-		</tr>
-{/foreach}
-	</tbody>
-</table>
+<div class="panel panel-default">
+	<table class="table table-striped table-sorted">
+		<thead>
+			<tr>
+				<th{if $orderby eq "date"} class="sort-{$sort}"{/if}><a href="supporttickets.php?orderby=date" title="{$LANG.supportticketsdate}">{$LANG.supportticketsdate}</a></th>
+				<th{if $orderby eq "dept"} class="sort-{$sort}"{/if}><a href="supporttickets.php?orderby=dept" title="{$LANG.supportticketsdepartment}">{$LANG.supportticketsdepartment}</a></th>
+				<th{if $orderby eq "subject"} class="sort-{$sort}"{/if}><a href="supporttickets.php?orderby=subject" title="{$LANG.supportticketssubject}">{$LANG.supportticketssubject}</a></th>
+				<th{if $orderby eq "status"} class="sort-{$sort}"{/if}><a href="supporttickets.php?orderby=status" title="{$LANG.supportticketsstatus}">{$LANG.supportticketsstatus}</a></th>
+				<th{if $orderby eq "lastreply"} class="sort-{$sort}"{/if}><a href="supporttickets.php?orderby=lastreply" title="{$LANG.supportticketsticketlastupdated}">{$LANG.supportticketsticketlastupdated}</a></th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+			{foreach key=num item=ticket from=$tickets}
+			<tr>
+				<td>{$ticket.date}</td>
+				<td>{$ticket.department}</td>
+				<td><a href="viewticket.php?tid={$ticket.tid}&amp;c={$ticket.c}">{if $ticket.unread}<strong>{/if}#{$ticket.tid} - {$ticket.subject}{if $ticket.unread}</strong>{/if}</a></td>
+				<td>{$ticket.status}</td>
+				<td>{$ticket.lastreply}</td>
+				<td class="text-center"><a href="viewticket.php?tid={$ticket.tid}&amp;c={$ticket.c}" title="{$LANG.supportticketsviewticket} {$ticket.tid}" class="btn btn-info">{$LANG.supportticketsviewticket}</a></td>
+			</tr>
+			{foreachelse}
+			<tr>
+				<td colspan="7" class="text-center">{$LANG.norecordsfound}</td>
+			</tr>
+			{/foreach}
+		</tbody>
+	</table>
+</div>
 
 <form method="post" action="supporttickets.php" class="pull-right">
 	<fieldset>

@@ -4,34 +4,36 @@
 
 <p>{$numitems} {$LANG.recordsfound}, {$LANG.page} {$pagenumber} {$LANG.pageof} {$totalpages}</p>
 
-<table class="table table-bordered-outside table-striped table-sorted">
-	<thead>
-		<tr>
-			<th{if $orderby eq "id"} class="sort-{$sort}"{/if}><a href="clientarea.php?action=quotes&orderby=id" title="{$LANG.quotenumber}">{$LANG.quotenumber}</a></th>
-			<th{if $orderby eq "subject"} class="sort-{$sort}"{/if}><a href="clientarea.php?action=quotes&orderby=subject" title="{$LANG.quotesubject}">{$LANG.quotesubject}</a></th>
-			<th{if $orderby eq "datecreated"} class="sort-{$sort}"{/if}><a href="clientarea.php?action=quotes&orderby=datecreated" title="{$LANG.quotedatecreated}">{$LANG.quotedatecreated}</a></th>
-			<th{if $orderby eq "validuntil"} class="sort-{$sort}"{/if}><a href="clientarea.php?action=quotes&orderby=validuntil" title="{$LANG.quotevaliduntil}">{$LANG.quotevaliduntil}</a></th>
-			<th{if $orderby eq "stage"} class="sort-{$sort}"{/if}><a href="clientarea.php?action=quotes&orderby=stage" title="{$LANG.quotestage}">{$LANG.quotestage}</a></th>
-			<th>&nbsp;</th>
-		</tr>
-	</thead>
-	<tbody>
-{foreach from=$quotes item=quote}
-		<tr>
-			<td><a href="dl.php?type=q&id={$quote.id}" target="_blank" title="{$LANG.quotenumber} {$quote.id}">{$quote.id}</a></td>
-			<td>{$quote.subject}</td>
-			<td>{$quote.datecreated}</td>
-			<td>{$quote.validuntil}</td>
-			<td>{$quote.stage}</td>
-			<td class="text-center"><a href="viewquote.php?id={$quote.id}" class="btn btn-info" title="{$LANG.quoteview}">{$LANG.quoteview}</a> <a href="dl.php?type=q&id={$quote.id}" class="btn btn-info" title="{$LANG.quotedownload}">{$LANG.quotedownload}</a></td>
-		</tr>
-{foreachelse}
-		<tr>
-			<td colspan="6" class="text-center">{$LANG.norecordsfound}</td>
-		</tr>
-{/foreach}
-	</tbody>
-</table>
+<div class="panel panel-default">
+	<table class="table table-striped table-sorted">
+		<thead>
+			<tr>
+				<th{if $orderby eq "id"} class="sort-{$sort}"{/if}><a href="clientarea.php?action=quotes&orderby=id" title="{$LANG.quotenumber}">{$LANG.quotenumber}</a></th>
+				<th{if $orderby eq "subject"} class="sort-{$sort}"{/if}><a href="clientarea.php?action=quotes&orderby=subject" title="{$LANG.quotesubject}">{$LANG.quotesubject}</a></th>
+				<th{if $orderby eq "datecreated"} class="sort-{$sort}"{/if}><a href="clientarea.php?action=quotes&orderby=datecreated" title="{$LANG.quotedatecreated}">{$LANG.quotedatecreated}</a></th>
+				<th{if $orderby eq "validuntil"} class="sort-{$sort}"{/if}><a href="clientarea.php?action=quotes&orderby=validuntil" title="{$LANG.quotevaliduntil}">{$LANG.quotevaliduntil}</a></th>
+				<th{if $orderby eq "stage"} class="sort-{$sort}"{/if}><a href="clientarea.php?action=quotes&orderby=stage" title="{$LANG.quotestage}">{$LANG.quotestage}</a></th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+			{foreach from=$quotes item=quote}
+			<tr>
+				<td><a href="dl.php?type=q&id={$quote.id}" target="_blank" title="{$LANG.quotenumber} {$quote.id}">{$quote.id}</a></td>
+				<td>{$quote.subject}</td>
+				<td>{$quote.datecreated}</td>
+				<td>{$quote.validuntil}</td>
+				<td>{$quote.stage}</td>
+				<td class="text-center"><a href="viewquote.php?id={$quote.id}" class="btn btn-info" title="{$LANG.quoteview}">{$LANG.quoteview}</a> <a href="dl.php?type=q&id={$quote.id}" class="btn btn-info" title="{$LANG.quotedownload}">{$LANG.quotedownload}</a></td>
+			</tr>
+			{foreachelse}
+			<tr>
+				<td colspan="6" class="text-center">{$LANG.norecordsfound}</td>
+			</tr>
+			{/foreach}
+		</tbody>
+	</table>
+</div>
 
 <form method="post" action="{$smarty.server.PHP_SELF}?action={$clientareaaction}" class="pull-right">
 	<fieldset>

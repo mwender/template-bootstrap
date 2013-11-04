@@ -14,36 +14,38 @@
 
 <div id="resultsfound" style="padding-top:30px;">{$numitems} {$LANG.recordsfound}, {$LANG.page} {$pagenumber} {$LANG.pageof} {$totalpages}</div>
 
-<table id="resultslist" class="table table-bordered-outside table-striped table-sorted">
-	<thead>
-		<tr>
-			<th{if $orderby eq "product"} class="sort-{$sort}"{/if}><a href="clientarea.php?action=products{if $q}&q={$q}{/if}&orderby=product">{$LANG.orderproduct}</a></th>
-			<th{if $orderby eq "price"} class="sort-{$sort}"{/if}><a href="clientarea.php?action=products{if $q}&q={$q}{/if}&orderby=price">{$LANG.orderprice}</a></th>
-			<th{if $orderby eq "billingcycle"} class="sort-{$sort}"{/if}><a href="clientarea.php?action=products{if $q}&q={$q}{/if}&orderby=billingcycle">{$LANG.orderbillingcycle}</a></th>
-			<th{if $orderby eq "nextduedate"} class="sort-{$sort}"{/if}><a href="clientarea.php?action=products{if $q}&q={$q}{/if}&orderby=nextduedate">{$LANG.clientareahostingnextduedate}</a></th>
-			<th{if $orderby eq "status"} class="sort-{$sort}"{/if}><a href="clientarea.php?action=products{if $q}&q={$q}{/if}&orderby=status">{$LANG.clientareastatus}</a></th>
-			<th>&nbsp;</th>
-		</tr>
-	</thead>
-	<tbody>
-{foreach from=$services item=service}
-		<tr>
-			<td>{$service.group} - {$service.product}{if $service.domain}<br ><a href="http://{$service.domain}" target="_blank">{$service.domain}</a>{/if}</td>
-			<td>{$service.amount}</td>
-			<td>{$service.billingcycle}</td>
-			<td>{$service.nextduedate}</td>
-			<td><span class="label label-{$service.rawstatus}">{$service.statustext}</span></td>
-			<td class="text-center">
-				<a href="{$smarty.server.PHP_SELF}?action=productdetails&amp;id={$service.id}" class="btn btn-primary" title="{$LANG.clientareaviewdetails}">{$LANG.clientareaviewdetails}</a>
-			</td>
-		</tr>
-{foreachelse}
-		<tr>
-			<td colspan="6" class="text-center">{$LANG.norecordsfound}</td>
-		</tr>
-{/foreach}
-	</tbody>
-</table>
+<div class="panel panel-default">
+	<table id="resultslist" class="table table-striped table-sorted">
+		<thead>
+			<tr>
+				<th{if $orderby eq "product"} class="sort-{$sort}"{/if}><a href="clientarea.php?action=products{if $q}&q={$q}{/if}&orderby=product">{$LANG.orderproduct}</a></th>
+				<th{if $orderby eq "price"} class="sort-{$sort}"{/if}><a href="clientarea.php?action=products{if $q}&q={$q}{/if}&orderby=price">{$LANG.orderprice}</a></th>
+				<th{if $orderby eq "billingcycle"} class="sort-{$sort}"{/if}><a href="clientarea.php?action=products{if $q}&q={$q}{/if}&orderby=billingcycle">{$LANG.orderbillingcycle}</a></th>
+				<th{if $orderby eq "nextduedate"} class="sort-{$sort}"{/if}><a href="clientarea.php?action=products{if $q}&q={$q}{/if}&orderby=nextduedate">{$LANG.clientareahostingnextduedate}</a></th>
+				<th{if $orderby eq "status"} class="sort-{$sort}"{/if}><a href="clientarea.php?action=products{if $q}&q={$q}{/if}&orderby=status">{$LANG.clientareastatus}</a></th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+			{foreach from=$services item=service}
+			<tr>
+				<td>{$service.group} - {$service.product}{if $service.domain}<br ><a href="http://{$service.domain}" target="_blank">{$service.domain}</a>{/if}</td>
+				<td>{$service.amount}</td>
+				<td>{$service.billingcycle}</td>
+				<td>{$service.nextduedate}</td>
+				<td><span class="label label-{$service.rawstatus}">{$service.statustext}</span></td>
+				<td class="text-center">
+					<a href="{$smarty.server.PHP_SELF}?action=productdetails&amp;id={$service.id}" class="btn btn-primary" title="{$LANG.clientareaviewdetails}">{$LANG.clientareaviewdetails}</a>
+				</td>
+			</tr>
+			{foreachelse}
+			<tr>
+				<td colspan="6" class="text-center">{$LANG.norecordsfound}</td>
+			</tr>
+			{/foreach}
+		</tbody>
+	</table>
+</div>
 
 <form id="resultslimit" method="post" action="{$smarty.server.PHP_SELF}?action={$clientareaaction}" class="pull-right" style="margin-top: 18px">
 	<fieldset>

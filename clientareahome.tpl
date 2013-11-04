@@ -81,78 +81,82 @@
 {if in_array('tickets',$contactpermissions)}
 <div class="clearfix">
 	<h3>{$clientsstats.numactivetickets} {$LANG.supportticketsopentickets} <small>( <a href="submitticket.php">{$LANG.opennewticket}</a> )</small></h3>
-	<table class="table table-striped table-bordered-outside table-sorted">
-		<thead>
-			<tr>
-				<th><a href="supporttickets.php?orderby=date">{$LANG.supportticketsdate}</a></th>
-				<th><a href="supporttickets.php?orderby=subject">{$LANG.supportticketssubject}</a></th>
-				<th><a href="supporttickets.php?orderby=dept">{$LANG.supportticketsdepartment}</a></th>
-				<th><a href="supporttickets.php?orderby=status">{$LANG.supportticketsstatus}</a></th>
-				<th class="sort-desc"><a href="supporttickets.php?orderby=lastreply">{$LANG.supportticketsticketlastupdated}</a></th>
-			</tr>
-		</thead>
-		<tbody>
-	{foreach from=$tickets item=ticket}
-			<tr>
-				<td>{$ticket.date}</td>
-				<td><img src="images/article.gif" alt="Ticket">&nbsp;<a href="viewticket.php?tid={$ticket.tid}&amp;c={$ticket.c}">{if $ticket.unread}<strong>{/if}#{$ticket.tid} - {$ticket.subject}{if $ticket.unread}</strong>{/if}</a></td>
-				<td>{$ticket.department}</td>
-				<td>{$ticket.status}</td>
-				<td>{$ticket.lastreply}</td>
-			</tr>
-	{foreachelse}
-			<tr>
-				<td colspan="6" class="text-center">{$LANG.supportticketsnoneopen}</td>
-			</tr>
-	{/foreach}
-		</tbody>
-	</table>
+	<div class="panel panel-default">
+		<table class="table table-striped table-sorted">
+			<thead>
+				<tr>
+					<th><a href="supporttickets.php?orderby=date">{$LANG.supportticketsdate}</a></th>
+					<th><a href="supporttickets.php?orderby=subject">{$LANG.supportticketssubject}</a></th>
+					<th><a href="supporttickets.php?orderby=dept">{$LANG.supportticketsdepartment}</a></th>
+					<th><a href="supporttickets.php?orderby=status">{$LANG.supportticketsstatus}</a></th>
+					<th class="sort-desc"><a href="supporttickets.php?orderby=lastreply">{$LANG.supportticketsticketlastupdated}</a></th>
+				</tr>
+			</thead>
+			<tbody>
+				{foreach from=$tickets item=ticket}
+				<tr>
+					<td>{$ticket.date}</td>
+					<td><img src="images/article.gif" alt="Ticket">&nbsp;<a href="viewticket.php?tid={$ticket.tid}&amp;c={$ticket.c}">{if $ticket.unread}<strong>{/if}#{$ticket.tid} - {$ticket.subject}{if $ticket.unread}</strong>{/if}</a></td>
+					<td>{$ticket.department}</td>
+					<td>{$ticket.status}</td>
+					<td>{$ticket.lastreply}</td>
+				</tr>
+				{foreachelse}
+				<tr>
+					<td colspan="6" class="text-center">{$LANG.supportticketsnoneopen}</td>
+				</tr>
+				{/foreach}
+			</tbody>
+		</table>
+	</div>
 </div>
 {/if}
 
 {if in_array('invoices',$contactpermissions)}
 <h3>{$clientsstats.numdueinvoices} {$LANG.invoicesdue} <small>( <a href="clientarea.php?action=invoices">{$LANG.view}</a> )</small></h3>
 <form method="post" action="clientarea.php?action=masspay">
-	<table class="table table-striped table-bordered-outside table-sorted">
-		<thead>
-			<tr>
-				{if $masspay}<th class="text-center"><input type="checkbox" onclick="toggleCheckboxes('invids')"></th>{/if}
-				<th class="sort-desc"><a href="clientarea.php?action=invoices&orderby=id">{$LANG.invoicestitle}</a></th>
-				<th><a href="clientarea.php?action=invoices&orderby=date">{$LANG.invoicesdatecreated}</a></th>
-				<th><a href="clientarea.php?action=invoices&orderby=duedate">{$LANG.invoicesdatedue}</a></th>
-				<th><a href="clientarea.php?action=invoices&orderby=total">{$LANG.invoicestotal}</a></th>
-				<th><a href="clientarea.php?action=invoices&orderby=balance">{$LANG.invoicesbalance}</a></th>
-				<th><a href="clientarea.php?action=invoices&orderby=status">{$LANG.invoicesstatus}</a></th>
-			</tr>
-		</thead>
-		<tbody>
-	{foreach from=$invoices item=invoice}
-			<tr>
-				{if $masspay}<td class="text-center"><input type="checkbox" name="invoiceids[]" value="{$invoice.id}" class="invids"></td>{/if}
-				<td><a href="viewinvoice.php?id={$invoice.id}" target="_blank">{$invoice.invoicenum}</a></td>
-				<td>{$invoice.datecreated}</td>
-				<td>{$invoice.datedue}</td>
-				<td>{$invoice.total}</td>
-				<td><span class="label label-{$invoice.rawstatus}">{$invoice.statustext}</span></td>
-				<td>{$invoice.balance}</td>
-			</tr>
-	{foreachelse}
-			<tr>
-				<td colspan="{if $masspay}7{else}6{/if}" class="text-center">{$LANG.invoicesnoneunpaid}</td>
-			</tr>
-	{/foreach}
-		</tbody>
-		<tfoot>
-	{if $invoices}
-			<tr>
-				<td colspan="{if $masspay}3{else}2{/if}">{if $masspay}<input type="submit" value="{$LANG.masspayselected}" class="btn btn-default"> <input type="button" value="{$LANG.masspayall}" onclick="window.location='clientarea.php?action=masspay&all=true'" class="btn btn-primary">{/if}</td>
-				<td class="text-right">{$LANG.invoicestotaldue}</td>
-				<td>{$totalbalance}</td>
-				<td colspan="2">&nbsp;</td>
-			</tr>
-	{/if}
-		</tfoot>
-	</table>
+	<div class="panel panel-default">
+		<table class="table table-striped table-sorted">
+			<thead>
+				<tr>
+					{if $masspay}<th class="text-center"><input type="checkbox" onclick="toggleCheckboxes('invids')"></th>{/if}
+					<th class="sort-desc"><a href="clientarea.php?action=invoices&orderby=id">{$LANG.invoicestitle}</a></th>
+					<th><a href="clientarea.php?action=invoices&orderby=date">{$LANG.invoicesdatecreated}</a></th>
+					<th><a href="clientarea.php?action=invoices&orderby=duedate">{$LANG.invoicesdatedue}</a></th>
+					<th><a href="clientarea.php?action=invoices&orderby=total">{$LANG.invoicestotal}</a></th>
+					<th><a href="clientarea.php?action=invoices&orderby=balance">{$LANG.invoicesbalance}</a></th>
+					<th><a href="clientarea.php?action=invoices&orderby=status">{$LANG.invoicesstatus}</a></th>
+				</tr>
+			</thead>
+			<tbody>
+				{foreach from=$invoices item=invoice}
+				<tr>
+					{if $masspay}<td class="text-center"><input type="checkbox" name="invoiceids[]" value="{$invoice.id}" class="invids"></td>{/if}
+					<td><a href="viewinvoice.php?id={$invoice.id}" target="_blank">{$invoice.invoicenum}</a></td>
+					<td>{$invoice.datecreated}</td>
+					<td>{$invoice.datedue}</td>
+					<td>{$invoice.total}</td>
+					<td><span class="label label-{$invoice.rawstatus}">{$invoice.statustext}</span></td>
+					<td>{$invoice.balance}</td>
+				</tr>
+				{foreachelse}
+				<tr>
+					<td colspan="{if $masspay}7{else}6{/if}" class="text-center">{$LANG.invoicesnoneunpaid}</td>
+				</tr>
+				{/foreach}
+			</tbody>
+			<tfoot>
+				{if $invoices}
+				<tr>
+					<td colspan="{if $masspay}3{else}2{/if}">{if $masspay}<input type="submit" value="{$LANG.masspayselected}" class="btn btn-default"> <input type="button" value="{$LANG.masspayall}" onclick="window.location='clientarea.php?action=masspay&all=true'" class="btn btn-primary">{/if}</td>
+					<td class="text-right">{$LANG.invoicestotaldue}</td>
+					<td>{$totalbalance}</td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+				{/if}
+			</tfoot>
+		</table>
+	</div>
 </form>
 {/if}
 
