@@ -82,7 +82,7 @@
 							<li><a href="affiliates.php" title="{$LANG.affiliatestitle}">{$LANG.affiliatestitle}</a></li>
 							{/if}
 						</ul>
-						<ul class="nav navbar-nav pull-right">
+						<ul class="nav navbar-nav navbar-right">
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" title="{$LANG.hello}, {$loggedinuser.firstname}!">{$LANG.hello}, {$loggedinuser.firstname}!<b class="caret"></b></a>
 								<ul class="dropdown-menu">
@@ -104,7 +104,7 @@
 							<li><a href="affiliates.php">{$LANG.affiliatestitle}</a></li>
 							<li><a href="contact.php">{$LANG.contactus}</a></li>
 						</ul>
-						<ul class="nav navbar-nav pull-right">
+						<ul class="nav navbar-nav navbar-right">
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">{$LANG.account} <b class="caret"></b></a>
 								<ul class="dropdown-menu">
