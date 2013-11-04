@@ -21,7 +21,7 @@
 	<form method="post" action="domainchecker.php">
 		<p>{$LANG.domaincheckerenterdomain}</p>
 		<div class="form-group col-md-10 col-md-offset-1">
-			<div class="input-group text-center">
+			<div class="input-group input-group-lg">
 				<input class="input-lg form-control" name="domain" type="text" value="{if $domain}{$domain}{/if}" placeholder="{$LANG.domaincheckerdomainexample}">
 				<span class="input-group-btn">
 					<button class="btn btn-info btn-lg" type="button" onclick="jQuery('#mtlds').slideToggle();">{$LANG.searchmultipletlds}</button>
