@@ -115,6 +115,3 @@ body { padding-top: 20px; padding-bottom: 20px; }
 .rating span.selected { 
 	background: url('../img/rating_star_filled.png') no-repeat;
 }
-
-/* bootstrap 3.0.0 fix, will be resolved in version 3.0.1 */
-.progress { line-height: 20px; }
