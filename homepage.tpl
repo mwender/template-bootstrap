@@ -50,7 +50,7 @@
 		<h2>{$LANG.manageyouraccount}</h2>
 		<p>{$LANG.clientareahomelogin}</p>
 		<div class="text-right">
-			<a href="clientarea.php" title="{$LANG.clientareahomeloginbtn}" class="btn btn-primary">{$LANG.clientareahomeloginbtn}</i></a>
+			<a href="clientarea.php" title="{$LANG.clientareahomeloginbtn}" class="btn btn-primary">{$LANG.clientareahomeloginbtn}</a>
 		</div>
 	</div>
 </div>
@@ -60,10 +60,10 @@
 	<h2>{$LANG.twitterlatesttweets}</h2>
 </div>
 <div id="twitterfeed">
-	<p><img src="images/loading.gif"></p>
+	<p><img src="images/loading.gif" alt="loading..."></p>
 </div>
 {literal}
-<script language="javascript">
+<script type="text/javascript">
 	jQuery(document).ready(function(){jQuery.post("announcements.php",{action:"twitterfeed",numtweets:3},function(data){jQuery("#twitterfeed").html(data);});});
 </script>
 {/literal}
