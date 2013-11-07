@@ -41,7 +41,7 @@
 					<td>{$domain.nextduedate}</td>
 					<td><span class="label label-{$domain.rawstatus}">{$domain.statustext}</span></td>
 					<td>{if $domain.autorenew}{$LANG.domainsautorenewenabled}{else}{$LANG.domainsautorenewdisabled}{/if}</td>
-					<td><a href="clientarea.php?action=domaindetails&amp;id={$domain.id}" class="btn btn-default" title="{$LANG.managedomain}">{$LANG.managedomain}</a></td>
+					<td><a href="clientarea.php?action=domaindetails&amp;id={$domain.id}" class="btn btn-primary" title="{$LANG.managedomain}">{$LANG.managedomain}</a></td>
 				</tr>
 				{foreachelse}
 				<tr>
