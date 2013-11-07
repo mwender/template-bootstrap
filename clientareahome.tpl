@@ -114,7 +114,7 @@
 
 {if in_array('invoices',$contactpermissions)}
 <h3>{$clientsstats.numdueinvoices} {$LANG.invoicesdue} <small>( <a href="clientarea.php?action=invoices">{$LANG.view}</a> )</small></h3>
-<form method="post" action="clientarea.php?action=masspay">
+<form method="post" action="clientarea.php?action=masspay" class="clearfix">
 	<div class="panel panel-default">
 		<table class="table table-striped table-sorted">
 			<thead>
@@ -162,16 +162,14 @@
 
 
 {if $files}
-<div class="clearfix">
-	<h3>{$LANG.clientareafiles}</h3>
-	<ul class="list-inline list-unstyled">
-		{foreach from=$files item=file}
-		<li class="col-md-3">
-			<h4><img src="images/file.png" class="valignbaseline" alt="File Icon"> <a href="dl.php?type=f&amp;id={$file.id}"><strong>{$file.title}</strong></a></h4>
-			{$LANG.clientareafilesdate}: {$file.date}
-		</li>
-		{/foreach}
-	</ul>
-</div>
+<h3>{$LANG.clientareafiles}</h3>
+<ul class="list-inline list-unstyled clearfix">
+	{foreach from=$files item=file}
+	<li class="col-md-3">
+		<h4><img src="images/file.png" class="valignbaseline" alt="File Icon"> <a href="dl.php?type=f&amp;id={$file.id}"><strong>{$file.title}</strong></a></h4>
+		{$LANG.clientareafilesdate}: {$file.date}
+	</li>
+	{/foreach}
+</ul>
 {/if}
 
