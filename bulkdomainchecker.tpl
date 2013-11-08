@@ -102,7 +102,7 @@
 				<tfoot>
 					<tr>
 						<td colspan="4" class="text-right">
-							<input type="submit" value="{$LANG.ordernowbutton} &raquo;" class="btn btn-lg btn-success">
+							<input type="submit" value="{$LANG.ordernowbutton} &raquo;" class="btn btn-success">
 						</td>
 					</tr>
 				</tfoot>
