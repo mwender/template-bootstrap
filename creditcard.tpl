@@ -233,10 +233,10 @@ function autoForward() {
 		 </div>
 	</div>
 	<div class="text-center alert alert-warning">
-		<img src="images/padlock.gif" alt="Secure" class="valigntextbottom"> {$LANG.creditcardsecuritynotice}
+		<img src="images/padlock.gif" alt="Secure" style="vertical-align:text-bottom"> {$LANG.creditcardsecuritynotice}
 	</div>
 	<div class="text-center form-group">
-		<input class="btn btn-lg btn-primary" type="submit" value="{$LANG.ordercontinuebutton}" onclick="$('#modalpleasewait').modal();">
+		<button class="btn btn-primary" type="submit" onclick="$('#modalpleasewait').modal();">{$LANG.ordercontinuebutton}</button>
 	</div>
 </form>
 
@@ -244,7 +244,8 @@ function autoForward() {
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header text-center">
-				<h3><img src="images/loadingsml.gif" alt="{$LANG.pleasewait}" class="valignbaseline"> {$LANG.pleasewait}</h3>
+				<img src="images/loadingsml.gif" alt="{$LANG.pleasewait}" style="vertical-align:baseline;">
+				<span class="lead">{$LANG.pleasewait}</span>
 			</div>
 		</div>
 	</div>
@@ -255,7 +256,7 @@ function autoForward() {
 		<div class="modal-content">
 			<div class="modal-header">
 				<button class="close" data-dismiss="modal">&times;</button>
-				<h4>{$LANG.creditcardcvvnumber}, {$LANG.creditcardcvvwhere}</h4>
+				<h4 class="modal-title">{$LANG.creditcardcvvnumber}, {$LANG.creditcardcvvwhere}</h4>
 			</div>
 			<div class="modal-body text-center">
 				<img src="images/ccv.gif" alt="cvv2 image">

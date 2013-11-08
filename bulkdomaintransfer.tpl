@@ -153,7 +153,7 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header text-center">
-				<h4 class="modal-title"><img src="images/loadingsml.gif" alt="{$LANG.pleasewait}" class="valignbaseline"> {$LANG.pleasewait}</h4>
+				<h4 class="modal-title"><img src="images/loadingsml.gif" alt="{$LANG.pleasewait}" style="vertical-align:baseline"> {$LANG.pleasewait}</h4>
 			</div>
 		</div>
 	</div>

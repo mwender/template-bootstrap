@@ -159,7 +159,7 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header text-center">
-				<h4 class="modal-title"><img src="images/loadingsml.gif" alt="{$LANG.pleasewait}" class="valignbaseline"> {$LANG.pleasewait}</h4>
+				<h4 class="modal-title"><img src="images/loadingsml.gif" alt="{$LANG.pleasewait}" style="vertical-align:baseline"> {$LANG.pleasewait}</h4>
 			</div>
 		</div>
 	</div>
@@ -170,7 +170,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h4 class="modal-title">{$LANG.whoisresults} <span><img src="images/loadingsml.gif" alt="{$LANG.pleasewait}" class="valignbaseline"></span></h4>
+				<h4 class="modal-title">{$LANG.whoisresults} <span><img src="images/loadingsml.gif" alt="{$LANG.pleasewait}" style="vertical-align:baseline"></span></h4>
 			</div>
 			<div class="modal-body"></div>
 			<div class="modal-footer">

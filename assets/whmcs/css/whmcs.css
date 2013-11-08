@@ -24,10 +24,6 @@ body { padding-top: 20px; padding-bottom: 20px; }
 .margin-bottom { margin-bottom: 20px; }
 .margin-top { margin-top: 20px; }
 
-.valigntop { vertical-align:top !important; }
-.valigntextbottom { vertical-align:text-bottom !important;}
-.valignbaseline { vertical-align:baseline !important; }
-
 /* table head sorting */
 .table-sorted th.sort-asc,
 .table-sorted th.sort-desc {

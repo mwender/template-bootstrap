@@ -43,4 +43,4 @@
 	</li>
 </ul>
 
-<div class="pull-right"><img src="images/rssfeed.gif" alt="{$LANG.announcementsrss}" class="valigntop"> <a href="announcementsrss.php">{$LANG.announcementsrss}</a></div>
+<div class="pull-right"><img src="images/rssfeed.gif" alt="{$LANG.announcementsrss}" style="vertical-align:top"> <a href="announcementsrss.php">{$LANG.announcementsrss}</a></div>

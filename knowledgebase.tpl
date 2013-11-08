@@ -21,7 +21,7 @@
 	<ul class="list-unstyled list-inline">
 		{foreach from=$kbcats item=kbcat}
 		<li class="col-md-3">
-			<h4><img src="images/folder.gif" class="valignbaseline" alt="folder icon"> <a href="{if $seofriendlyurls}knowledgebase/{$kbcat.id}/{$kbcat.urlfriendlyname}{else}knowledgebase.php?action=displaycat&amp;catid={$kbcat.id}{/if}">{$kbcat.name}</a> <small>( {$kbcat.numarticles} )</small></h4>
+			<h4><img src="images/folder.gif" style="vertical-align:baseline" alt="folder icon"> <a href="{if $seofriendlyurls}knowledgebase/{$kbcat.id}/{$kbcat.urlfriendlyname}{else}knowledgebase.php?action=displaycat&amp;catid={$kbcat.id}{/if}">{$kbcat.name}</a> <small>( {$kbcat.numarticles} )</small></h4>
 			<p>{$kbcat.description}</p>
 		</li>
 		{/foreach}
@@ -35,7 +35,7 @@
 <ul class="list-unstyled">
 {foreach from=$kbmostviews item=kbarticle}
 	<li>
-		<h4><img src="images/article.gif" class="valignbaseline" alt="article icon"> <a href="{if $seofriendlyurls}knowledgebase/{$kbarticle.id}/{$kbarticle.urlfriendlytitle}.html{else}knowledgebase.php?action=displayarticle&amp;id={$kbarticle.id}{/if}">{$kbarticle.title}</a></h4>
+		<h4><img src="images/article.gif" style="vertical-align:baseline" alt="article icon"> <a href="{if $seofriendlyurls}knowledgebase/{$kbarticle.id}/{$kbarticle.urlfriendlytitle}.html{else}knowledgebase.php?action=displayarticle&amp;id={$kbarticle.id}{/if}">{$kbarticle.title}</a></h4>
 		<p>{$kbarticle.article|truncate:150:"..."}</p>
 	</li>
 {/foreach}

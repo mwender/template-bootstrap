@@ -88,7 +88,7 @@
 		function extraAttachment() { $("#attachements").append('<div class="form-group"><input type="file" name="attachments[]"></div>');}
 		{/literal}
 		</script>
-		<a href="#" onclick="extraAttachment();return false;"><img src="images/add.gif" alt="add icon" class="valigntop"> {$LANG.addmore}</a>
+		<a href="#" onclick="extraAttachment();return false;"><img src="images/add.gif" alt="add icon" style="vertical-align:textbottom"> {$LANG.addmore}</a>
 		({$LANG.supportticketsallowedextensions}: {$allowedfiletypes})
 		<div class="form-group text-center">
 			<button class="btn btn-primary" onclick="$('#modalpleasewait').modal();">{$LANG.supportticketsticketsubmit}</button>
@@ -120,7 +120,7 @@
 		<ul class="list-unstyled">
 		{foreach from=$reply.attachments key=num item=attachment}
 			<li>
-				<img src="images/article.gif" class="valigntextbottom" alt="article"> <a href="dl.php?type={if $reply.id}ar&amp;id={$reply.id}{else}a&amp;id={$id}{/if}&amp;i={$num}">{$attachment}</a>
+				<img src="images/article.gif" style="vertical-align:textbottom" alt="article"> <a href="dl.php?type={if $reply.id}ar&amp;id={$reply.id}{else}a&amp;id={$id}{/if}&amp;i={$num}">{$attachment}</a>
 			</li>
 		{/foreach}
 		</ul>
@@ -153,7 +153,7 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 		   <div class="modal-header text-center">
-		      <h3><img src="images/loadingsml.gif" alt="{$LANG.pleasewait}" class="valignbaseline"> {$LANG.pleasewait}</h3>
+		      <h3><img src="images/loadingsml.gif" alt="{$LANG.pleasewait}" style="vertical-align:baseline"> {$LANG.pleasewait}</h3>
 		   </div>
 		</div>
 	</div>

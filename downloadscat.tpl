@@ -21,7 +21,7 @@
 	<ul class="list-unstyled list-inline">
 {foreach from=$dlcats item=dlcat}
 		<li class="col-md-3">
-			<h3><img src="images/folder.gif" class="valignbaseline" alt="folder icon"> <a href="{if $seofriendlyurls}downloads/{$dlcat.id}/{$dlcat.urlfriendlyname}{else}downloads.php?action=displaycat&amp;catid={$dlcat.id}{/if}">{$dlcat.name}</a> <small>( {$dlcat.numarticles} )</small></h3>
+			<h3><img src="images/folder.gif" style="vertical-align:baseline" alt="folder icon"> <a href="{if $seofriendlyurls}downloads/{$dlcat.id}/{$dlcat.urlfriendlyname}{else}downloads.php?action=displaycat&amp;catid={$dlcat.id}{/if}">{$dlcat.name}</a> <small>( {$dlcat.numarticles} )</small></h3>
 			<p>{$dlcat.description}</p>
 		</li>
 {/foreach}

@@ -166,7 +166,7 @@
 <ul class="list-inline list-unstyled clearfix">
 	{foreach from=$files item=file}
 	<li class="col-md-3">
-		<h4><img src="images/file.png" class="valignbaseline" alt="File Icon"> <a href="dl.php?type=f&amp;id={$file.id}"><strong>{$file.title}</strong></a></h4>
+		<h4><img src="images/file.png" style="vertical-align:baseline" alt="File Icon"> <a href="dl.php?type=f&amp;id={$file.id}"><strong>{$file.title}</strong></a></h4>
 		{$LANG.clientareafilesdate}: {$file.date}
 	</li>
 	{/foreach}

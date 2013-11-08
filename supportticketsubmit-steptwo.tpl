@@ -104,7 +104,8 @@
 
 <div class="modal hide fade in" id="modalpleasewait">
 	<div class="modal-header text-center">
-		<h3><img src="images/loadingsml.gif" class="valignbaseline"> {$LANG.pleasewait}</h3>
+		<img src="images/loadingsml.gif" style="vertical-align:baseline">
+		<span class="lead">{$LANG.pleasewait}</span>
 	</div>
 </div>
 

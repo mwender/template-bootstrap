@@ -108,5 +108,5 @@
 {/if}
 
 <div class="text-right">
-	<img src="images/rssfeed.gif" alt="RSS" class="valigntextbottom"> <a href="networkissuesrss.php">{$LANG.announcementsrss}</a>
+	<img src="images/rssfeed.gif" alt="RSS" style="vertical-align:textbottom"> <a href="networkissuesrss.php">{$LANG.announcementsrss}</a>
 </div>
