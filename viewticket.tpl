@@ -44,7 +44,7 @@
 	</div>
 </div>
 
-<div class="marginbottom">
+<div class="margin-bottom">
 	<a href="supporttickets.php" class="btn btn-default" title="{$LANG.clientareabacklink}">{$LANG.clientareabacklink}</a> 
 	<button type="button" class="btn btn-primary" onclick="$('#replycontainer').slideToggle().removeClass('hide');">{$LANG.supportticketsreply}</button> 
 	{if $showclosebutton}<a href="{$smarty.server.PHP_SELF}?tid={$tid}&amp;c={$c}&amp;closeticket=true" class="btn btn-danger" title="{$LANG.supportticketsclose}">{$LANG.supportticketsclose}</a>{/if}

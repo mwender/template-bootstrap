@@ -32,7 +32,7 @@
 	{foreach from=$domainids item=domainid}
 	<input type="hidden" name="domids[]" value="{$domainid}">
 	{/foreach}
-	<fieldset name="nschoises" class="marginbottom well">
+	<fieldset name="nschoises" class="margin-bottom well">
 		<label class="radio"><input type="radio" name="nschoice" value="default"{if $defaultns} checked="checked"{/if}> {$LANG.nschoicedefault}</label>
 		<label class="radio"><input type="radio" name="nschoice" value="custom"{if !$defaultns} checked="checked"{/if}> {$LANG.nschoicecustom}</label>
 		<script type="text/javascript">

@@ -79,7 +79,7 @@
 			{/if}
 		</div>
 		<div class="col-md-6">
-			<h3 class="marginbottom">{$LANG.creditcardenternewcard}</h3>
+			<h3 class="margin-bottom">{$LANG.creditcardenternewcard}</h3>
 			<div class="form-group">
 				<label class="col-md-4 control-label" for="cctype">{$LANG.creditcardcardtype}</label>
 				<div class="col-md-8">

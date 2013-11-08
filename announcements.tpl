@@ -3,7 +3,7 @@
 </div>
 
 {foreach key=num item=announcement from=$announcements}
-<div class="marginbottom">
+<div class="margin-bottom">
 	<h4><a href="{if $seofriendlyurls}announcements/{$announcement.id}/{$announcement.urlfriendlytitle}.html{else}{$smarty.server.PHP_SELF}?id={$announcement.id}{/if}">{$announcement.title}</a></h4>
 	<p>{$announcement.timestamp|date_format:"%A, %B %e, %Y"}</p>
 	<blockquote>
@@ -30,7 +30,7 @@
 </div>
 <hr>
 {foreachelse}
-	<p class="text-center marginbottom"><strong>{$LANG.announcementsnone}</strong></p>
+	<p class="text-center margin-bottom"><strong>{$LANG.announcementsnone}</strong></p>
 {/foreach}
 
 

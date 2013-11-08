@@ -104,7 +104,7 @@
 					<p>{$LANG.domainrenewexp}</p>
 				</div>
 				<div class="col-md-8 text-center">
-					<form method="post" action="{$smarty.server.PHP_SELF}?action=domaindetails#tab-autorenew" class="margintop marginbottom">
+					<form method="post" action="{$smarty.server.PHP_SELF}?action=domaindetails#tab-autorenew" class="margin-top margin-bottom">
 						<input type="hidden" name="id" value="{$domainid}">
 						{if $autorenew}
 						<div class="alert alert-success alert-block text-center">
@@ -130,7 +130,7 @@
 					<p>{$LANG.domainnsexp}</p>
 				</div>
 				<div class="col-md-8">
-					<form method="post" action="{$smarty.server.PHP_SELF}?action=domaindetails" class="form-horizontal margintop">
+					<form method="post" action="{$smarty.server.PHP_SELF}?action=domaindetails" class="form-horizontal margin-top">
 						<input type="hidden" name="id" value="{$domainid}">
 						<input type="hidden" name="sub" value="savens">
 						<fieldset name="nschoises">
@@ -208,9 +208,9 @@
 					<p>{$LANG.domainaddonsinfo}</p>
 				</div>
 				<div class="col-md-8">
-					<div class="margintop">
+					<div class="margin-top">
 						{if $addons.idprotection}
-						<div class="media marginbottom">
+						<div class="media margin-bottom">
 							<div class="pull-left">
 								<img src="images/idprotect.png" alt="{$LANG.domainidprotection}" class="media-oject">
 							</div>
@@ -226,7 +226,7 @@
 						</div>
 						{/if}
 						{if $addons.dnsmanagement}
-						<div class="media marginbottom">
+						<div class="media margin-bottom">
 							<div class="pull-left">
 								<img src="images/dnsmanagement.png" alt="{$LANG.domainaddonsdnsmanagement}" class="media-object">
 							</div>
@@ -242,7 +242,7 @@
 						</div>
 						{/if}
 						{if $addons.emailforwarding}
-						<div class="media marginbottom">
+						<div class="media margin-bottom">
 							<div class="pull-left">
 								<img src="images/emailfwd.png" alt="{$LANG.domainemailforwarding}" class="media-object">
 							</div>
@@ -268,7 +268,7 @@
 					<p>{$LANG.domainlockingexp}</p>
 				</div>
 				<div class="col-md-8 text-center">
-               <form method="post" action="{$smarty.server.PHP_SELF}?action=domaindetails#tab-registrarlock" class="margintop marginbottom">
+               <form method="post" action="{$smarty.server.PHP_SELF}?action=domaindetails#tab-registrarlock" class="margin-top margin-bottom">
 						<input type="hidden" name="id" value="{$domainid}">
 						<input type="hidden" name="sub" value="savereglock">
 	               {if $lockstatus == "locked"}
@@ -293,7 +293,7 @@
 					<p>{$LANG.domainlockingexp}</p>
 				</div>
 				<div class="col-md-8 text-center">
-					<form method="post" action="{$smarty.server.PHP_SELF}?action=domaindetails" class="form-inline margintop marginbottom">
+					<form method="post" action="{$smarty.server.PHP_SELF}?action=domaindetails" class="form-inline margin-top margin-bottom">
 						<input type="hidden" name="sub" value="releasedomain">
 						<input type="hidden" name="id" value="{$domainid}">
 						<fieldset class="well">

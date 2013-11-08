@@ -26,6 +26,6 @@
 	</div>
 </div>
 
-<div class="text-center marginbottom">
+<div class="text-center margin-bottom">
 	<a href="clientarea.php?action=domaindetails&id={$domainid}" class="btn btn-default" title="{$LANG.clientareabacklink}">{$LANG.clientareabacklink}</a>
 </div>

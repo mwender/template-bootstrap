@@ -64,7 +64,7 @@
 	{/if}
 
 {/if}
-	<div class="text-center margintop">
+	<div class="text-center margin-top">
 		<a class="btn btn-default" href="clientarea.php?action=domaindetails&amp;id={$domainid}" title="{$LANG.clientareabacklink}">{$LANG.clientareabacklink}</a>
 	</div>
 

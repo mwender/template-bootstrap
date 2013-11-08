@@ -4,7 +4,7 @@
 
 <div class="row">
 	<div class="col-md-7">
-		<a href="submitticket.php" class="btn btn-primary marginbottom" title="{$LANG.opennewticket}">{$LANG.opennewticket}</a>
+		<a href="submitticket.php" class="btn btn-primary margin-bottom" title="{$LANG.opennewticket}">{$LANG.opennewticket}</a>
 		<p>{$numitems} {$LANG.recordsfound}, {$LANG.page} {$pagenumber} {$LANG.pageof} {$totalpages}</p>
 	</div>
 	<div class="col-md-5">

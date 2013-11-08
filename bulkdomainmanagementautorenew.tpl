@@ -23,7 +23,7 @@
 	{foreach from=$domainids item=domainid}
 	<input type="hidden" name="domids[]" value="{$domainid}">
 	{/foreach}
-	<h4 class="marginbottom">{$LANG.domainautorenewrecommend}</h4>
+	<h4 class="margin-bottom">{$LANG.domainautorenewrecommend}</h4>
 	<input type="submit" name="enable" value="{$LANG.domainsautorenewenable}" class="btn btn-success btn-lg">
 	<input type="submit" name="disable" value="{$LANG.domainsautorenewdisable}" class="btn btn-danger btn-lg">
 </form>

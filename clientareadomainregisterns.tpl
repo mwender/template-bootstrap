@@ -23,7 +23,7 @@
 					<p>{$LANG.domainregisternsexplanation}</p>
 				</div>
 				<div class="col-md-8">
-					<form method="post" action="{$smarty.server.PHP_SELF}?action=domainregisterns#tab-create" class="form-horizontal margintop">
+					<form method="post" action="{$smarty.server.PHP_SELF}?action=domainregisterns#tab-create" class="form-horizontal margin-top">
 						<input type="hidden" name="sub" value="register">
 						<input type="hidden" name="domainid" value="{$domainid}">
 						<div class="form-group">
@@ -58,7 +58,7 @@
 					<p>{$LANG.domainregisternsexplanation}</p>
 				</div>
 				<div class="col-md-8">
-					<form method="post" action="{$smarty.server.PHP_SELF}?action=domainregisterns#tab-modify" class="form-horizontal margintop">
+					<form method="post" action="{$smarty.server.PHP_SELF}?action=domainregisterns#tab-modify" class="form-horizontal margin-top">
 						<input type="hidden" name="sub" value="modify">
 						<input type="hidden" name="domainid" value="{$domainid}">
 						<div class="form-group">
@@ -99,7 +99,7 @@
 					<p>{$LANG.domainregisternsexplanation}</p>
 				</div>
 				<div class="col-md-8">
-					<form method="post" action="{$smarty.server.PHP_SELF}?action=domainregisterns#tab-delete" class="form-horizontal margintop">
+					<form method="post" action="{$smarty.server.PHP_SELF}?action=domainregisterns#tab-delete" class="form-horizontal margin-top">
 						<input type="hidden" name="sub" value="delete">
 						<input type="hidden" name="domainid" value="{$domainid}">
 						<div class="form-group">

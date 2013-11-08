@@ -21,10 +21,10 @@ body { padding-top: 20px; padding-bottom: 20px; }
 
 .page-header { margin-top: 0px; }
 
-.marginbottom { margin-bottom: 18px; }
+.margin-bottom { margin-bottom: 18px; }
 .nomarginbottom { margin-bottom: 0px !important; }
 .marginright { margin-right: 18px; }
-.margintop { margin-top: 18px; }
+.margin-top { margin-top: 18px; }
 
 .valigntop { vertical-align:top !important; }
 .valigntextbottom { vertical-align:text-bottom !important;}
