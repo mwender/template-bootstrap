@@ -12,16 +12,16 @@
 		</tr>
 	</thead>
 	<tbody>
-	{foreach from=$emails item=email}
+		{foreach from=$emails item=email}
 		<tr>
 			<td>{$email.date}</td>
 			<td><a href="viewemail.php?id={$email.id}" onclick="viewEmail({$email.id});return false;" title="{$LANG.emailviewmessage}">{$email.subject}</a></td>
 		</tr>
-{foreachelse}
+		{foreachelse}
 		<tr>
 			<td colspan="2" class="text-center">{$LANG.norecordsfound}</td>
 		</tr>
-{/foreach}
+		{/foreach}
 	</tbody>
 </table>
 
