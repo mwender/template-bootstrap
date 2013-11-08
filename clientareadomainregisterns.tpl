@@ -23,24 +23,29 @@
 					<p>{$LANG.domainregisternsexplanation}</p>
 				</div>
 				<div class="col-md-8">
-					<form method="post" action="{$smarty.server.PHP_SELF}?action=domainregisterns#tab-create" class="form-horizontal">
+					<form method="post" action="{$smarty.server.PHP_SELF}?action=domainregisterns#tab-create" class="form-horizontal margintop">
 						<input type="hidden" name="sub" value="register">
 						<input type="hidden" name="domainid" value="{$domainid}">
-						<div class="control-group">
-							<label class="control-label" for="createns">{$LANG.domainregisternsns}</label>
-							<div class="controls">
-								<input type="text" name="ns" id="createns" class="col-md-2"> . {$domain}
+						<div class="form-group">
+							<label class="col-md-4 control-label" for="createns">{$LANG.domainregisternsns}</label>
+							<div class="col-md-6">
+								<div class="input-group">
+									<input type="text" name="ns" id="createns" class="form-control">
+									<span class="input-group-addon">.{$domain}</span>
+								</div>
 							</div>
 						</div>
-						<div class="control-group">
-							<label class="control-label" for="createip">{$LANG.domainregisternsip}</label>
-							<div class="controls">
-								<input type="text" name="ipaddress" id="createip" class="col-md-2">
+						<div class="form-group">
+							<label class="col-md-4 control-label" for="createip">{$LANG.domainregisternsip}</label>
+							<div class="col-md-6">
+								<input type="text" name="ipaddress" id="createip" class="form-control">
 							</div>
 						</div>
-						<div class="form-actions">
-							<a href="clientarea.php?action=domaindetails&id={$domainid}" class="btn btn-default" title="{$LANG.clientareabacklink}">{$LANG.clientareabacklink}</a>
-							<button class="btn btn-primary">{$LANG.clientareasavechanges}</button>
+						<div class="form-group">
+							<div class="col-md-8 col-md-offset-4">
+								<a href="clientarea.php?action=domaindetails&amp;id={$domainid}" class="btn btn-default" title="{$LANG.clientareabacklink}">{$LANG.clientareabacklink}</a>
+								<button class="btn btn-primary">{$LANG.clientareasavechanges}</button>
+							</div>
 						</div>
 					</form>
 				</div>
@@ -53,30 +58,35 @@
 					<p>{$LANG.domainregisternsexplanation}</p>
 				</div>
 				<div class="col-md-8">
-					<form method="post" action="{$smarty.server.PHP_SELF}?action=domainregisterns#tab-modify" class="form-horizontal">
+					<form method="post" action="{$smarty.server.PHP_SELF}?action=domainregisterns#tab-modify" class="form-horizontal margintop">
 						<input type="hidden" name="sub" value="modify">
 						<input type="hidden" name="domainid" value="{$domainid}">
-						<div class="control-group">
-							<label class="control-label" for="modifyns">{$LANG.domainregisternsns}</label>
-							<div class="controls">
-								<input type="text" name="ns" id="modifyns" class="col-md-2"> . {$domain}
+						<div class="form-group">
+							<label class="col-md-4 control-label" for="modifyns">{$LANG.domainregisternsns}</label>
+							<div class="col-md-6">
+								<div class="input-group">
+									<input type="text" name="ns" id="modifyns" class="form-control">
+									<span class="input-group-addon">.{$domain}</span>
+								</div>
 							</div>
 						</div>
-						<div class="control-group">
-							<label class="control-label" for="modifyoldip">{$LANG.domainregisternscurrentip}</label>
-							<div class="controls">
-								<input type="text" name="currentipaddress" id="modifyoldip" class="col-md-2">
+						<div class="form-group">
+							<label class="col-md-4 control-label" for="modifyoldip">{$LANG.domainregisternscurrentip}</label>
+							<div class="col-md-6">
+								<input type="text" name="currentipaddress" id="modifyoldip" class="form-control">
 							</div>
 						</div>
-						<div class="control-group">
-							<label class="control-label" for="modifynewip">{$LANG.domainregisternsnewip}</label>
-							<div class="controls">
-								<input type="text" name="newipaddress" id="modifyoldip" class="col-md-2">
+						<div class="form-group">
+							<label class="col-md-4 control-label" for="modifynewip">{$LANG.domainregisternsnewip}</label>
+							<div class="col-md-6">
+								<input type="text" name="newipaddress" id="modifynewip" class="form-control">
 							</div>
 						</div>
-						<div class="form-actions">
-							<a href="clientarea.php?action=domaindetails&id={$domainid}" class="btn btn-default" title="{$LANG.clientareabacklink}">{$LANG.clientareabacklink}</a>
-							<button class="btn btn-primary">{$LANG.clientareasavechanges}</button>
+						<div class="form-group">
+							<div class="col-md-8 col-md-offset-4">
+								<a href="clientarea.php?action=domaindetails&amp;id={$domainid}" class="btn btn-default" title="{$LANG.clientareabacklink}">{$LANG.clientareabacklink}</a>
+								<button class="btn btn-primary">{$LANG.clientareasavechanges}</button>
+							</div>
 						</div>
 					</form>
 				</div>
@@ -89,18 +99,23 @@
 					<p>{$LANG.domainregisternsexplanation}</p>
 				</div>
 				<div class="col-md-8">
-					<form method="post" action="{$smarty.server.PHP_SELF}?action=domainregisterns#tab-delete" class="form-horizontal">
+					<form method="post" action="{$smarty.server.PHP_SELF}?action=domainregisterns#tab-delete" class="form-horizontal margintop">
 						<input type="hidden" name="sub" value="delete">
 						<input type="hidden" name="domainid" value="{$domainid}">
-						<div class="control-group">
-							<label class="control-label" for="deletens">{$LANG.domainregisternsns}</label>
-							<div class="controls">
-								<input type="text" name="ns" id="deletens" class="col-md-2"> . {$domain}
+						<div class="form-group">
+							<label class="col-md-4 control-label" for="deletens">{$LANG.domainregisternsns}</label>
+							<div class="col-md-6">
+								<div class="input-group">
+									<input type="text" name="ns" id="deletens" class="form-control">
+									<span class="input-group-addon">.{$domain}</span>
+								</div>
 							</div>
 						</div>
-						<div class="form-actions">
-							<a href="clientarea.php?action=domaindetails&id={$domainid}" class="btn btn-default" title="{$LANG.clientareabacklink}">{$LANG.clientareabacklink}</a>
-							<button class="btn btn-primary">{$LANG.clientareasavechanges}</button>
+						<div class="form-group">
+							<div class="col-md-8 col-md-offset-4">
+								<a href="clientarea.php?action=domaindetails&amp;id={$domainid}" class="btn btn-default" title="{$LANG.clientareabacklink}">{$LANG.clientareabacklink}</a>
+								<button class="btn btn-primary">{$LANG.clientareasavechanges}</button>
+							</div>
 						</div>
 					</form>
 				</div>

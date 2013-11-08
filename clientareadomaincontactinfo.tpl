@@ -24,31 +24,45 @@
 		<div class="col-md-4">
 			<h2>{$k}</h2>
 			<fieldset class="well">
-				<label class="radio"><input type="radio" name="wc[{$k}]" value="contact" onclick="toggleContact('#{$k}')"{if $defaultns} checked="checked"{/if}>{$LANG.domaincontactusexisting}</label>
-				<label class="radio"><input type="radio" name="wc[{$k}]" value="custom" onclick="toggleCustom('#{$k}')"{if !$defaultns} checked="checked"{/if}>{$LANG.domaincontactusecustom}</label>
-				<hr>
-				<div id="{$k}choosecontact" {if !$defaultns}class="hide"{/if}>
-					<label for="{$k}contact">{$LANG.domaincontactchoose}</label>
-					<select name="sel[{$k}]" class="col-md-3">
-						<option value="u{$clientsdetails.userid}" selected="selected">{$LANG.domaincontactprimary}</option>
-					{foreach key=num item=contact from=$contacts}
-						<option value="c{$contact.id}">{$contact.name}</option>
-					{/foreach}
-					</select>
+				<div class="radio">
+					<label>
+						<input type="radio" name="wc[{$k}]" value="contact" onclick="toggleContact('#{$k}')"{if $defaultns} checked="checked"{/if}> 
+						{$LANG.domaincontactusexisting}
+					</label>
 				</div>
-				<div id="{$k}custom" {if $defaultns}class="hide"{/if}>
-		{foreach from=$i key=kk item=ii}
-					<label for="{$k}{$kk|replace:" ":""}">{$kk}</label>
-					<input type="text" name="contactdetails[{$k}][{$kk}]" id="{$k}{$kk|replace:" ":""}" value="{$ii}" class="col-md-3">
-		{/foreach}
+				<div class="radio">
+					<label>
+						<input type="radio" name="wc[{$k}]" value="custom" onclick="toggleCustom('#{$k}')"{if !$defaultns} checked="checked"{/if}> 
+						{$LANG.domaincontactusecustom}
+					</label>
+				</div>
+				<hr>
+				<div id="{$k}choosecontact" {if !$defaultns}style="display:none"{/if}>
+					<div class="form-group">
+						<label for="{$k}contact">{$LANG.domaincontactchoose}</label>
+						<select name="sel[{$k}]" class="form-control">
+							<option value="u{$clientsdetails.userid}" selected="selected">{$LANG.domaincontactprimary}</option>
+							{foreach key=num item=contact from=$contacts}
+							<option value="c{$contact.id}">{$contact.name}</option>
+							{/foreach}
+						</select>
+					</div>
+				</div>
+				<div id="{$k}custom" {if $defaultns}style="display:none"{/if}>
+					{foreach from=$i key=kk item=ii}
+					<div class="form-group">
+						<label for="{$k}{$kk|replace:" ":""}">{$kk}</label>
+						<input type="text" name="contactdetails[{$k}][{$kk}]" id="{$k}{$kk|replace:" ":""}" value="{$ii}" class="form-control">
+					</div>
+					{/foreach}
 				</div>
 			</fieldset>
 		</div>
 	{/foreach}
 	</div>
-	<div class="text-center">
+	<div class="text-center form-group">
 		<a href="clientarea.php?action=domaindetails&id={$domainid}" class="btn btn-default" title="{$LANG.clientareabacklink}">{$LANG.clientareabacklink}</a>
-		<input type="submit" value="{$LANG.clientareasavechanges}" class="btn btn-primary">
+		<button type="submit" class="btn btn-primary">{$LANG.clientareasavechanges}</button>
 	</div>
 </form>
 
