@@ -33,35 +33,43 @@
 			<tr>
 				<td>
 					<div class="input-group">
-						<input type="text" name="emailforwarderprefix[{$num}]" value="{$emailforwarder.prefix}" class="col-md-3"><span class="input-group-addon">@{$domain}</span>
+						<input type="text" name="emailforwarderprefix[{$num}]" value="{$emailforwarder.prefix}" class="form-control">
+						<span class="input-group-addon">@{$domain}</span>
 					</div>
 				</td>
-				<td><input type="text" name="emailforwarderforwardto[{$num}]" value="{$emailforwarder.forwardto}" class="col-md-4"></td>
+				<td><input type="text" name="emailforwarderforwardto[{$num}]" value="{$emailforwarder.forwardto}" class="form-control"></td>
 			</tr>
 		{/foreach}
 			<tr>
 				<td>
 					<div class="input-group">
-						<input type="text" name="emailforwarderprefixnew" class="col-md-3"><span class="input-group-addon">@{$domain}</span>
+						<input type="text" name="emailforwarderprefixnew" class="form-control">
+						<span class="input-group-addon">@{$domain}</span>
 					</div>
 				</td>
-				<td><input type="text" name="emailforwarderforwardtonew" class="col-md-4"></td>
+				<td><input type="text" name="emailforwarderforwardtonew" class="form-control"></td>
 			</tr>
 		</tbody>
 		<tfoot>
 			<tr>
 				<td colspan="3" class="text-right">
-					<input type="submit" value="{$LANG.clientareasavechanges}" onclick="$('#modalpleasewait').modal();" class="btn btn-primary btn-lg">
+					<input type="submit" value="{$LANG.clientareasavechanges}" onclick="$('#modalpleasewait').modal();" class="btn btn-primary">
 				</td>
 			</tr>
 		</tfoot>
 	</table>
 </form>
 
-<div class="modal hide fade in" id="modalpleasewait">
-	<div class="modal-header text-center">
-		<h3><img src="images/loadingsml.gif" alt="{$LANG.pleasewait}" style="vertical-align:baseline"> {$LANG.pleasewait}</h3>
+<div class="modal fade" id="modalpleasewait">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header text-center">
+				<img src="images/loadingsml.gif" alt="{$LANG.pleasewait}" style="vertical-align:baseline;">
+				<span class="lead">{$LANG.pleasewait}</span>
+			</div>
+		</div>
 	</div>
 </div>
+
 
 {/if}
