@@ -1,5 +1,5 @@
 {if $condlinks.domainreg || $condlinks.domaintrans || $condlinks.domainown}
-<div class="well text-center">
+<div class="well text-center margin-top">
 	<h1>{$LANG.domaincheckerchoosedomain}</h1>
 	<p>{$LANG.domaincheckerenterdomain}</p>
 	<form method="post" action="domainchecker.php">
