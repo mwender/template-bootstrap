@@ -38,6 +38,7 @@
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" title="{$LANG.navservices}">{$LANG.navservices}<b class="caret"></b></a>
 								<ul class="dropdown-menu">
 									<li><a href="clientarea.php?action=products" title="{$LANG.clientareanavservices}">{$LANG.clientareanavservices}</a></li>
+									{if $condlinks.pmaddon}<li><a href="index.php?m=project_management" title="{$LANG.clientareaprojects}">{$LANG.clientareaprojects}</a></li>{/if}
 									<li class="divider"></li>
 									<li><a href="cart.php" title="{$LANG.navservicesorder}">{$LANG.navservicesorder}</a></li>
 									<li><a href="cart.php?gid=addons" title="{$LANG.clientareaviewaddons}">{$LANG.clientareaviewaddons}</a></li>

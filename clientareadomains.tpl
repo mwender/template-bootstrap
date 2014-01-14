@@ -57,7 +57,7 @@
 						<input type="submit" name="autorenew" value="{$LANG.domainautorenewstatus}" class="btn btn-primary btn-sm">
 						<input type="submit" name="reglock" value="{$LANG.domainreglockstatus}" class="btn btn-primary btn-sm">
 						<input type="submit" name="contactinfo" value="{$LANG.domaincontactinfoedit}" class="btn btn-primary btn-sm">
-						<input type="submit" name="renew" value="{$LANG.domainmassrenew}" class="btn btn-primary btn-sm">
+						{if $allowrenew}<input type="submit" name="renew" value="{$LANG.domainmassrenew}" class="btn btn-primary btn-sm">{/if}
 					</td>
 				</tr>
 			</tfoot>
