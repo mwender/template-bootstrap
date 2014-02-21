@@ -29,7 +29,7 @@
 <div class="alert alert-warning alert-dismissable">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	<h4 class="alert-heading">{$LANG.ourlatestnews}</h4>
-	<p>{$announcements.0.text|strip_tags|truncate:500:'...'} <a href="announcements.php?id={$announcements.0.id}" title="{$LANG.more}">{$LANG.view} &raquo;</a></p>
+	<p>{$announcements.0.text|strip_tags|truncate:500:'...'} <a href="announcements.php?id={$announcements.0.id}" title="{$LANG.more}" class="alert-link">{$LANG.view} &raquo;</a></p>
 </div>
 {/if}
 
@@ -50,7 +50,7 @@
 {if $clientsstats.numoverdueinvoices>0}
 <div class="alert alert-danger alert-dismissable">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-	<strong>{$LANG.youhaveoverdueinvoices|sprintf2:$clientsstats.numoverdueinvoices}:</strong> {$LANG.overdueinvoicesdesc|sprintf2:'<a href="clientarea.php?action=masspay&amp;all=true">':'</a>'}
+	<strong>{$LANG.youhaveoverdueinvoices|sprintf2:$clientsstats.numoverdueinvoices}:</strong> {$LANG.overdueinvoicesdesc|sprintf2:'<a href="clientarea.php?action=masspay&amp;all=true" class="alert-link">':'</a>'}
 </div>
 {/if}
 
