@@ -1,3 +1,5 @@
+{if $contactid}
+
 <div class="page-header">
 	<h1>{$LANG.clientareanavcontacts}</h1>
 </div>
@@ -26,11 +28,10 @@
 </div>
 {/if}
 
-<form method="post" class="form-inline alert alert-info alert-block" action="clientarea.php">
-	<input type="hidden" name="action" value="contacts">
+<form method="post" class="form-inline alert alert-info alert-block" action="clientarea.php?action=contacts">
 	<label class="form-control-static" for="contactid">{$LANG.clientareachoosecontact}:</label>
 	<div class="form-group">
-		<select name="contactid" id="contactid" onchange="submit()" class="form-control">
+		<select name="contactid" id="contactid" onchange="submit()"class="form-control">
 			{foreach item=contact from=$contacts}
 			<option value="{$contact.id}"{if $contact.id eq $contactid} selected="selected"{/if}>{$contact.name} - {$contact.email}</option>
 			{/foreach}
@@ -40,9 +41,7 @@
 	<button type="submit" class="btn btn-primary">{$LANG.go}</button>
 </form>
 
-<form class="form-horizontal" method="post" action="clientarea.php">
-	<input type="hidden" name="action" value="contacts">
-	<input type="hidden" name="id" value="{$contactid}">
+<form class="form-horizontal" method="post" action="clientarea.php?action=contacts&id={$contactid}">
 	<div class="row">
 		<div class="col-md-6">
 			<div class="form-group">
@@ -315,11 +314,9 @@
 
 	<div class="form-group row">
 		<div class="col-md-10 col-md-offset-2">
-			<button type="submit" class="btn btn-primary">{$LANG.clientareasavechanges}</button>
+			<button type="submit" name="submit" value="{$LANG.clientareasavechanges}" class="btn btn-primary">{$LANG.clientareasavechanges}</button>
 			<input class="btn btn-default" type="reset" value="{$LANG.cancel}">
-			{if $contactid}
 			<a href="clientarea.php?action=contacts&delete=true&id={$contactid}" title="{$LANG.clientareadeletecontact}" class="btn btn-danger" onclick="return confirm('{$LANG.clientareadeletecontactareyousure}')">{$LANG.clientareadeletecontact}</a>
-			{/if}
 		</div>
 	</div>
 </form>
@@ -333,3 +330,9 @@
 	});
 </script>
 {/literal}
+
+{else}
+
+{include file="$template/clientareaaddcontact.tpl"}
+
+{/if}
