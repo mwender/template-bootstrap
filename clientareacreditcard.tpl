@@ -13,18 +13,18 @@
 </div>
 
 {if $remoteupdatecode}
-	{$removeupdatecode}
+	{$remoteupdatecode}
 {else}
 
 {if $successful}
-<div class="alert alert-success alert-dismissable">
+<div class="alert alert-success alert-dismissable" style="margin-top:20px;">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	{$LANG.changessavedsuccessfully}
 </div>
 {/if}
 
 {if $errormessage}
-<div class="alert alert-danger">
+<div class="alert alert-danger" style="margin-top:20px;">
 	<h4 class="alert-heading">{$LANG.clientareaerrors}</h4>
 	<ul>
 		{$errormessage}
@@ -32,12 +32,11 @@
 </div>
 {/if}
 
-<form class="form-horizontal" method="post" action="clientarea.php">
-	<input type="hidden" name="action" value="creditcard">
 
 <div class="row">
 	<div class="col-md-6">
 		<h3>{$LANG.creditcarddetails}</h3>
+		<fieldset class="form-horizontal">
 			<div class="form-group">
 				<label class="col-md-4 control-label">{$LANG.creditcardcardtype}</label>
 				<div class="col-md-8">
@@ -74,11 +73,17 @@
 			{/if}
 			{if $allowcustomerdelete && $cardtype}
 			<div class="text-right">
-				<a href="clientarea.php?action=creditcard&amp;delete=true" class="btn btn-danger">{$LANG.creditcarddelete}</a>
+				<form method="post" action="{$smarty.server.PHP_SELF}">
+					<input type="hidden" name="action" value="creditcard">
+					<button type="submit" name="remove" value="{$LANG.creditcarddelete}" class="btn btn-danger">{$LANG.creditcarddelete}</button>
+				</form>
 			</div>
 			{/if}
-		</div>
-		<div class="col-md-6">
+		</fieldset>
+	</div>
+	<div class="col-md-6">
+		<form class="form-horizontal" method="post" action="clientarea.php">
+			<input type="hidden" name="action" value="creditcard">
 			<h3 class="margin-bottom">{$LANG.creditcardenternewcard}</h3>
 			<div class="form-group">
 				<label class="col-md-4 control-label" for="cctype">{$LANG.creditcardcardtype}</label>
@@ -101,15 +106,15 @@
 				<div class="col-md-8">
 					<div class="input-group">
 						<select name="ccexpirymonth" id="ccexpirymonth" class="form-control">
-						{foreach from=$months item=month}
+							{foreach from=$months item=month}
 							<option>{$month}</option>
-						{/foreach}
+							{/foreach}
 						</select>
 						<span class="input-group-addon">/</span>
 						<select name="ccexpiryyear" class="form-control">
-						{foreach from=$expiryyears item=year}
+							{foreach from=$expiryyears item=year}
 							<option>{$year}</option>
-						{/foreach}
+							{/foreach}
 						</select>
 					</div>
 				</div>
@@ -151,7 +156,6 @@
 				<input class="btn btn-default" type="reset" value="{$LANG.cancel}">
 			</div>
 		</form>
-		{/if}
 	</div>
 </div>
-
+{/if}
