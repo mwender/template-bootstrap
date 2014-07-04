@@ -23,8 +23,13 @@
 			{$headeroutput}
 
 			<div id="whmcsheader" class="container">
-				<div>
-					<img src="templates/{$template}/assets/whmcs/img/wenderhostclientarealogo.png" alt="{$companyname}">
+				<div class="row">
+					<div class="col-md-8">
+						<img src="templates/{$template}/assets/whmcs/img/wenderhostclientarealogo.png" alt="{$companyname}">
+					</div>
+					<div class="col-md-4" style="text-align: right">
+						<a class="btn btn-default" href="http://www.wenderhost.com">Return to wenderhost.com</a>
+					</div>
 				</div>
 			</div>
 
