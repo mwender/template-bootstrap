@@ -5,17 +5,17 @@
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<title>{if $kbarticle.title}{$kbarticle.title} - {/if}{$pagetitle} - {$companyname}</title>
 			{if $systemurl}<base href="{$systemurl}">{/if}
-	
+
 			<script type="text/javascript" src="templates/{$template}/assets/jquery/js/jquery-1.10.2.min.js"></script>
-	
+
 			<script type="text/javascript" src="templates/{$template}/assets/bootstrap/js/bootstrap.min.js"></script>
 			<link href="templates/{$template}/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	
+
 			<script src="templates/{$template}/assets/whmcs/js/whmcs.js"></script>
 			<link href="templates/{$template}/assets/whmcs/css/whmcs.css" rel="stylesheet">
-	
+
 			{if $livehelpjs}{$livehelpjs}{/if}
-			
+
 			{$headoutput}
 		</head>
 		<body>
@@ -24,7 +24,7 @@
 
 			<div id="whmcsheader" class="container">
 				<div>
-					<img src="templates/{$template}/assets/whmcs/img/whmcslogo.png" alt="{$companyname}">
+					<img src="templates/{$template}/assets/whmcs/img/wenderhostclientarealogo.png" alt="{$companyname}">
 				</div>
 			</div>
 
@@ -131,5 +131,5 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<div id="whmcsbody" class="container">
