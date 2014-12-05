@@ -24,8 +24,8 @@
 	<table class="table table-bordered table-striped">
 		<thead>
 			<tr>
-				<th>{$LANG.domainemailforwardingprefix}</th>
-				<th>{$LANG.domainemailforwardingforwardto}</th>
+				<th style="width: 50%">{$LANG.domainemailforwardingprefix}</th>
+				<th style="width: 50%">{$LANG.domainemailforwardingforwardto}</th>
 			</tr>
 		</thead>
 		<tbody>
