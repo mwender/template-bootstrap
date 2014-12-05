@@ -1,4 +1,4 @@
-/* 
+/*
 Centered Layout Style
 
 body { background-color: #EFEFEF; }
@@ -63,7 +63,7 @@ body { padding-top: 20px; padding-bottom: 20px; }
 
 .ticketreply {
 	border-color: #ddd;
-	border-width: 0 1px; 
+	border-width: 0 1px;
 	border-style: solid;
 	padding: 10px;
 	margin: 0px 10px;
@@ -86,14 +86,17 @@ body { padding-top: 20px; padding-bottom: 20px; }
 	background: url('../img/rating_star_empty.png') no-repeat;
 	height:16px;
 	width:16px;
-}	
+}
 
-.rating span a { 
+.rating span a {
 	display:block;
 	height:16px;
 	width:16px;
 }
 
-.rating span.selected { 
+.rating span.selected {
 	background: url('../img/rating_star_filled.png') no-repeat;
 }
+
+/* Fix Bootstrap form fields */
+input[type="text"]{min-width: 50px}
