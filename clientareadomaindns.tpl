@@ -35,10 +35,10 @@
 			<tr>
 				<td>
 					<input type="hidden" name="dnsrecid[]" value="{$dnsrecord.recid}">
-					<input type="text" name="dnsrecordhost[]" value="{$dnsrecord.hostname}" class="col-md-3">
+					<input type="text" name="dnsrecordhost[]" value="{$dnsrecord.hostname}" class="form-control">
 				</td>
 				<td>
-					<select name="dnsrecordtype[]" class="col-md-2">
+					<select name="dnsrecordtype[]" class="form-control">
 						<option value="A"{if $dnsrecord.type eq "A"} selected="selected"{/if}>A (Address)</option>
 						<option value="AAAA"{if $dnsrecord.type eq "AAAA"} selected="selected"{/if}>AAAA (Address)</option>
 						<option value="MXE"{if $dnsrecord.type eq "MXE"} selected="selected"{/if}>MXE (Mail Easy)</option>
@@ -49,10 +49,10 @@
 						<option value="FRAME"{if $dnsrecord.type eq "FRAME"} selected="selected"{/if}>URL Frame</option>
 					</select>
 				</td>
-				<td><input type="text" name="dnsrecordaddress[]" value="{$dnsrecord.address}" class="col-md-3"></td>
+				<td><input type="text" name="dnsrecordaddress[]" value="{$dnsrecord.address}" class="form-control"></td>
           		<td>
 				{if $dnsrecord.type eq "MX"}
-					<input type="text" name="dnsrecordpriority[]" value="{$dnsrecord.priority}" class="col-md-1"> <i class="glyphicon glyphicon-question-sign" rel="tooltip" data-original-title="{$LANG.domaindnsmxonly}"></i>
+					<input type="text" name="dnsrecordpriority[]" value="{$dnsrecord.priority}" class="form-control" style="width: 90%"> <i class="glyphicon glyphicon-question-sign" style="float: right; margin-top: -24px; margin-right: 3px;" rel="tooltip" data-original-title="{$LANG.domaindnsmxonly}"></i>
 				{else}
 					<input type="hidden" name="dnsrecordpriority[]" value="N/A">{$LANG.domainregnotavailable}
 				{/if}
@@ -60,9 +60,9 @@
 			</tr>
 		{/foreach}
 			<tr>
-				<td><input type="text" name="dnsrecordhost[]" value="" class="col-md-3"></td>
+				<td><input type="text" name="dnsrecordhost[]" value="" class="form-control"></td>
 				<td>
-					<select name="dnsrecordtype[]" class="col-md-2">
+					<select name="dnsrecordtype[]" class="form-control">
 						<option value="A">A (Address)</option>
 						<option value="AAAA">AAAA (Address)</option>
 						<option value="MXE">MXE (Mail Easy)</option>
@@ -73,8 +73,8 @@
 						<option value="FRAME">URL Frame</option>
 					</select>
 				</td>
-				<td><input type="text" name="dnsrecordaddress[]" value="" class="col-md-3"></td>
-				<td><input type="text" name="dnsrecordpriority[]" value="" class="col-md-1"> <i class="glyphicon glyphicon-question-sign" rel="tooltip" data-original-title="{$LANG.domaindnsmxonly}"></i></td>
+				<td><input type="text" name="dnsrecordaddress[]" value="" class="form-control"></td>
+				<td><input type="text" name="dnsrecordpriority[]" value="" class="form-control" style="width: 90%;"> <i class="glyphicon glyphicon-question-sign" style="float: right; margin-top: -24px; margin-right: 3px;" rel="tooltip" data-original-title="{$LANG.domaindnsmxonly}"></i></td>
 			</tr>
 		</tbody>
 		<tfoot>
