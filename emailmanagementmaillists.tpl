@@ -33,76 +33,72 @@
 
 <br />
 
-<table class="table table-striped table-framed">
-    <thead>
-        <tr>
-			<th {if $orderby eq "listname"} class="headerSort{$sort}"{/if}><a href="{$smarty.server.PHP_SELF}?action=managelists{if $q}&q={$q}{/if}&orderby=listname&domainid={$domainid}&domain={$domain}&sort={if $sort eq "desc"}asc{else}desc{/if}&page={$pagenumber}&itemlimit={$itemlimit}">{$LANG.rcmail_maillisttitle}</a></th>
-			<th {if $orderby eq "subscribers"} class="headerSort{$sort}"{/if}><a href="{$smarty.server.PHP_SELF}?action=managelists{if $q}&q={$q}{/if}&orderby=subscribers&domainid={$domainid}&domain={$domain}&sort={if $sort eq "desc"}asc{else}desc{/if}&page={$pagenumber}&itemlimit={$itemlimit}">{$LANG.rcmail_numsubscriberstitle}</a></th>
-			<th {if $orderby eq "moderators"} class="headerSort{$sort}"{/if}><a href="{$smarty.server.PHP_SELF}?action=managelists{if $q}&q={$q}{/if}&orderby=moderators&domainid={$domainid}&domain={$domain}&sort={if $sort eq "desc"}asc{else}desc{/if}&page={$pagenumber}&itemlimit={$itemlimit}">{$LANG.rcmail_nummoderatorstitle}</a></th>
-			<th colspan="3"><a href="#" onclick="return false">{$LANG.rcmail_mailactions}</a></th>
-		</tr>
-	</thead>
-	<tbody>
-		{foreach key=num item=service from=$searchdataKey}
-		<tr>
-			<td>
-				<div style="width:180px;word-wrap:break-word;">{$service.listname}@{$service.domainname}</div>
-			</td>
-			<td>
-				{$service.subscribers}
-			</td>
-			<td>
-				{$service.moderators}
-			</td>
-			<td>
-				<form method="POST" action="{$smarty.server.PHP_SELF}?action=configmailinglist">
-					<input type="hidden" name="domainid" value="{$domainid}"/>
-					<input type="hidden" name="domain" value="{$domain}"/>
-					<input type="hidden" name="listaddress" value="{$service.listname}@{$service.domainname}"/>
-					<input type="submit" value="{$LANG.rcmail_configurebutton}" class="btn btn-info"/>
-				</form>
-			</td>
-			<td>
-				<form method="POST" action="{$smarty.server.PHP_SELF}?action=managelist">
-					<input type="hidden" name="domainid" value="{$domainid}"/>
-					<input type="hidden" name="domain" value="{$domain}"/>
-					<input type="hidden" name="listaddress" value="{$service.listname}@{$service.domainname}"/>
-					<input type="submit" value="{$LANG.rcmail_managemembersmoderadorsbutton}" class="btn btn-info"/>
-				</form>
-			</td>
-			<td>
-				<form method="POST" action="{$smarty.server.PHP_SELF}?action=managelists" onclick="return confirmDelete();">
-					<input type="hidden" name="delete" value="true"/>
-					<input type="hidden" name="domainid" value="{$domainid}"/>
-					<input type="hidden" name="domain" value="{$domain}"/>
-					<input type="hidden" name="listname" value="{$service.listname}"/>
-					<input type="hidden" name="page" value="{$pagenumber}"/>
-					<input type="hidden" name="itemlimit" value="{$itemlimit}"/>
-					<input type="hidden" name="q" value="{$q}"/>
-					<input type="submit" value="{$LANG.rcmail_deletebutton}" class="btn btn-danger"/>
-				</form>
-			</td>
-		</tr>
-		{foreachelse}
-		<tr>
-			<td colspan="7">
-				{$LANG.norecordsfound}
-			</td>
-		</tr>
-		{/foreach}
-		{if $q neq ""}
-		<tr>
-			<td colspan="7">
-				<form method="post" action="{$smarty.server.PHP_SELF}?action=managelists">
-					<input type="hidden" name="q" value=""/> 
-					<input type="hidden" name="domainid" value="{$domainid}"/>
-					<input type="hidden" name="domain" value="{$domain}"/>
-					<input type="submit" value="{$LANG.rcmail_deletesearchquerybutton}" class="btn"/>
-				</form>
-			</td>
-		</tr>
-		{/if}
-	</tbody>
+<table class="table table-bordered table-hover">
+       <tr>
+		<td {if $orderby eq "listname"} class="headerSort{$sort}"{/if}><a href="{$smarty.server.PHP_SELF}?action=managelists{if $q}&q={$q}{/if}&orderby=listname&domainid={$domainid}&domain={$domain}&sort={if $sort eq "desc"}asc{else}desc{/if}&page={$pagenumber}&itemlimit={$itemlimit}">{$LANG.rcmail_maillisttitle}</a></td>
+		<td {if $orderby eq "subscribers"} class="headerSort{$sort}"{/if}><a href="{$smarty.server.PHP_SELF}?action=managelists{if $q}&q={$q}{/if}&orderby=subscribers&domainid={$domainid}&domain={$domain}&sort={if $sort eq "desc"}asc{else}desc{/if}&page={$pagenumber}&itemlimit={$itemlimit}">{$LANG.rcmail_numsubscriberstitle}</a></td>
+		<td {if $orderby eq "moderators"} class="headerSort{$sort}"{/if}><a href="{$smarty.server.PHP_SELF}?action=managelists{if $q}&q={$q}{/if}&orderby=moderators&domainid={$domainid}&domain={$domain}&sort={if $sort eq "desc"}asc{else}desc{/if}&page={$pagenumber}&itemlimit={$itemlimit}">{$LANG.rcmail_nummoderatorstitle}</a></td>
+		<td colspan="3"><a href="#" onclick="return false">{$LANG.rcmail_mailactions}</a></td>
+	</tr>
+	{foreach key=num item=service from=$searchdataKey}
+	<tr>
+		<td>
+			<div style="width:180px;word-wrap:break-word;">{$service.listname}@{$service.domainname}</div>
+		</td>
+		<td>
+			{$service.subscribers}
+		</td>
+		<td>
+			{$service.moderators}
+		</td>
+		<td>
+			<form method="POST" action="{$smarty.server.PHP_SELF}?action=configmailinglist">
+				<input type="hidden" name="domainid" value="{$domainid}"/>
+				<input type="hidden" name="domain" value="{$domain}"/>
+				<input type="hidden" name="listaddress" value="{$service.listname}@{$service.domainname}"/>
+				<input type="submit" value="{$LANG.rcmail_configurebutton}" class="btn btn-info"/>
+			</form>
+		</td>
+		<td>
+			<form method="POST" action="{$smarty.server.PHP_SELF}?action=managelist">
+				<input type="hidden" name="domainid" value="{$domainid}"/>
+				<input type="hidden" name="domain" value="{$domain}"/>
+				<input type="hidden" name="listaddress" value="{$service.listname}@{$service.domainname}"/>
+				<input type="submit" value="{$LANG.rcmail_managemembersmoderadorsbutton}" class="btn btn-info"/>
+			</form>
+		</td>
+		<td>
+			<form method="POST" action="{$smarty.server.PHP_SELF}?action=managelists" onclick="return confirmDelete();">
+				<input type="hidden" name="delete" value="true"/>
+				<input type="hidden" name="domainid" value="{$domainid}"/>
+				<input type="hidden" name="domain" value="{$domain}"/>
+				<input type="hidden" name="listname" value="{$service.listname}"/>
+				<input type="hidden" name="page" value="{$pagenumber}"/>
+				<input type="hidden" name="itemlimit" value="{$itemlimit}"/>
+				<input type="hidden" name="q" value="{$q}"/>
+				<input type="submit" value="{$LANG.rcmail_deletebutton}" class="btn btn-danger"/>
+			</form>
+		</td>
+	</tr>
+	{foreachelse}
+	<tr>
+		<td colspan="7">
+			{$LANG.norecordsfound}
+		</td>
+	</tr>
+	{/foreach}
+	{if $q neq ""}
+	<tr>
+		<td colspan="7">
+			<form method="post" action="{$smarty.server.PHP_SELF}?action=managelists">
+				<input type="hidden" name="q" value=""/> 
+				<input type="hidden" name="domainid" value="{$domainid}"/>
+				<input type="hidden" name="domain" value="{$domain}"/>
+				<input type="submit" value="{$LANG.rcmail_deletesearchquerybutton}" class="btn"/>
+			</form>
+		</td>
+	</tr>
+	{/if}
 </table>
 
 <br/>

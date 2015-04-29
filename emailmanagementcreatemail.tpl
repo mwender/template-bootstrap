@@ -15,87 +15,83 @@
 
 <br/>
 
-<table class="table table-striped table-framed">
-	<thead>
-		<tr>
-			<th style="vertical-align:top">
-				{$LANG.rcmail_emailaccounttitle}
-			</th>
-			<th style="vertical-align:top">
-				{$your_newemail}
-			</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>
-				<strong>{$LANG.clientareapassword}</strong>
-			</td>
-			<td>
-				<strong class="textred">{$your_password}</strong>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<strong>{$LANG.rcmail_popservertitle}</strong>
-			</td>
-			<td>
-				{$popserver}
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<strong>{$LANG.rcmail_imapservertitle}</strong>
-			</td>
-			<td>
-				{$imapserver}
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<strong>{$LANG.rcmail_smtpservertitle}</strong>
-			</td>
-			<td>
-				{$smtpserver}
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<strong>{$LANG.rcmail_clientareawebmaillink}</strong>
-			</td>
-			<td>
-				<a href="{$webmailurl}" target="_blank">{$webmailurl}</a>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<form method="post" action="{$smarty.server.PHP_SELF}?action=managemailhosting">
-					<input type="hidden" name="page" value="{$smarty.post.page}"/>
-					<input type="hidden" name="domainid" value="{$domainid}"/>
-					<input type="hidden" name="domain" value="{$domain}"/>
-					<input name="freemailhosting" value="{$freemailhosting}" type="hidden"/>
-					<p align="center"><input type="submit" value="{$LANG.clientareabacklink}" class="btn"/></p>
-				</form>
-			</td>
-			<td>
-				<form method="POST" action="{$smarty.server.PHP_SELF}?action=modifyaccount">
-					<input type="hidden" name="page" value="{$smarty.post.page}"/>
-					<input type="hidden" name="domainid" value="{$domainid}"/>
-					<input type="hidden" name="domain" value="{$domain}"/>
-					<input name="freemailhosting" value="{$freemailhosting}" type="hidden"/>
-					<input type="hidden" name="emailaddress" value="{$your_newemail}"/>
-					<input type="hidden" name="mailtype" value="mailaccount"/>
-					<input type="submit" value="{$LANG.rcmail_modifyemail}" class="btn btn-info"/>
-				</form>
-			</td>
-		</tr>
-	</tbody>
+<table class="table table-bordered table-hover">
+	<tr>
+		<td style="vertical-align:top">
+			{$LANG.rcmail_emailaccounttitle}
+		</td>
+		<td style="vertical-align:top">
+			{$your_newemail}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<strong>{$LANG.clientareapassword}</strong>
+		</td>
+		<td>
+			<strong class="textred">{$your_password}</strong>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<strong>{$LANG.rcmail_popservertitle}</strong>
+		</td>
+		<td>
+			{$popserver}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<strong>{$LANG.rcmail_imapservertitle}</strong>
+		</td>
+		<td>
+			{$imapserver}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<strong>{$LANG.rcmail_smtpservertitle}</strong>
+		</td>
+		<td>
+			{$smtpserver}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<strong>{$LANG.rcmail_clientareawebmaillink}</strong>
+		</td>
+		<td>
+			<a href="{$webmailurl}" target="_blank">{$webmailurl}</a>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<form method="post" action="{$smarty.server.PHP_SELF}?action=managemailhosting">
+				<input type="hidden" name="page" value="{$smarty.post.page}"/>
+				<input type="hidden" name="domainid" value="{$domainid}"/>
+				<input type="hidden" name="domain" value="{$domain}"/>
+				<input name="freemailhosting" value="{$freemailhosting}" type="hidden"/>
+				<p align="center"><input type="submit" value="{$LANG.clientareabacklink}" class="btn"/></p>
+			</form>
+		</td>
+		<td>
+			<form method="POST" action="{$smarty.server.PHP_SELF}?action=modifyaccount">
+				<input type="hidden" name="page" value="{$smarty.post.page}"/>
+				<input type="hidden" name="domainid" value="{$domainid}"/>
+				<input type="hidden" name="domain" value="{$domain}"/>
+				<input name="freemailhosting" value="{$freemailhosting}" type="hidden"/>
+				<input type="hidden" name="emailaddress" value="{$your_newemail}"/>
+				<input type="hidden" name="mailtype" value="mailaccount"/>
+				<input type="submit" value="{$LANG.rcmail_modifyemail}" class="btn btn-info"/>
+			</form>
+		</td>
+	</tr>
 </table>
 {/if}
 
 {if $mailcreateaccounterror}
 <br />
-<div class="alert alert-error">
+<div class="alert alert-danger">
     <p class="bold">{$LANG.clientareaerrors}</p>
     <ul>
         {$mailcreateaccounterror}
@@ -111,82 +107,78 @@
 	<input type="hidden" name="domain" value="{$domain}"/>
 	<input name="freemailhosting" value="{$freemailhosting}" type="hidden"/>
 	<input type="hidden" name="createaccount" value="true"/>
-	<table class="table table-striped table-framed">
-		<thead>
-			<tr>
-				<th style="vertical-align:top">
-					{$LANG.clientareafirstname}
-				</th>
-				<th style="vertical-align:top">
-					<input name="firstname" type="text" value="{if $mailcreateaccounterror}{$smarty.post.firstname}{/if}" size="20"/>
-				</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>
-					<strong>{$LANG.clientarealastname}</strong>
-				</td>
-				<td>
-					<input name="lastname" type="text" value="{if $mailcreateaccounterror}{$smarty.post.lastname}{/if}" size="20"/>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<strong>{$LANG.clientareaemail}</strong>
-				</td>
-				<td>
-					<input name="email" type="text" value="{if $mailcreateaccounterror}{$smarty.post.email}{/if}" size="20"/>&nbsp;<strong>@{$domain}</strong>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<strong>{$LANG.rcmail_bulkcolpasswd}</strong>
-				</td>
-				<td>
-					<input name="password" type="text" value="{if $mailcreateaccounterror}{$smarty.post.password}{/if}" size="20"/><br />
-					{$LANG.rcmail_passwordtitledesc}
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<strong>{$LANG.rcmail_alternatemailaddress}</strong>
-				</td>
-				<td>
-					<input name="notifymail" type="text" value="{if $mailcreateaccounterror}{$smarty.post.notifymail}{/if}" size="40"/><br/><strong>{$LANG.rcmail_importantnotetitle}</strong>: {$LANG.rcmail_importantnotedesc}
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<strong>{$LANG.rcmail_languagetitle}</strong>
-				</td>
-				<td>
-					<select name="language-code">
-					<option value="en">{$LANG.rcmail_langenglish}</option>
-					<option value="es">{$LANG.rcmail_langspanish}</option>
-					<option value="es-MX">{$LANG.rcmail_langspanishla}</option>
-					<option value="pt-PT">{$LANG.rcmail_langportuguese}</option>
-					<option value="de">{$LANG.rcmail_langgerman}</option>
-					<option value="tr">{$LANG.rcmail_langturkish}</option>
-					<option value="ru">{$LANG.rcmail_langrussian}</option>	
-					<option value="zh-CN">{$LANG.rcmail_langchinese}</option>	
-					</select>
-				</td>
-			</tr>
-			<tr>
-			<td>
-				<strong>{$LANG.clientareacountry}</strong>
+	<table class="table table-bordered table-hover">
+		<tr>
+			<td style="vertical-align:top">
+				{$LANG.clientareafirstname}
 			</td>
-			<td>
-				{$dropdowncountries}
+			<td style="vertical-align:top">
+				<input name="firstname" type="text" value="{if $mailcreateaccounterror}{$smarty.post.firstname}{/if}" size="20"/>
 			</td>
 		</tr>
 		<tr>
-			<td colspan="3">
-				<p align="center"><input type="submit" value="{$LANG.rcmail_createemail}" class="btn btn-success"/></p>
+			<td>
+				<strong>{$LANG.clientarealastname}</strong>
+			</td>
+			<td>
+				<input name="lastname" type="text" value="{if $mailcreateaccounterror}{$smarty.post.lastname}{/if}" size="20"/>
 			</td>
 		</tr>
-	</tbody>
+		<tr>
+			<td>
+				<strong>{$LANG.clientareaemail}</strong>
+			</td>
+			<td>
+				<input name="email" type="text" value="{if $mailcreateaccounterror}{$smarty.post.email}{/if}" size="20"/>&nbsp;<strong>@{$domain}</strong>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<strong>{$LANG.rcmail_bulkcolpasswd}</strong>
+			</td>
+			<td>
+				<input name="password" type="text" value="{if $mailcreateaccounterror}{$smarty.post.password}{/if}" size="20"/><br />
+				{$LANG.rcmail_passwordtitledesc}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<strong>{$LANG.rcmail_alternatemailaddress}</strong>
+			</td>
+			<td>
+				<input name="notifymail" type="text" value="{if $mailcreateaccounterror}{$smarty.post.notifymail}{/if}" size="40"/><br/><strong>{$LANG.rcmail_importantnotetitle}</strong>: {$LANG.rcmail_importantnotedesc}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<strong>{$LANG.rcmail_languagetitle}</strong>
+			</td>
+			<td>
+				<select name="language-code">
+				<option value="en">{$LANG.rcmail_langenglish}</option>
+				<option value="es">{$LANG.rcmail_langspanish}</option>
+				<option value="es-MX">{$LANG.rcmail_langspanishla}</option>
+				<option value="pt-PT">{$LANG.rcmail_langportuguese}</option>
+				<option value="de">{$LANG.rcmail_langgerman}</option>
+				<option value="tr">{$LANG.rcmail_langturkish}</option>
+				<option value="ru">{$LANG.rcmail_langrussian}</option>	
+				<option value="zh-CN">{$LANG.rcmail_langchinese}</option>	
+				</select>
+			</td>
+		</tr>
+		<tr>
+		<td>
+			<strong>{$LANG.clientareacountry}</strong>
+		</td>
+		<td>
+			{$dropdowncountries}
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<p align="center"><input type="submit" value="{$LANG.rcmail_createemail}" class="btn btn-success"/></p>
+		</td>
+	</tr>
 </table>
 </form>
 
@@ -200,7 +192,7 @@
 
 {if $bulkerrormessage}
 <br />
-<div class="alert alert-error">
+<div class="alert alert-danger">
 	<p class="bold">{$LANG.clientareaerrors}</p>
     <ul>
         {$bulkerrormessage}
@@ -215,48 +207,44 @@
 		<br />
 
 		<div id="tblfrm" style="display:none;">
-	    <table class="table table-striped table-framed">
-			<thead>
+			<table class="table table-bordered table-hover">
 				<tr>
-		            <th>{$LANG.rcmail_languagenametitle}</th>
-		            <th>{$LANG.rcmail_languagecodetitle}</th>
-		        </tr>
-	        </thead>
-	        <tbody>
-				<tr>
-				    <td>{$LANG.rcmail_langchinese}</td>
-				    <td>zh-CN</td>
+					<td>{$LANG.rcmail_languagenametitle}</td>
+					<td>{$LANG.rcmail_languagecodetitle}</td>
 				</tr>
 				<tr>
-				    <td>{$LANG.rcmail_langenglish}</td>
-				    <td>en</td>
+					<td>{$LANG.rcmail_langchinese}</td>
+					<td>zh-CN</td>
 				</tr>
 				<tr>
-				    <td>{$LANG.rcmail_langgerman}</td>
-				    <td>de</td>
+					<td>{$LANG.rcmail_langenglish}</td>
+					<td>en</td>
 				</tr>
 				<tr>
-				    <td>{$LANG.rcmail_langportuguese}</td>
-				    <td>pt-PT</td>
+					<td>{$LANG.rcmail_langgerman}</td>
+					<td>de</td>
 				</tr>
 				<tr>
-				    <td>{$LANG.rcmail_langrussian}</td>
-				    <td>ru</td>
+					<td>{$LANG.rcmail_langportuguese}</td>
+					<td>pt-PT</td>
 				</tr>
 				<tr>
-				    <td>{$LANG.rcmail_langspanishla}</td>
-				    <td>es-MX</td>
+					<td>{$LANG.rcmail_langrussian}</td>
+					<td>ru</td>
 				</tr>
 				<tr>
-				    <td>{$LANG.rcmail_langspanish}</td>
-				    <td>es</td>
+					<td>{$LANG.rcmail_langspanishla}</td>
+					<td>es-MX</td>
 				</tr>
 				<tr>
-				    <td>{$LANG.rcmail_langturkish}</td>
-				    <td>tr</td>
+					<td>{$LANG.rcmail_langspanish}</td>
+					<td>es</td>
 				</tr>
-	        </tbody>	    
-	    </table>
+				<tr>
+					<td>{$LANG.rcmail_langturkish}</td>
+					<td>tr</td>
+				</tr>
+			</table>
 		</div>
 		
 		<p>{$LANG.rcmail_bulkdesc3}:</p><br />
@@ -296,36 +284,32 @@
 	<input name="freemailhosting" value="{$freemailhosting}" type="hidden"/>
 	<p><input type="submit" value="{$LANG.rcmail_bulkdownloadbutton}" class="btn btn-success" /></p>
 	
-	<table class="table table-striped table-framed">
-		<thead>
-			<tr>
-				<th>{$LANG.rcmail_bulkcolresult}</th>
-				<th>{$LANG.rcmail_bulkcolemail}</th>
-				<th>{$LANG.rcmail_bulkcolfirstname}</th>
-				<th>{$LANG.rcmail_bulkcollastname}</th>
-				<th>{$LANG.rcmail_bulkcolpasswd}</th>
-				<th>{$LANG.rcmail_bulkcolcountry}</th>
-				<th>{$LANG.rcmail_bulkcollang}</th>
-				<th>{$LANG.rcmail_bulkcolaltmail}</th>
-			</tr>
-		</thead>
-		<tbody>
-			{foreach key=num item=service from=$csvresultdata}
-			<tr>
-			<td>
-				<img src="templates/{$template}/img/{if $service.key8 eq "ok"}ok.png{else}ko.png{/if}" alt="{$service.key8}" border="0">
-				<input type="hidden" name="result[]" value="{$service.key8},{$service.key1},{$service.key2},{$service.key3},{$service.key4},{$service.key5},{$service.key6},{$service.key7}"/>
-			</td>
-			<td>{$service.key1}</td>
-			<td>{$service.key2}</td>
-			<td>{$service.key3}</td>
-			<td>{$service.key4}</td>
-			<td>{$service.key5}</td>
-			<td>{$service.key6}</td>
-			<td>{$service.key7}</td>
-			</tr>
-			{/foreach}
-		</tbody>
+	<table class="table table-bordered table-hover">
+		<tr>
+			<td>{$LANG.rcmail_bulkcolresult}</td>
+			<td>{$LANG.rcmail_bulkcolemail}</td>
+			<td>{$LANG.rcmail_bulkcolfirstname}</td>
+			<td>{$LANG.rcmail_bulkcollastname}</td>
+			<td>{$LANG.rcmail_bulkcolpasswd}</td>
+			<td>{$LANG.rcmail_bulkcolcountry}</td>
+			<td>{$LANG.rcmail_bulkcollang}</td>
+			<td>{$LANG.rcmail_bulkcolaltmail}</td>
+		</tr>
+		{foreach key=num item=service from=$csvresultdata}
+		<tr>
+		<td>
+			<img src="templates/{$template}/img/{if $service.key8 eq "ok"}ok.png{else}ko.png{/if}" alt="{$service.key8}" border="0">
+			<input type="hidden" name="result[]" value="{$service.key8},{$service.key1},{$service.key2},{$service.key3},{$service.key4},{$service.key5},{$service.key6},{$service.key7}"/>
+		</td>
+		<td>{$service.key1}</td>
+		<td>{$service.key2}</td>
+		<td>{$service.key3}</td>
+		<td>{$service.key4}</td>
+		<td>{$service.key5}</td>
+		<td>{$service.key6}</td>
+		<td>{$service.key7}</td>
+		</tr>
+		{/foreach}
 	</table>
 </form>
 {/if}
